@@ -1,4 +1,4 @@
 # Emergency Stop and Pause
 
-![System](../Images/EstopPause)
+![System](../Images/EstopandPause/E-StopPauseImage.png)
 
