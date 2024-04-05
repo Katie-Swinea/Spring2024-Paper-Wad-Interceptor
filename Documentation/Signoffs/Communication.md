@@ -2,7 +2,7 @@
 
 **Function:**
 
-![Function](../Images/Communication/Conceptual.png)
+![Function](../Images/Communication/Conceptual.PNG)
 
 Firgure 1 : Communication Subsystem
 
