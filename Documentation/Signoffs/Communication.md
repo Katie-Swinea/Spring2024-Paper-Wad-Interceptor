@@ -18,6 +18,7 @@ The goal of this subsystem is to recieve and transmit the data from the sensor s
 | 4   | The interceptor shall fit into a one-foot square on the floor and be able to fit in a one-by-one-by-one box                   |Conceptual Design|
 | 5   | The wireless system needs to span over the gameboard which is 64"x78"                  |System Requirments|
 | 6   | The wireless system needs to transmit the data at a high enough speed for the golf ball to be intercepted                  |System Requirments|
+| 7   | The wireless system needs to have pin connections that allow it to connect with the sensor                 |System Requirments|
 
 
 1. The connection between the interceptor and sensors shall be a wireless connection. [Conceptual Design]
@@ -37,3 +38,6 @@ The goal of this subsystem is to recieve and transmit the data from the sensor s
 
 6. The wireless system needs to transmit the data at a high enough speed for the golf ball to be intercepted. [System Requirments]
    The data needs to be transmitted quickly enough for the interceptor to process the data, aim, and fire at the incoming golf ball.
+   
+7. The wirelsess system needs to have pin connections that allow it to connect with the sensor. [System Requirments]
+   The data from the sensor uses either an I2C or SPI protocol to send the recieved data to a microcontroller. The microcontroller that will be needs to have pin connections to support these protcols and recieve the data.
