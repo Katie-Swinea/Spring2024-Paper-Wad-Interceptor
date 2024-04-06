@@ -43,5 +43,7 @@ Figure 3: Image shows the connections of the Prime extension cord and the connec
 | PRIME Extension Cord | 1 | $6.98 | $10.46 |
 
 ## References
+1.[1] “Toggle switches,” NTE Electronics, https://www.nteinc.com/switches/pdf/toggle-std.pdf (accessed Apr. 6, 2024).
 
+2. [2] “9FT 16/2 SPT-2 Green 3-Outlet Extension Cord W/Lighted Footswitch,” Prime Wire & Cable Inc., https://primewirecable.com/products/fsl7806099ft-16-2-spt-2-green-3-outlet-extension-cord-w-lighted-footswitch?_pos=1&_sid=f6715f7aa&_ss=r (accessed Apr. 6, 2024). 
 ‌
