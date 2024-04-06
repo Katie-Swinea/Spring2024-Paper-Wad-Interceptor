@@ -3,7 +3,7 @@
 ![System](../Images/EstopandPause/E-StopPauseImage.png)
 Figure 1: Emergency Stop and Pause sub-system, seen here as the color red.
 
-- The goal of this subsystem is to adhere to the rules as provided by the customer, Devcom. The system needs a pause switch to deactivate it between rounds and the emergency stop will be used to deenergize the system.
+- The goal of this subsystem is to adhere to the rules as provided by the customer, Devcom. The system needs a pause switch to deactivate it between rounds and the emergency stop will be used to deenergize the system if a problem occurs.
 
 ## **Constraints:**
 
@@ -26,6 +26,14 @@ For the pause switch component, there are many different switches that can be ch
 The emergency stop is a constraint that was added by the customer, Devcom. This switch has one purpose and that is to deenergize the system. The thought was this could easily be done by cutting off the power directly at the source. This can be done with the PRIME 3-Outlet Extension Cord with Lighted Footswitch. This extension cord is rated for 13A and 125V which will be more than enough for the power that needs to be supplied to the power subsystem. The main selling point of this item is that it includes two LED’s that indicate when the power is on and off. Based on the description the foot switch displays red when the power is off and green when the power is on. This will be perfect for the team’s application because it will be very easy to identify when the power is on and off. 
 
 ## Buildable Schematic
+![System](../Images/Switch_Buildable.png)
+
+Figure 2: The 5V source will most likely come from an output of the processor block but if this is not possible it may have to come from the power block. Either way the switch will go into the processor block. 
+
+
+![System](../Images/E-Stop_Buildable.png)
+
+Figure 3: Image shows the connections of the Prime extension cord and the connections that will be made. The circle in the middle represents the foot switch which includes the LEDs to indicate if the power is on or off. 
 
 ## Bill of Materials
 
