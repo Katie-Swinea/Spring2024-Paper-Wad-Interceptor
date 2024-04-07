@@ -78,10 +78,16 @@ This diagram shows that pins 29 and 26 are used for I2C communication. While oth
 | ESP32 DevKitC V4 Board (3-pack)| 1 | $15.99 | $15.99 |
 
 **References:**
+
 [1] “ESP32-WROOM-32 (ESP-WROOM-32) datasheet,” Mouser, https://www.mouser.com/datasheet/2/891/esp-wroom-32_datasheet_en-1223836.pdf (accessed Apr. 7, 2024).
-[2] ESP32-DEVKITC V4 getting started guide. ESP. (n.d.). https://docs.espressif.com/projects/esp-idf/en/stable/esp32/hw-reference/esp32/get-started-devkitc.html#get-started-esp32-devkitc-board-front 
-[3] “ESP32 series datasheet,” espressif, https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf (accessed Apr. 7, 2024). 
+
+[2] ESP32-DEVKITC V4 getting started guide. ESP. (n.d.). https://docs.espressif.com/projects/esp-idf/en/stable/esp32/hw-reference/esp32/get-started-devkitc.html#get-started-esp32-devkitc-board-front (accessed Apr. 7, 2024). 
+
+[3] “ESP32 series datasheet,” espressif, https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf (accessed Apr. 7, 2024).
+
 [4] C. Downey, “Understanding wireless range calculations,” Electronic Design, https://www.electronicdesign.com/technologies/communications/article/21796484/understanding-wireless-range-calculations (accessed Apr. 7, 2024). 
-[5] R. Teja, “ESP32 pinout: ESP-WROOM-32 pinout,” ElectronicsHub USA, https://www.electronicshub.org/esp32-pinout/ (accessed Apr. 7, 2024). 
+
+[5] R. Teja, “ESP32 pinout: ESP-WROOM-32 pinout,” ElectronicsHub USA, https://www.electronicshub.org/esp32-pinout/ (accessed Apr. 7, 2024).
+
 [6] “Esp32 module micro USB 5V&USB-UART,” espressif, https://dl.espressif.com/dl/schematics/esp32_devkitc_v4-sch.pdf (accessed Apr. 7, 2024). 
  
