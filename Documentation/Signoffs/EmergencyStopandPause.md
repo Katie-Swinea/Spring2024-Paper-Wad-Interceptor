@@ -25,7 +25,7 @@ For the pause switch component, there are many different switches that can be ch
 The emergency stop is a constraint that was added by the customer, Devcom. This switch has one purpose and that is to de-energize the system. The thought was this could easily be done by cutting off the power directly at the source. This can be done with the PRIME 3-Outlet Extension Cord with Lighted Footswitch. This extension cord is rated for 13A and 125V which will be more than enough for the power that needs to be supplied to the power subsystem. The main selling point of this item is that it includes two LEDs that indicate when the power is on and off. Based on the description the foot switch displays red when the power is off and green when the power is on. This will be perfect for the team’s application because it will be very easy to identify when the power is on and off. 
 
 ## Buildable Schematic
-![System](../Images/Switch_Buildable.png)
+![System](../Images/Switch_Buildable_2.png)
 
 Figure 2: The 5V source will most likely come from an output of the processor block but if this is not possible it may have to come from the power block. Either way, the switch will go into the processor block. 
 
