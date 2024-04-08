@@ -62,6 +62,9 @@ The communication receiver requires a voltage input of 3.3 v. This system must b
 
 The mechanical unit requires a voltage input of 24 v. This system must be able to produce the 24 volt DC signal from the wall outlet.
 
+## Buildable schematic 
+
+
 
 
 ## Analysis
@@ -138,8 +141,7 @@ Total System Power: (36 Watts) + (1.65 Watts) + (15 Watts) = 52. 65 Watts
 
 As stated above, the system will provide at least 1.2 times the amount of required power. This is why the system will need to provide 78.98 watts total. This will be done through two convertors. The first will output a total of 24 watts. The systems it will support are the processor and communication systems, which require 16.65 watts. 24 watts is over 1.2 times that amount. The second will produce 48 watts. The system it supports requires 36 watts. 48 watts is over 1.2 times that amount. <sup>6</sup>
 
-
-This system will have a power switch connected between the AC-DC transformer and three adjacent transformers. This system will be supplied with 12 volts/ 3 amps, so it is important the switch is rated for those values. This system will use a basic on/off switch that is rated for 12 volts/ 5 amps. [7] This completely encapsulates what is required from the system. <sup>7</sup>
+This system will have a power switch connected between the AC-DC transformers and there adjacent outputs. Both convertors will controlled using the KRE2ANA1BBD switch rocker.[7] This switch is rated for a max of 28 volts/ 6 amps. These ratings will completely encapsulate the requirements for each convertor. <sup>7</sup>
 
 As stated at fulfilling constraints 2 and 3, the system must supply 5 volts/ 3 amps, and 3.3 volts/ 1 amp respectively. This will done by using the 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter to supply the 5 volt system, and the LM2596 to power the 3.3 volt system. [2][3] <sup>8</sup>
 
@@ -150,6 +152,18 @@ As stated at fulfilling constraints 4, the system must supply a 24 volt/ 1.5 amp
 To connect each system, there will be 2 soldered bread boards. One will connect the 12 volt convertor to the power switch and then connect that output to both of the step-down convertors. The output of those will be connected to there actual systems. The second will connect the 24 volt convertor to the switch and then connect the output of that switch to the actual system. The board that will be used will be Double Sided ENIG Protoboard, Solderable Breadboard at varying sizes. [9]
 
 There is also plans to 3d print a box to encapsulate each power system's componets if time permits. 
+
+## BOM
+
+|Device     | Quantity | price per  | total price  |
+|-----------|----------|------------|--------------|
+|12-5v Buck Convertor| 1 | 15.99 | 15.99 |
+|Chanzon 12V 2A Power Supply | 1 | 13.99 | 13.99 |
+|AC to DC 24V 2A Power Supply Adapter | 1 | 9.99 | 9.99 |
+|LM2596 DC to DC | 1 | 5.49 | 5.49|
+|KRE2ANA1BBD | 2 | 3.20 | 6.40 |
+|Solder Prototype Board 2x2 | 1 | 3.59 | 3.59 |
+|total |7 | --- | 55.45 | 
 
 ## References 
 
@@ -165,7 +179,7 @@ There is also plans to 3d print a box to encapsulate each power system's compone
 
 [6] Amazon.com: Chanzon 12V 2A Power Supply class2 24W led strip CCTV Camera AC DC switching Adapter (input 100-240V, output 12 volt 2 amp) wall wart transformer charger for DC12V (6ft Cord, 24 Watt Max) : Electronics, https://www.amazon.com/Chanzon-Switching-Adapter-100-240V-Transformer/dp/B07HNL5D56 (accessed Apr. 8, 2024). 
 
-[7]
+[7] ZF, http://switches-sensors.zf.com/us/wp-content/uploads/sites/7/2012/10/Rocker_KR_Datasheet_08-11-17.pdf (accessed Apr. 8, 2024). 
 
 [8] “AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC,” Amazon, https://www.amazon.com/Power-Supply-Adapter-5-5mm-Listed/dp/B08T636YVR/ref=asc_df_B08T636YVR/?tag=hyprod-20&linkCode=df0&hvadid=507792222889&hvpos=&hvnetw=g&hvrand=12806499727394812437&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1262398291870&psc=1&mcid=edd9d085cf3b3cc6915cbdb81a548b03&gclid=Cj0KCQjwq86wBhDiARIsAJhuphlXeLT83NoSYTl9ESdo2cRMDwrTjeLdDQEmibtQ-LtuMLKLdhcwaioaAohBEALw_wcB (accessed Apr. 8, 2024). 
 
