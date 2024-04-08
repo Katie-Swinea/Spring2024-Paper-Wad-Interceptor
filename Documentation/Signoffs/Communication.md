@@ -4,7 +4,7 @@
 
 ![Function](../Images/Communication/Conceptual.PNG)
 
-Firgure 1 : Communication Subsystem
+Figure 1 : Communication Subsystem
 
 The goal of this subsystem is to recieve and transmit the data from the sensor subsystem to the processor.  
 
