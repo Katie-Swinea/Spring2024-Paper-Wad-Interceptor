@@ -1,7 +1,7 @@
 # Battery Subsystem
 
 ## **Function:**
-
+![Elaboration Photo](../Images/battery/Battery picture.png)
 Figure 1: Battery Subsystem
 
 The goal of this subsystem is to provide 5 Volt power source to power the sensor subsystem
