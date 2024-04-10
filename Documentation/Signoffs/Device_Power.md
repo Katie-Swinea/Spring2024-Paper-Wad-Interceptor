@@ -46,7 +46,7 @@ This system will take the AC power supplied from the wall outlet and then conver
 
 <sup>6</sup> The system shall provide a minimum of 78.98 W [Design Constraint]
 
-Due to possible overclocking and power spikes, this system will provide 1.2 times the required wattage. [1] Because of this, the system will provide 78.98 watts of power, which is over 1.2 times the required wattage (52.65 watts). This will ensure there is plenty of power for the entire system. 
+Due to possible overclocking and power spikes, this system will provide 1.2 times the required wattage [1]. Because of this, the system will provide 78.98 watts of power, which is over 1.2 times the required wattage (52.65 watts). This will ensure there is plenty of power for the entire system. 
 
 <sup>7</sup>  The system shall have a connected power switch [Conceptual Design]
 
@@ -125,14 +125,14 @@ The total power of the entire subsystem will be:
 
 As the schematic depicts this subsystem is connected to the emergency stop subsystem. The emergency stop subsystem is connected to the wall outlet. This allows the power subsystem to be disconnected from power completely if needed. <sup>1</sup>
 
-The main/processor unit requires a 5 volt/ 3 amp input (15 Watts). The 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter takes a 12 volt input and outputs a 5 volt/ 3 amp signal. [2] This is exactly what the wall outlet transformer produces and it is exactly what the main/processor requires. <sup>2</sup>
+The main/processor unit requires a 5 volt/ 3 amp input (15 Watts). The 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter takes a 12 volt input and outputs a 5 volt/ 3 amp signal [2]. This is exactly what the wall outlet transformer produces and it is exactly what the main/processor requires. <sup>2</sup>
 
-The communication receiver requires a 3.3 volt/ 0.5 amp (or more) input (1.65 Watts). The LM2596 takes a 12 volt input and can convert a 3.3 volt output with a 1 amp, 1.5 amp, or 2 amp signal.[3] This system will output a 3.3 volt/ 1 amp output. This will be sufficient as the wall outlet transformer produces 12 volts and it encapsulates what is required by the communication receiver. <sup>3</sup>
+The communication receiver requires a 3.3 volt/ 0.5 amp (or more) input (1.65 Watts). The LM2596 takes a 12 volt input and can convert a 3.3 volt output with a 1 amp, 1.5 amp, or 2 amp signal [3]. This system will output a 3.3 volt/ 1 amp output. This will be sufficient as the wall outlet transformer produces 12 volts and it encapsulates what is required by the communication receiver. <sup>3</sup>
 
-The mechanical unit requires a 24 volt/ 1.5 amp input (36 watts). The AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC produces a 24 volt/ 2 amp output from the wall outlet. [8] This will be sufficient as it will completely encapsulate what is required from the mechanical unit. <sup>4</sup>
+The mechanical unit requires a 24 volt/ 1.5 amp input (36 watts). The AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC produces a 24 volt/ 2 amp output from the wall outlet [8]. This will be sufficient as it will completely encapsulate what is required from the mechanical unit. <sup>4</sup>
 
-The system must convert AC power from the wall outlet and output a DC signal. This system will use two separate AC to DC converters. The first will produce a signal of 12 volts/ 2 amps (16.65 watts). This converter will power the two step-down transformers. The transformer will be the Chanzon 12V 2A Power Supply Class2 24W LED Strip CCTV Camera AC DC Switching Adapter. [6] The second will produce a signal of 24 volts/ 2 amps (48 watts). This converter will power the mechanical unit.
-The transformer will be the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC. [8] <sup>5</sup>
+The system must convert AC power from the wall outlet and output a DC signal. This system will use two separate AC to DC converters. The first will produce a signal of 12 volts/ 2 amps (16.65 watts). This converter will power the two step-down transformers. The transformer will be the Chanzon 12V 2A Power Supply Class2 24W LED Strip CCTV Camera AC DC Switching Adapter [6]. The second will produce a signal of 24 volts/ 2 amps (48 watts). This converter will power the mechanical unit.
+The transformer will be the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC [8]. <sup>5</sup>
 
 The system must provide a total of 78.98 watts. This is because the total wattage of each system added together will be 52.65 watts:
 
@@ -142,11 +142,11 @@ Total System Power: (36 Watts) + (1.65 Watts) + (15 Watts) = 52. 65 Watts
 
 As stated above, the system will provide at least 1.2 times the amount of required power. This is why the system will need to provide 78.98 watts total. This will be done through two converters. The first will output a total of 24 watts. The systems it will support are the processor and communication systems, which require 16.65 watts. 24 watts is over 1.2 times that amount. The second will produce 48 watts. The system it supports requires 36 watts. 48 watts is over 1.2 times that amount. <sup>6</sup>
 
-This system will have a power switch connected between the AC-DC transformers and there adjacent outputs. Both converters will controlled using the KRE2ANA1BBD switch rocker.[7] This switch is rated for a max of 28 volts/ 6 amps. These ratings will completely encapsulate the requirements for each convertor. <sup>7</sup>
+This system will have a power switch connected between the AC-DC transformers and there adjacent outputs. Both converters will controlled using the KRE2ANA1BBD switch rocker [7]. This switch is rated for a max of 28 volts/ 6 amps. These ratings will completely encapsulate the requirements for each convertor. <sup>7</sup>
 
-As stated in fulfilling constraints 2 and 3, the system must supply 5 volts/ 3 amps, and 3.3 volts/ 1 amp respectively. This will done by using the 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter to supply the 5 volt system, and the LM2596 to power the 3.3 volt system. [2][3] <sup>8</sup>
+As stated in fulfilling constraints 2 and 3, the system must supply 5 volts/ 3 amps, and 3.3 volts/ 1 amp respectively. This will done by using the 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter to supply the 5 volt system, and the LM2596 to power the 3.3 volt system [2][3]. <sup>8</sup>
 
-As stated in fulfilling constraint 4, the system must supply a 24 volt/ 1.5 amp signal. This will be done using the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC, as it produces a 24 volt/ 2 amp output. [8] <sup>9</sup>
+As stated in fulfilling constraint 4, the system must supply a 24 volt/ 1.5 amp signal. This will be done using the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC, as it produces a 24 volt/ 2 amp output [8]. <sup>9</sup>
 
 ## Application
 
