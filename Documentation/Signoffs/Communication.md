@@ -53,7 +53,7 @@ The goal of this subsystem is to receive and transmit the data from the sensor s
 
 Based on the pinouts and schematics for the ESP32 DevKitC V4, the communication between the sensor and the microcontroller for the SPI protocol are shown below. The diagram also includes the power supply for the board from the battery power. 
 
-![Schematic #1](../Images/Communication/Sensor_to_ESP.PNG)
+![Schematic #1](../Images/Communication/Controller_Diagram.png)
 
 As seen in the diagram pins 30, 25, 24, and 23 are used for SPI communication. Pins 18, 13, 12, and 11 also have SPI communication capabilities but were not used in this wiring diagram. There is a third set of SPI communication pins, but these do not directly correlate with the SPI pins on the sensor. The clock connects to pin 24, the chip select connects to pin 23, the MISO connects to pin 25, and the MOSI connects to pin 30. These connections are made with the sensor to communicate the data captured by the sensor. The 3.3 volt input, pin 16, is connected to the battery power so the board can operate. Ground will be connected to the same source as the battery power and sensor. All other pins will not be connected unless a GPIO pin has to be integrated with the sensor to act as a clock. If that is the case, pin 10 will be used since the pin out does not have a specified purpose or configuration for it. If a second sensor is implemented on the posts, as opposed to its current location on the interceptor, the connections to that sensor will be implemented the same way.
 
