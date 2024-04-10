@@ -13,7 +13,7 @@ Figure 1: Emergency Stop and Pause sub-system, seen here as the color red.
 | 2. | The interceptor shall have a switch that sets the system into a pause state.  | Rulebook |
 | 3. | The voltage switched by the pause switch shall be within the requirements of the processor block. | System Constraint|
 
-1. One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This will be needed to ensure that the design passes the safety check.
+1. One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power off the device power system that will de-energize all of the systems that are being powered by the device power system. This functionality will be needed to ensure that the design passes the safety check.
    
 2. One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have a pause switch that keeps the interceptor from firing when the board is being reset. This switch will need to be physical, but in the implementation, it will run to the processor where it will prevent it from outputting any signals.
    
