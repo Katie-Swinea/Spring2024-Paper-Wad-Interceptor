@@ -156,7 +156,7 @@ There are also plans to 3d print a box to encapsulate each power system's compon
 
 ## BOM
 
-|Device     | Quantity | price per  | total price  |
+|Device     | Quantity | Price per  | Total price  |
 |-----------|----------|------------|--------------|
 |12-5v Buck Convertor| 1 | 15.99 | 15.99 |
 |Chanzon 12V 2A Power Supply | 1 | 13.99 | 13.99 |
@@ -164,7 +164,7 @@ There are also plans to 3d print a box to encapsulate each power system's compon
 |LM2596 DC to DC | 1 | 5.49 | 5.49|
 |KRE2ANA1BBD | 2 | 3.20 | 6.40 |
 |Solder Prototype Board 2x2 | 1 | 3.59 | 3.59 |
-|total |7 | --- | 55.45 | 
+|Total |7 | --- | 55.45 | 
 
 ## References 
 
