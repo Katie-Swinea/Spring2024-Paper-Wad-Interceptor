@@ -52,15 +52,15 @@ Due to possible overclocking and power spikes, this system will provide 1.2 time
 
 The system will be controlled by an on/off switch. This switch will allow the wall power to be connected or disconnected from each system that this subsystem powers.  
 
-<sup>8</sup> The system shall be able to step down the voltage to 5 v and 3.3 v respectively [Design Constraint]
+<sup>8</sup> The system shall be able to step down the voltage to 5 V and 3.3 V respectively [Design Constraint]
 
-The main/processor unit requires a voltage input of 5 v. This system must be able to step down the DC voltage acquired by the wall outlet to 5 v to power this unit. 
+The main/processor unit requires a voltage input of 5 V. This system must be able to step down the DC voltage acquired by the wall outlet to 5 V to power this unit. 
 
-The communication receiver requires a voltage input of 3.3 V. This system must be able to step down the DC voltage acquired by the wall outlet to 3.3 v to power this unit. 
+The communication receiver requires a voltage input of 3.3 V. This system must be able to step down the DC voltage acquired by the wall outlet to 3.3 V to power this unit. 
 
-<sup>9</sup> The system shall be able to produce 24 volts   [Design Constraint]
+<sup>9</sup> The system shall be able to produce 24 V   [Design Constraint]
 
-The mechanical unit requires a voltage input of 24 v. This system must be able to produce the 24 volt DC signal from the wall outlet.
+The mechanical unit requires a voltage input of 24 V. This system must be able to produce the 24 V DC signal from the wall outlet.
 
 ## Buildable schematic 
 
@@ -150,7 +150,7 @@ As stated in fulfilling constraint 4, the system must supply a 24 volt/ 1.5 amp 
 
 ## Application
 
-To connect each system, there will be 2 soldered breadboards. One will connect the 12 volt convertor to the power switch and then connect that output to both of the step-down converters. The output of those will be connected to their actual systems. The second will connect the 24 volt converter to the switch and then connect the output of that switch to the actual system. The board that will be used will be a double-sided ENIG Protoboard, Solderable Breadboard of varying sizes. [9]
+To connect each system, there will be 2 soldered breadboards. One will connect the 12 volt convertor to the power switch and then connect that output to both of the step-down converters. The output of those will be connected to their actual systems. The second will connect the 24 volt converter to the switch and then connect the output of that switch to the actual system. The board that will be used will be a double-sided ENIG Protoboard [9].
 
 There are also plans to 3d print a box to encapsulate each power system's components if time permits. 
 
