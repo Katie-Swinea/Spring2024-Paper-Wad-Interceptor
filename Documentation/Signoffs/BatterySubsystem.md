@@ -41,9 +41,14 @@ Which is approximately 22 minutes so a battery charger will need to be purchased
 | | |Final Total|$41.39|
 
 ## **References:**
-[1] 232 Keystone Electronics | Battery Products | DigiKey, https://www.digikey.com/en/products/detail/keystone-electronics/232/303804 (accessed Apr. 10, 2024). 
+[1] 232 Keystone Electronics | Battery Products | DigiKey, https://www.digikey.com/en/products/detail/keystone-electronics/232/303804 (accessed Apr. 10, 2024).
+
 [2] Amazon.com:EBL 9V Li-ion Rechargeable Batteries 600mAh 4-Pack with LCD 9V Smart Battery Charger for 9 Volt Lithium-ion/Ni-MH/Ni-CD Rechargeable Batteries, https://www.amazon.com/EBL-Rechargeable-Batteries-Battery-Lithium-ion/dp/B08HRXHKQV/ref=sr_1_1_sspa?dib=eyJ2IjoiMSJ9.zOjHE_S7xCpuJg_qW9qaIHWWKzNAk6X9x6nbbJvQcAml1pLat0Qp6gE6hjGav7hVipmQwOd1hZ6Xz3-gLi750HOJbSCaH4My1LzDMnh_McgVyN71GdB4fgk4PLDQxto1xxpIpo8e2LfO9S1MgsJWF9Nk_fk0wCc3nVONYSh4iEOwny5j-oyUqnlXUPEjY8MfQmEoPNmtvm7jvLg7JCcPfxx8DkhAiHdf8CtZoYEm934.oRYXtEizD2QZeVMPUB5Kx8kCQZTfktmIgxK126JlqMg&dib_tag=se&keywords=9+volt+rechargeable+batteries+and+charger&qid=1712774892&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1 (accessed Apr. 10, 2024). 
+
 [3] Az1117i, https://www.diodes.com/assets/Datasheets/AZ1117I.pdf (accessed Apr. 10, 2024). 
+
 [4] J. Teel, “How to pick the right voltage regulator(s) for your design,” PREDICTABLE DESIGNS, https://predictabledesigns.com/how-to-pick-the-right-voltage-regulators-for-your-design/ (accessed Apr. 10, 2024).
+
 [5] F. Reis et al., “Battery life calculator: How long does a battery last? (ah, V, hours),” LearnMetrics, https://learnmetrics.com/battery-life-calculator-how-long-does-a-battery-last/ (accessed Apr. 10, 2024). 
+
 [6] PRT-08808 sparkfun electronics | Prototyping, fabrication products | DigiKey, https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-08808/7387401 (accessed Apr. 10, 2024). 
