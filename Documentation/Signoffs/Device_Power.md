@@ -12,55 +12,55 @@ The goal of this subsystem is to convert AC power from the wall outlet to DC pow
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1   | The power system shall be connected to the emergency stop           |Conceptual Design |
-| 2   | The power system shall power the main/processor unit                |Conceptual Design |
-| 3   | The power system shall power the communication receiver             |Conceptual Design |
-| 4   | The power system shall power the mechanical unit                    |Conceptual Design |
-| 5   | The system shall convert AC power to DC power                       |Conceptual Design |
-| 6   | The system shall provide a minimum of 78.98 Watts                         |Design Constraint |
-| 7   | The system shall have a connected power switch                      |Conceptual Design |
-| 8   | The system shall be able to step down the voltage to 5 v and 3.3 v respectively |Design Constraint |
+| 1   | The power system shall be controlled by an emergency stop which will de-energizes the device power system that will in turn de-energize the interceptor itself. |Conceptual Design |
+| 2   | The power system shall supply 15 Watts to the main/processor unit   |Conceptual Design |
+| 3   | The power system shall supply 1.65 Watts to the communication receiver |Conceptual Design |
+| 4   | The power system shall supply 36 Watts to the the mechanical unit   |Conceptual Design |
+| 5   | The system shall convert 100-240 wall outlet AC voltage to 24 Watts and 48 Watts DC |Conceptual Design |
+| 6   | The system shall provide a minimum of 78.98 Watts                    |Design Constraint |
+| 7   | The system shall be controlled by a power switch                 |Conceptual Design |
+| 8   | The system shall be able to step down 12 volts to 5 volts and 3.3 volts respectively |Design Constraint |
 | 9   | The system shall be able to produce 24 volts                 |Design Constraint |
 
 
 
-<sup>1</sup> The power system shall be connected to the emergency stop [Conceptual Design]
+<sup>1</sup> The power system shall be controlled by an emergency stop which will de-energizes the device power system that will in turn de-energize the interceptor itself. [Conceptual Design]
 
-The power system will be connected to the emergency stop which will act as an extension cord with a turn of switch. This emergency stop will be directly connected to the wall outlet.
+One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the wall outlet to the AC-DC convertors which will de-energize all of the systems that are being powered by this power system. 
 
-<sup>2</sup> The power system shall power the main/processor unit [Conceptual Design]
+<sup>2</sup> The power system shall supply 15 Watts to the main/processor unit [Conceptual Design]
 
-The system will need to be the primary power source for the main/processor unit. This system will be responsible for powering or providing the necessary power to every component in the main unit. 
+This system will be the primary power supplier for the main/processor unit. It must be able to supply 15 Watts to this system as required by the main/processor.  
 
-<sup>3</sup> The power system shall power the communication receiver [Conceptual Design]
+<sup>3</sup> The power system shall supply 1.65 Watts to the communication receiver [Conceptual Design]
 
-The system will need to be the primary power source for the communication unit. This system will be responsible for powering or providing the necessary power to every component in the communication unit. 
+This system will be the primary power supplier for the communication receiver. It must be able to supply 1.65 Watts to this system as required by the communication receiver.  
 
-<sup>4</sup> The power system shall power the mechanical unit [Conceptual Design]
+<sup>4</sup>  The power system shall supply 36 Watts to the the mechanical unit [Conceptual Design]
 
-The system will need to be the primary power source for the mechanical unit. This system will be responsible for powering or providing the necessary power to every component in the mechanical unit. 
+ This system will be the primary power supplier for the mechanical unit. It must be able to supply 36 Watts to this system as required by the mechanical unit.  
 
-<sup>5</sup> The system shall convert AC power to DC power [Conceptual Design]
+<sup>5</sup> The system shall convert 100-240 wall outlet AC voltage to 24 Watts and 48 Watts DC [Conceptual Design]
 
-This system will take the AC power supplied from the wall outlet and then convert that to a DC signal that will be provided to the other subsystems. 
+This system will take the 100-240 AC voltage supplied from the wall outlet and then convert that to 2 DC power signals that will be provided to the other subsystems. These DC signals are 24 Watts to the main/processor and communication receiver and 48 Watts to the mechanical unit.
 
 <sup>6</sup> The system shall provide a minimum of 78.98 W [Design Constraint]
 
 Due to possible overclocking and power spikes, this system will provide 1.2 times the required wattage [1]. Because of this, the system will provide 78.98 watts of power, which is over 1.2 times the required wattage (52.65 watts). This will ensure there is plenty of power for the entire system. 
 
-<sup>7</sup>  The system shall have a connected power switch [Conceptual Design]
+<sup>7</sup>  The system shall be controlled by a power switch  [Conceptual Design]
 
 The system will be controlled by an on/off switch. This switch will allow the wall power to be connected or disconnected from each system that this subsystem powers.  
 
-<sup>8</sup> The system shall be able to step down the voltage to 5 V and 3.3 V respectively [Design Constraint]
+<sup>8</sup> The system shall be able to step down 12 volts to 5 volts and 3.3 volts respectively [Design Constraint]
 
-The main/processor unit requires a voltage input of 5 V. This system must be able to step down the DC voltage acquired by the wall outlet to 5 V to power this unit. 
+The main/processor unit requires a voltage input of 5 volts. This system must be able to take the 12 volts from the AC to DC convertor and step it down to 5 volts to power this unit. 
 
-The communication receiver requires a voltage input of 3.3 V. This system must be able to step down the DC voltage acquired by the wall outlet to 3.3 V to power this unit. 
+The communication receiver requires a voltage input of 3.3 volts. This system must be able to take the 12 volts from the AC to DC convertor and step it down to 3.3 volts to power this unit. 
 
-<sup>9</sup> The system shall be able to produce 24 V   [Design Constraint]
+<sup>9</sup> The system shall be able to produce 24 volts   [Design Constraint]
 
-The mechanical unit requires a voltage input of 24 V. This system must be able to produce the 24 V DC signal from the wall outlet.
+The mechanical unit requires a voltage input of 24 volts. This system must be able to produce the 24 V DC signal from the wall outlet.
 
 ## Buildable schematic 
 
@@ -123,7 +123,7 @@ The total power of the entire subsystem will be:
 
 ## Fulfilling Constraints
 
-As the schematic depicts this subsystem is connected to the emergency stop subsystem. The emergency stop subsystem is connected to the wall outlet. This allows the power subsystem to be disconnected from power completely if needed. <sup>1</sup>
+This switch has one purpose and that is to de-energize the system. This can easily be done by cutting off the power directly at the source. This will be accomplished with the PRIME 3-Outlet Extension Cord with Lighted Footswitch [10]. This extension cord is rated for 13A and 125V. This will have a high enough current rating as this system will only be drawing up to 5 amps at up to 38.3 volts. <sup>1</sup>
 
 The main/processor unit requires a 5 volt/ 3 amp input (15 Watts). The 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter takes a 12 volt input and outputs a 5 volt/ 3 amp signal [2]. This is exactly what the wall outlet transformer produces and it is exactly what the main/processor requires. <sup>2</sup>
 
@@ -164,7 +164,8 @@ There are also plans to 3d print a box to encapsulate each power system's compon
 |LM2596 DC to DC | 1 | 5.49 | 5.49|
 |KRE2ANA1BBD | 2 | 3.20 | 6.40 |
 |Solder Prototype Board 2x2 | 1 | 3.59 | 3.59 |
-|Total |7 | --- | 55.45 | 
+|PRIME Extension Cord | 1 | 6.98 | 6.98 |
+|Total |8 | --- | 62.43 | 
 
 ## References 
 
@@ -185,3 +186,5 @@ There are also plans to 3d print a box to encapsulate each power system's compon
 [8] “AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC,” Amazon, https://www.amazon.com/Power-Supply-Adapter-5-5mm-Listed/dp/B08T636YVR/ref=asc_df_B08T636YVR/?tag=hyprod-20&linkCode=df0&hvadid=507792222889&hvpos=&hvnetw=g&hvrand=12806499727394812437&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1262398291870&psc=1&mcid=edd9d085cf3b3cc6915cbdb81a548b03&gclid=Cj0KCQjwq86wBhDiARIsAJhuphlXeLT83NoSYTl9ESdo2cRMDwrTjeLdDQEmibtQ-LtuMLKLdhcwaioaAohBEALw_wcB (accessed Apr. 8, 2024). 
 
 [9] “Schmalztech premium solderless breadboard/Electronics Prototyping Bread Board for quick circuit building, Arduino, or Raspberry Pi, st-BB (470 position): Amazon.com: Industrial & Scientific,” Amazon, https://www.amazon.com/SchmalzTech-Solderless-Breadboard-Electronics-Prototyping/dp/B0C3YZRMR5 (accessed Apr. 8, 2024). 
+
+[10] “9FT 16/2 SPT-2 Green 3-Outlet Extension Cord W/Lighted Footswitch,” Prime Wire & Cable Inc., https://primewirecable.com/products/fsl7806099ft-16-2-spt-2-green-3-outlet-extension-cord-w-lighted-footswitch?_pos=1&_sid=f6715f7aa&_ss=r (accessed Apr. 6, 2024). ‌
