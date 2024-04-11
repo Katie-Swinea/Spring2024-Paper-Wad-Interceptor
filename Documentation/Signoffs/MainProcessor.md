@@ -1,6 +1,6 @@
 **Function:**
 
-The Jetson Nano 945-13450-0000-0000 plays a pivotal role in this project as the central processing unit responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the jetson.
+The Jetson Nano plays a pivotal role in this project as the central processing unit responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the jetson.
 
 Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of the golf ball interceptor. Through the data it calculates and processes, it determines the optimal timing for activating the interceptor, ensuring precise targeting of the golf ball, particularly within the designated "kill zone."
 
@@ -73,7 +73,7 @@ Real-time trajectory data received by the Jetson Nano guides precise motor movem
 |TB6600 Stepper Motor Driver|	3	|$20.00	|$60.00|
 | | | | 			~$270.00|
 
-[4] The Jetson Nano 945-13450-0000-0000 offers an affordable yet powerful solution for system control, priced at $209.00. Coupled with the TB6600 Stepper Motor Driver, the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+[4] The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00. Coupled with the TB6600 Stepper Motor Driver, the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
 References:
 
