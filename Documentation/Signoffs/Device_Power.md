@@ -12,11 +12,11 @@ The goal of this subsystem is to convert AC power from the wall outlet to DC pow
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1   | The power system shall be controlled by an emergency stop which will de-energizes the device power system that will in turn de-energize the interceptor itself. |Conceptual Design |
+| 1   | The power system shall be controlled by an emergency stop which will de-energize the device power system that will in turn de-energize the interceptor itself. |Conceptual Design |
 | 2   | The power system shall supply 15 Watts to the main/processor unit   |Conceptual Design |
 | 3   | The power system shall supply 1.65 Watts to the communication receiver |Conceptual Design |
 | 4   | The power system shall supply 36 Watts to the the mechanical unit   |Conceptual Design |
-| 5   | The system shall convert 100-240 wall outlet AC voltage to 24 Watts and 48 Watts DC |Conceptual Design |
+| 5   | The system shall convert 100-120 wall outlet AC voltage to 24 Watts and 48 Watts DC |Conceptual Design |
 | 6   | The system shall provide a minimum of 78.98 Watts                    |Design Constraint |
 | 7   | The system shall be controlled by a power switch                 |Conceptual Design |
 | 8   | The system shall be able to step down 12 volts to 5 volts and 3.3 volts respectively |Design Constraint |
@@ -40,9 +40,9 @@ This system will be the primary power supplier for the communication receiver. I
 
  This system will be the primary power supplier for the mechanical unit. It must be able to supply 36 Watts to this system as required by the mechanical unit.  
 
-<sup>5</sup> The system shall convert 100-240 wall outlet AC voltage to 24 Watts and 48 Watts DC [Conceptual Design]
+<sup>5</sup> The system shall convert 100-120 wall outlet AC voltage to 24 Watts and 48 Watts DC [Conceptual Design]
 
-This system will take the 100-240 AC voltage supplied from the wall outlet and then convert that to 2 DC power signals that will be provided to the other subsystems. These DC signals are 24 Watts to the main/processor and communication receiver and 48 Watts to the mechanical unit.
+This system will take the 100-120 AC voltage supplied from the wall outlet and then convert that to 2 DC power signals that will be provided to the other subsystems. These DC signals are 24 Watts to the main/processor and communication receiver and 48 Watts to the mechanical unit.
 
 <sup>6</sup> The system shall provide a minimum of 78.98 W [Design Constraint]
 
