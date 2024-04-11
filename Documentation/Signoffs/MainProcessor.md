@@ -5,6 +5,7 @@ The Jetson Nano 945-13450-0000-0000 plays a pivotal role in this project as the 
 Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of the golf ball interceptor. Through the data it calculates and processes, it determines the optimal timing for activating the interceptor, ensuring precise targeting of the golf ball, particularly within the designated "kill zone."
 
 ![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
+
 Figure 1: Jetson Nano Wiring Schematic
 
 **Constraints:**
