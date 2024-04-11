@@ -67,9 +67,16 @@ Real-time trajectory data received by the Jetson Nano guides precise motor movem
 **Cost Analysis:**
 |Name|	Count|	Price |	Total |
 |---|---|---|---|
-|Jetson Nano 945-13450-0000-000|	1|	$150.00|	$150.00|
+|Jetson Nano 945-13450-0000-000|	1|	$209.00|	$209.00|
 |TB6600 Stepper Motor Driver|	3	|$20.00	|$60.00|
-| | | | 			$210.00|
+| | | | 			~$270.00|
 
-The Jetson Nano 945-13450-0000-0000 offers an affordable yet powerful solution for system control, priced at $150.00. Coupled with the TB6600 Stepper Motor Driver, the total cost amounts to $210.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano 945-13450-0000-0000 offers an affordable yet powerful solution for system control, priced at $209.00. Coupled with the TB6600 Stepper Motor Driver, the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
+References:
+
+[1] “NVIDIA® Jetson Nano 4GB development kit,” OKdo, https://www.okdo.com/us/p/nvidia-jetson-nano-4gb-development-kit/ (accessed Apr. 11, 2024).
+
+[2] “Jetson nano developer kit by Nvidia: 945-13450-0000-000,” Arrow.com, https://www.arrow.com/en/products/945-13450-0000-000/nvidia (accessed Apr. 11, 2024).
+
+[3] Walmart, https://www.walmart.com/ip/NVIDIA-Jetson-Nano-Developer-Kit/480691437?wmlspartner=wlpa&selectedSellerId=11832&adid=22222222227480691437_11832_146045225401_18612869729&wl0=&wl1=g&wl2=c&wl3=628562918858&wl4=aud-2225087348107%3Apla-1838654855916&wl5=1025954&wl6=&wl7=&wl8=&wl9=pla&wl10=117079748&wl11=online&wl12=480691437_11832&veh=sem&gad_source=1&gclid=Cj0KCQjwlN6wBhCcARIsAKZvD5jwTYJgdMQqUTOA0_bi87XId5dExtSr0RrJbe0Hu2oBk9rWw8MvXPMaAoahEALw_wcB (accessed Apr. 11, 2024).
