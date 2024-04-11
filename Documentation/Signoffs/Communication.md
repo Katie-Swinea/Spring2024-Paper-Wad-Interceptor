@@ -12,30 +12,29 @@ The goal of this subsystem is to receive and transmit the data from the sensor s
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1   | The connection between the interceptor and sensors shall be a wireless connection.           |Conceptual Design |
-| 2   | The wireless connection shall be protected and secured to maintain the integrity of the intercepting system                |Conceptual Design |
-| 3   | The connection shall operate within the appropriate frequency ranges to meet federal requirements for free, unlicensed use             |Conceptual Design |
-| 4   | The interceptor shall fit into a one-foot square on the floor and be able to fit in a one-by-one-by-one box                   |Conceptual Design|
-| 5   | The wireless connection needs to transmit data fast enough for the interceptor to deflect the golf ball                   |Conceptual Design|
+| 1   | The connection between the interceptor and sensors shall be a wireless connection           |Conceptual Design |
+| 2   | The wireless connection shall be password protected to minimize any outside party interference with the intercepting device                |Conceptual Design |
+| 3   | The connection shall operate within the federally defined frequency range of either 2.4 Ghz or 5 Ghz            |Conceptual Design |
+| 4   | The reciever shall be compact enough to use minimal space in the interceptor device which must fit in a one-by-one-by-one box                   |Conceptual Design|
+| 5   | The wireless connection needs to transmit data at a minimum rate of 10.3 Mbps for the golf ball to be defelct                   |Conceptual Design|
 | 6   | The wireless system needs to span over the gameboard which is 64"x78"                  |System Requirments|
-| 7   | The wireless system needs to transmit the data at a high enough speed for the golf ball to be intercepted                  |System Requirments|
-| 8   | The wireless system needs to have pin connections that allow it to connect with the sensor and processor                 |System Requirments|
-| 9   | The transmitter and receiver used for the wireless connection will need 3.3 volts for operation or another voltage supported by the board                 |Device Constraint|
+| 7   | The wireless system needs to support either I2C or SPI communication to interface with the sensor and processor                 |System Requirments|
+| 8   | The transmitter and receiver used for the wireless connection will need 3.3 volts for operation or another voltage supported by the board                 |Device Constraint|
 
 1. The connection between the interceptor and sensors shall be a wireless connection. [Conceptual Design]
-   The communication system is establishing the connection between the sensor and the processor within the intercepting device.
+   The communication system is establishing the connection between the sensor and the processor within the intercepting device. The customer has specified that the connection from the sensor stands to the interceptor must be wireless. 
 
-2. The wireless connection shall be protected and secured to maintain the integrity of the intercepting system. [Conceptual Design]
-   The connection between the sensors and processors will be password-protected. The microcontroller that will be used can generate its own Wifi connection and ensure only devices with the password can use the access point. 
+2. The wireless connection shall be password protected to combat any interference with the intercepting device. [Conceptual Design]
+   The connection between the sensors and processors will be password-protected to ensure no unauthorized person can change the firing of the device. The microcontroller that will be used can generate its own Wifi connection and ensure only devices with the password can use the access point. 
 
-3. The connection shall operate within the appropriate frequency ranges to meet federal requirements for free, unlicensed use. [Conceptual Design]
-   The federal government requires Wifi operation within the ranges or either 2.4 GHz or 5 GHz. The microcontroller that will be used has both Wifi and Bluetooth connection options that operate in the 2.4 GHz.
+3. The connection shall operate within the federally defined frequency range of either 2.4 Ghx and 5 Ghz. [Conceptual Design]
+   The federal government requires Wifi operation within the ranges or either 2.4 GHz or 5 GHz for free, unlicensed use of a wireless connection. The microcontroller that will be used has both Wifi and Bluetooth connection options that operate in the 2.4 GHz.
 
 4. The interceptor shall fit into a one-foot square on the floor and be able to fit in a one-by-one-by-one box. [Conceptual Design]
    The receiver of the wireless communication system will be housed in the interceptor. The size of the microcontroller will need to be considered to stay within this constraint.
 
 5. The wireless connection needs to transmit data fast enough for the interceptor to deflect the golf ball. [Conceptual Design]
-   If the data takes too long to be transmitted, the incoming golf ball will not be intercepted in time. The calculation made in the conceptual design determines that the connection speed needs to be at least 10.3 Mbps. The equipment used will be capable of reaching speeds this high.
+   If the data takes too long to be transmitted, the incoming golf ball will not be intercepted in time. The calculation made in the conceptual design determines that the connection speed needs to be at least 10.3 Mbps. The equipment used will need to be capable of reaching speeds this high.
 
 6. The wireless system needs to span over the gameboard which is 64"x78". [System Requirments]
    The range of the connection needs to be able to span over the area of the transmitting microcontroller and receiving microcontroller.
@@ -43,8 +42,8 @@ The goal of this subsystem is to receive and transmit the data from the sensor s
 7. The wireless system needs to transmit the data at a high enough speed for the golf ball to be intercepted. [System Requirments]
    The data needs to be transmitted quickly enough for the interceptor to process the data, aim, and fire at the incoming golf ball.
    
-8. The wireless system needs to have pin connections that allow it to connect with the sensor and processor. [System Requirments]
-   The data from the sensor uses either an I2C or SPI protocol to send the received data to a microcontroller. The microcontroller will need to have pin connections to support these protocols and receive the data.
+8. The wireless system needs to support either I2C or SPI communication to interface with the sensor and processor. [System Requirments]
+   The data from the sensor and processor can use either an I2C or SPI protocol to send the received data to a microcontroller. The microcontroller will need to have pin connections to support these protocols and receive the data.
 
 9. The transmitter and receiver used for the wireless connection will need 3.3 volts for operation. [Device Constraint]
    The ESP-WROOM-32 microcontroller fulfills the constraints imposed by the stakeholders and the requirements of the other designs of the system. This device requires 3.3 volts for operation [1]. Certain board implementations can also be used to provide more This microcontroller will act as the receiver and transmitter since it is capable of creating its own Wifi network.
