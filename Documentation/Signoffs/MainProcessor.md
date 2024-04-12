@@ -23,6 +23,8 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 | 2	| Processing Speed - Optimization for efficient calculations | System Constraint |
 | 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation | Programming Constraint |
 | 4	| Resource Utilization - Preventing overload of system resources | System Constraint |
+| 5 | Pause State: The interceptor shall have a switch that sets the system into a pause state that will keep the interceptor from firing. | Rulebook |
+| 6 | Pause Switch Voltage: The voltage switched by the pause switch shall be 5V. | System Constraint |
 
 
 
@@ -34,8 +36,11 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 
 **Signal Interpretation Challenges:** Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting sensor data. The Jetson Nano needs to be able to filter all signals, determine accurate data that it receives and predict the golf balls trajectory will require enormous testing and a versatile system. An accurate signal-processing algorithm and error-handling backup codes are going to be essential for creating reliable data for the system.
 
-**Resource Utilization:** With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness.
+**Resource Utilization:** With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness [2].
 
+**Pause State:** Since the rulebook from Devcom states the requirement for a pause switch integrated with the interceptor to stop the machine from firing, the system will require an integrated switch to halt operations inside the Jetson Nano [9].
+
+**Pause Switch Voltage:** The pause switch requires a reliable 5V for the Jetson Nano to take the input as an active high input, otherwise the Jetson Nano could incorrectly understand the input, and not pause the system. This would break the Pause State constraint creating an immediate issue with the rulebook, therefore causing a disqualification [9]. 
 
 
 ## **Execution Using Jetson Nano:**
@@ -91,10 +96,11 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 |Name|	Count|	Price |	Total |
 |---|---|---|---|
 |Jetson Nano 945-13450-0000-000|	1|	$209.00|	$209.00|
+| NTE Electronics, 54-571	 | 1 | $3.48 | $3.48 |
 |TB6600 Stepper Motor Driver|	3	|$20.00	|$60.00|
-| | | | 			~$270.00|
+| | | | 			$272.48|
 
-The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $20.00 each [6], the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $20.00 each [6] and the pause switch for $.38 [8], the total cost amounts to $272.48, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
 
 
@@ -115,3 +121,5 @@ The Jetson Nano offers an affordable yet powerful solution for system control, p
 [7] “TB6600 Stepper Motor Driver,” DFRobot, https://www.dfrobot.com/product-1547.html (accessed Apr. 8, 2024).
 
 [8] “Toggle switches,” NTE Electronics, https://www.nteinc.com/switches/pdf/toggle-std.pdf (accessed Apr. 6, 2024).
+
+[9] S. Hall, Devcom. Devcom, 2024. S31 Paper Wad Interceptor Challenge 2024, Rulebook, (accessed Apr. 8, 2024).
