@@ -124,4 +124,4 @@ The Jetson Nano offers an affordable yet powerful solution for system control, p
 
 [9] S. Hall, Devcom. Devcom, 2024. S31 Paper Wad Interceptor Challenge 2024, Rulebook, (accessed Apr. 8, 2024).
 
-[10] "54-571-2", NTE Electronics-DigiKey, https://www.digikey.com/en/products/detail/nte-electronics-inc/54-571-2/11654462 (accessed Apr. 12, 2024)
+[10] "54-571-2", DigiKey, https://www.digikey.com/en/products/detail/nte-electronics-inc/54-571-2/11654462 (accessed Apr. 12, 2024)
