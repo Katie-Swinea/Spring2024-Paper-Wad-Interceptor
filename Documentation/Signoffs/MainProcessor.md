@@ -43,17 +43,17 @@ Programs and Tasks: Custom Python scripts orchestrate various system tasks, incl
 
 Data Processing and Calculations: Upon receiving the image detection data, the Jetson Nano executes trajectory calculations to determine the golf ball's velocity, height, distance, and direction. Mathematical algorithms will be used to accurately determine the data.
 
-[1] The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the distance from the camera to the object. The physical height of the two possible positions.
+The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the distance from the camera to the object. The physical height of the two possible positions [1].
 ~~~math
 Object Height = ( Physical Height * Image Height )/( Distance * Sensor Height )
 ~~~
 
-[1] The Speed calcuations will be taking the distance or position of the object over time. The frames of the objects lcoation can calculate the speed using:
+The Speed calcuations will be taking the distance or position of the object over time [1]. The frames of the objects lcoation can calculate the speed using the following equation.
 ~~~math
 Speed = Change in Distance / Change in Time
 ~~~
 
-[1] The distance calcuation will need to take the time interval between frames the object has traveled using the equation of:
+The distance calcuation will need to take the time interval between frames the object has traveled using the following equation to properly find the distance from the interceptor [1].
 ~~~math
 Distance = Speed * Time interval
 ~~~
