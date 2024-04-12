@@ -1,4 +1,4 @@
-**Function:**
+# **Function:**
 
 The Jetson Nano plays a pivotal role in this project as the central processing unit responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the jetson.
 
@@ -10,7 +10,7 @@ Figure 1: Jetson Nano Wiring Schematic
 
 
 
-**Constraints:**
+## **Constraints:**
 
 | NO. |	Constraint | Origin |
 |-----|------------|--------|
@@ -21,7 +21,7 @@ Figure 1: Jetson Nano Wiring Schematic
 
 
 
-**Fulfilling Constraints:**
+## **Fulfilling Constraints:**
 
 Time Constraints: Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. The programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically. [2]
 
@@ -33,7 +33,7 @@ Resource Utilization: With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memor
 
 
 
-**Execution Using Jetson Nano:**
+## **Execution Using Jetson Nano:**
 
 Python remains the primary programming language for interfacing with the Jetson Nano due to its versatility and extensive libraries. Additionally, C++ may be employed for computationally intensive tasks, leveraging the Jetson Nano's GPU for accelerated computations. [5]
 
@@ -67,7 +67,7 @@ Control of Golf Ball Interceptor Shooter: Based on the calculated trajectory dat
 
 
 
-**Integration:**
+## **Integration:**
 
 The Jetson Nano seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism [7]. Through GPIO communication, the Jetson Nano commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path.
 
@@ -76,7 +76,7 @@ Real-time trajectory data calculated by the Jetson Nano guides precise motor mov
 The stepper motor will be put into a zero position. While it is in its zero position, the jetson nano can count how many steps the motor takes to determine the correct aiming position. This can apply for the X-Axis and Y-Axis of the system to be able to reset the interceptor back to the zero position after each time it aims and fires at the incoming golf ball [6].
 
 
-**Cost Analysis:**
+## **Cost Analysis:**
 |Name|	Count|	Price |	Total |
 |---|---|---|---|
 |Jetson Nano 945-13450-0000-000|	1|	$209.00|	$209.00|
@@ -87,7 +87,7 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 
 
 
-**References:**
+## **References:**
 
 [1] N. shukla, “A review on image based target distance & height ...,” Research Publish, https://www.researchpublish.com/upload/book/A Review on Image Based Target Distance-1172.pdf (accessed Apr. 11, 2024). 
 
