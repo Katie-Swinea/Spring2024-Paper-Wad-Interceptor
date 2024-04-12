@@ -95,12 +95,12 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 ## **Cost Analysis:**
 |Name|	Count|	Price |	Total |
 |---|---|---|---|
-|Jetson Nano 945-13450-0000-000|	1|	$209.00|	$209.00|
+|Jetson Nano 945-13450-0000-000|	1|	$229.38|	$229.38|
 | NTE Electronics, 54-571	 | 1 | $3.48 | $3.48 |
-|TB6600 Stepper Motor Driver|	3	|$20.00	|$60.00|
-| | | | 			$272.48|
+|TB6600 Stepper Motor Driver|	3	|$24.07	|$72.21|
+| | | | 			$305.07|
 
-The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $20.00 each [6] and the pause switch for $.38 [8], the total cost amounts to $272.48, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $24.07 each [6] and the pause switch for $3.48 [8], the total cost amounts to $305.07, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
 
 
