@@ -8,6 +8,8 @@ Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of
 
 Figure 1: Jetson Nano Wiring Schematic
 
+
+
 **Constraints:**
 
 | NO. |	Constraint | Origin |
@@ -16,6 +18,8 @@ Figure 1: Jetson Nano Wiring Schematic
 | 2	| Processing Speed - Optimization for efficient calculations | System Constraint |
 | 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation | Programming Constraint |
 | 4	| Resource Utilization - Preventing overload of system resources | System Constraint |
+
+
 
 **Fulfilling Constraints:**
 
@@ -26,6 +30,8 @@ Processing Speed: Complex calculations and simultaneous tasks may strain the pro
 Signal Interpretation Challenges: Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting sensor data. The Jetson Nano needs to be able to filter all signals, determine accurate data that it receives and predict the golf balls trajectory will require enormous testing and a versatile system. An accurate signal-processing algorithm and error-handling backup codes are going to be essential for creating reliable data for the system.
 
 Resource Utilization: With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness.
+
+
 
 **Execution Using Jetson Nano:**
 
@@ -59,6 +65,8 @@ Signal Interpretation: The Jetson Nano will need signal processing techniques to
 Control of Golf Ball Interceptor Shooter: Based on the calculated trajectory data, the Jetson Nano will control the timing and activation of the golf ball interceptor shooting mechanism. It needs to have the interceptor to be properly aligned towards the golf ball's predicted path, and fire at the appropriate time to hit the ball mid-air. This could use preset fire positions to optimize the interception process.
 
 
+
+
 **Integration:**
 
 The Jetson Nano seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism. Through GPIO communication, the Jetson Nano commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path.
@@ -75,7 +83,9 @@ Real-time trajectory data received by the Jetson Nano guides precise motor movem
 
 [4] The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00. Coupled with the TB6600 Stepper Motor Driver, the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
-References:
+
+
+**References:**
 
 [1] N. shukla, “A review on image based target distance & height ...,” Research Publish, https://www.researchpublish.com/upload/book/A Review on Image Based Target Distance-1172.pdf (accessed Apr. 11, 2024). 
 
