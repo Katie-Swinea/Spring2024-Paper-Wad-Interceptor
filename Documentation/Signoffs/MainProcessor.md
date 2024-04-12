@@ -100,7 +100,7 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 |TB6600 Stepper Motor Driver|	3	|$24.07	|$72.21|
 | | | | 			$305.07|
 
-The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $24.07 each [6] and the pause switch for $3.48 [8], the total cost amounts to $305.07, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $24.07 each [6] and the pause switch for $3.48 [10], the total cost amounts to $305.07, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
 
 
@@ -123,3 +123,5 @@ The Jetson Nano offers an affordable yet powerful solution for system control, p
 [8] “Toggle switches,” NTE Electronics, https://www.nteinc.com/switches/pdf/toggle-std.pdf (accessed Apr. 6, 2024).
 
 [9] S. Hall, Devcom. Devcom, 2024. S31 Paper Wad Interceptor Challenge 2024, Rulebook, (accessed Apr. 8, 2024).
+
+[10] "54-571-2", NTE Electronics-DigiKey, https://www.digikey.com/en/products/detail/nte-electronics-inc/54-571-2/11654462 (accessed Apr. 12, 2024)
