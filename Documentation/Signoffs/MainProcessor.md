@@ -23,13 +23,13 @@ Figure 1: Jetson Nano Wiring Schematic
 
 ## **Fulfilling Constraints:**
 
-Time Constraints: Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. The programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically. [2]
+**Time Constraints:** Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. The programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically. [2]
 
-Processing Speed: Complex calculations and simultaneous tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. Optimizing algorithms and utilizing hardware and multi-core techniques can help minimize processing speed limitations.
+**Processing Speed:** Complex calculations and simultaneous tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. Optimizing algorithms and utilizing hardware and multi-core techniques can help minimize processing speed limitations.
 
-Signal Interpretation Challenges: Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting sensor data. The Jetson Nano needs to be able to filter all signals, determine accurate data that it receives and predict the golf balls trajectory will require enormous testing and a versatile system. An accurate signal-processing algorithm and error-handling backup codes are going to be essential for creating reliable data for the system.
+**Signal Interpretation Challenges:** Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting sensor data. The Jetson Nano needs to be able to filter all signals, determine accurate data that it receives and predict the golf balls trajectory will require enormous testing and a versatile system. An accurate signal-processing algorithm and error-handling backup codes are going to be essential for creating reliable data for the system.
 
-Resource Utilization: With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness.
+**Resource Utilization:** With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness.
 
 
 
@@ -37,11 +37,11 @@ Resource Utilization: With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memor
 
 Python remains the primary programming language for interfacing with the Jetson Nano due to its versatility and extensive libraries. Additionally, C++ may be employed for computationally intensive tasks, leveraging the Jetson Nano's GPU for accelerated computations. [5]
 
-Hardware Configuration: The Jetson Nano interfaces with the other hardware components with the GPIO pins. GPIO pins such as GPIO05, GPIO06, GPIO13, GPIO12, and GPIO18 facilitate flexible input/output operations, accommodating sensor connections and interceptor control. While using GPIO02 and GPIO03 for the SCL and SDA data.
+**Hardware Configuration:** The Jetson Nano interfaces with the other hardware components with the GPIO pins. GPIO pins such as GPIO05, GPIO06, GPIO13, GPIO12, and GPIO18 facilitate flexible input/output operations, accommodating sensor connections and interceptor control. While using GPIO02 and GPIO03 for the SCL and SDA data.
 
-Programs and Tasks: Custom Python scripts orchestrate various system tasks, including signal processing, trajectory calculations, and interceptor control. Multithreading may be applied to enable concurrent execution of tasks, maximizing system efficiency.
+**Programs and Tasks:** Custom Python scripts orchestrate various system tasks, including signal processing, trajectory calculations, and interceptor control. Multithreading may be applied to enable concurrent execution of tasks, maximizing system efficiency.
 
-Data Processing and Calculations: Upon receiving the image detection data, the Jetson Nano executes trajectory calculations to determine the golf ball's velocity, height, distance, and direction. Mathematical algorithms will be used to accurately determine the data.
+**Data Processing and Calculations:** Upon receiving the image detection data, the Jetson Nano executes trajectory calculations to determine the golf ball's velocity, height, distance, and direction. Mathematical algorithms will be used to accurately determine the data.
 
 The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the distance from the camera to the object. The physical height of the two possible positions [1].
 ~~~math
@@ -60,9 +60,9 @@ Distance = Speed * Time interval
 
 
 
-Signal Interpretation: The Jetson Nano will need signal processing techniques to interpret wireless sensor data accurately. Noise filtering and error correction mechanisms enhance signal clarity, enabling precise trajectory prediction.
+**Signal Interpretation:** The Jetson Nano will need signal processing techniques to interpret wireless sensor data accurately. Noise filtering and error correction mechanisms enhance signal clarity, enabling precise trajectory prediction.
 
-Control of Golf Ball Interceptor Shooter: Based on the calculated trajectory data, the Jetson Nano will control the timing and activation of the golf ball interceptor shooting mechanism. It needs to have the interceptor to be properly aligned towards the golf ball's predicted path, and fire at the appropriate time to hit the ball mid-air. This could use preset fire positions to optimize the interception process.
+**Control of Golf Ball Interceptor Shooter:** Based on the calculated trajectory data, the Jetson Nano will control the timing and activation of the golf ball interceptor shooting mechanism. It needs to have the interceptor to be properly aligned towards the golf ball's predicted path, and fire at the appropriate time to hit the ball mid-air. This could use preset fire positions to optimize the interception process.
 
 
 
@@ -83,7 +83,7 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 |TB6600 Stepper Motor Driver|	3	|$20.00	|$60.00|
 | | | | 			~$270.00|
 
-[4] The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00. Coupled with the TB6600 Stepper Motor Driver, the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano offers an affordable yet powerful solution for system control, priced at $209.00 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $20.00 each [6], the total cost amounts to ~$270.00, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
 
 
