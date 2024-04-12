@@ -12,53 +12,48 @@ The goal of this subsystem is to convert AC power from the wall outlet to DC pow
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1   | The power system shall be controlled by an emergency stop which will de-energize the device power system that will in turn de-energize the interceptor itself. |Conceptual Design |
-| 2   | The power system shall supply 15 Watts to the main/processor unit   |Conceptual Design |
-| 3   | The power system shall supply 1.65 Watts to the communication receiver |Conceptual Design |
-| 4   | The power system shall supply 36 Watts to the the mechanical unit   |Conceptual Design |
-| 5   | The system shall convert 100-120 wall outlet AC voltage to 24 Watts and 48 Watts DC |Conceptual Design |
-| 6   | The system shall provide a minimum of 78.98 Watts                    |Design Constraint |
-| 7   | The system shall be controlled by a power switch                 |Conceptual Design |
-| 8   | The system shall be able to step down 12 volts to 5 volts and 3.3 volts respectively |Design Constraint |
-| 9   | The system shall be able to produce 24 volts                 |Design Constraint |
+| 1   | The power system shall be controlled by an emergency stop which will de-energize the device power system that will in turn de-energize the interceptor itself. This will only be used if the system threatens peoples safety |Conceptual Design |
+| 2   | The system shall convert 100-120 wall outlet AC voltage to 24 Watts, which is required by the communication and main/processor unit, and 48 Watts DC, which is required by the mechanical unit  |Conceptual Design |
+| 3   | The system shall provide a minimum of 63.18 Watts (1.2 times the minimum wattage)     |Design Constraint |
+| 4   | The system shall be controlled by a power switch                 |Conceptual Design |
+| 5   | The system shall be able to step down the power supply voltage to 5 volts, to power the main/processor unit, and 3.3 volts, to power the communication unit, respectively |Design Constraint |
+| 6   | The system shall be able to produce 24 volts to power the mechanical unit (required voltage of that unit)    |Design Constraint |
 
 
 
 <sup>1</sup> The power system shall be controlled by an emergency stop which will de-energizes the device power system that will in turn de-energize the interceptor itself. [Conceptual Design]
 
-One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the wall outlet to the AC-DC convertors which will de-energize all of the systems that are being powered by this power system. 
+One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the wall outlet to the AC-DC convertors which will de-energize all of the systems that are being powered by this power system. This system will only be used as a last case option if the interceptor threatens peoples safety. 
 
-<sup>2</sup> The power system shall supply 15 Watts to the main/processor unit [Conceptual Design]
-
-This system will be the primary power supplier for the main/processor unit. It must be able to supply 15 Watts to this system as required by the main/processor.  
-
-<sup>3</sup> The power system shall supply 1.65 Watts to the communication receiver [Conceptual Design]
-
-This system will be the primary power supplier for the communication receiver. It must be able to supply 1.65 Watts to this system as required by the communication receiver.  
-
-<sup>4</sup>  The power system shall supply 36 Watts to the the mechanical unit [Conceptual Design]
-
- This system will be the primary power supplier for the mechanical unit. It must be able to supply 36 Watts to this system as required by the mechanical unit.  
-
-<sup>5</sup> The system shall convert 100-120 wall outlet AC voltage to 24 Watts and 48 Watts DC [Conceptual Design]
+<sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 24 Watts, which is required by the communication and main/processor unit, and 48 Watts DC, which is required by the mechanical unit [Conceptual Design]
 
 This system will take the 100-120 AC voltage supplied from the wall outlet and then convert that to 2 DC power signals that will be provided to the other subsystems. These DC signals are 24 Watts to the main/processor and communication receiver and 48 Watts to the mechanical unit.
 
-<sup>6</sup> The system shall provide a minimum of 78.98 W [Design Constraint]
+<sup>3</sup> The system shall provide a minimum of 63.18 Watts (1.2 times the minimum wattage) [Design Constraint]
 
-Due to possible overclocking and power spikes, this system will provide 1.2 times the required wattage [1]. Because of this, the system will provide 78.98 watts of power, which is over 1.2 times the required wattage (52.65 watts). This will ensure there is plenty of power for the entire system. 
+Due to possible overclocking and power spikes, this system will provide 1.2 times the required wattage [1]. Because of this, the system will provide 63.18 watts of power, which is over 1.2 times the required wattage. This is shown in the below table:
 
-<sup>7</sup>  The system shall be controlled by a power switch  [Conceptual Design]
+| System | Required Voltage | Required Current | Required Power |
+|--------|------------------|------------------|----------------|
+| Mechanical | 24 Volts | 1.5 Amps | 36 Watts |
+| Communication | 3.3 Volts | 0.5 Amps | 1.65 Watts |
+| Processor | 5 Volts | 3 Amps | 15 Watts |
+| Total | ---- | ---- | 52.65 |
+
+
+63.18 Watts of power is 1.2 times the required total wattage of this system. This system will use AC-DC convertors that will supply 72 watts of power which will be well over the 1.2 requirement. 
+
+<sup>4</sup>  The system shall be controlled by a power switch  [Conceptual Design]
 
 The system will be controlled by an on/off switch. This switch will allow the wall power to be connected or disconnected from each system that this subsystem powers.  
 
-<sup>8</sup> The system shall be able to step down 12 volts to 5 volts and 3.3 volts respectively [Design Constraint]
+<sup>5</sup> The system shall be able to step down the power supply voltage to 5 volts, to power the main/processor unit, and 3.3 volts, to power the communication unit, respectively [Design Constraint]
 
-The main/processor unit requires a voltage input of 5 volts. This system must be able to take the 12 volts from the AC to DC convertor and step it down to 5 volts to power this unit. 
+The main/processor unit requires a voltage input of 5 volts. This system must be able to take the power supply voltage from the AC to DC convertor and step it down to 5 volts to power this unit. 
 
-The communication receiver requires a voltage input of 3.3 volts. This system must be able to take the 12 volts from the AC to DC convertor and step it down to 3.3 volts to power this unit. 
+The communication receiver requires a voltage input of 3.3 volts. This system must be able to take the power supply voltage from the AC to DC convertor and step it down to 3.3 volts to power this unit. 
 
-<sup>9</sup> The system shall be able to produce 24 volts   [Design Constraint]
+<sup>6</sup> The system shall be able to produce 24 volts to power the mechanical unit  [Design Constraint]
 
 The mechanical unit requires a voltage input of 24 volts. This system must be able to produce the 24 V DC signal from the wall outlet.
 
@@ -75,7 +70,7 @@ The mechanical unit requires a voltage input of 24 volts. This system must be ab
 | mechanical    | 24 Volts   | 1.5 Amps  | 36 Watts    |
 | Communication | 3.3 Volts  | 500 mAmps | 1.65 Watts  |
 | Processor     | 5 Volts    | 3 Amps    | 15 Watts    |
-| Total         | 38.3 Volts | 5 Amps    | 52.65 Watts |
+| Total         | 32.3 Volts | 5 Amps    | 52.65 Watts |
 
 The above table details the different power draws that is required from this system. 
 
@@ -125,28 +120,22 @@ The total power of the entire subsystem will be:
 
 This switch has one purpose and that is to de-energize the system. This can easily be done by cutting off the power directly at the source. This will be accomplished with the PRIME 3-Outlet Extension Cord with Lighted Footswitch [10]. This extension cord is rated for 13A and 125V. This will have a high enough current rating as this system will only be drawing up to 5 amps at up to 38.3 volts. <sup>1</sup>
 
-The main/processor unit requires a 5 volt/ 3 amp input (15 Watts). The 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter takes a 12 volt input and outputs a 5 volt/ 3 amp signal [2]. This is exactly what the wall outlet transformer produces and it is exactly what the main/processor requires. <sup>2</sup>
-
-The communication receiver requires a 3.3 volt/ 0.5 amp (or more) input (1.65 Watts). The LM2596 takes a 12 volt input and can convert a 3.3 volt output with a 1 amp, 1.5 amp, or 2 amp signal [3]. This system will output a 3.3 volt/ 1 amp output. This will be sufficient as the wall outlet transformer produces 12 volts and it encapsulates what is required by the communication receiver. <sup>3</sup>
-
-The mechanical unit requires a 24 volt/ 1.5 amp input (36 watts). The AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC produces a 24 volt/ 2 amp output from the wall outlet [8]. This will be sufficient as it will completely encapsulate what is required from the mechanical unit. <sup>4</sup>
-
 The system must convert AC power from the wall outlet and output a DC signal. This system will use two separate AC to DC converters. The first will produce a signal of 12 volts/ 2 amps (16.65 watts). This converter will power the two step-down transformers. The transformer will be the Chanzon 12V 2A Power Supply Class2 24W LED Strip CCTV Camera AC DC Switching Adapter [6]. The second will produce a signal of 24 volts/ 2 amps (48 watts). This converter will power the mechanical unit.
-The transformer will be the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC [8]. <sup>5</sup>
+The transformer will be the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC [8]. <sup>2</sup>
 
-The system must provide a total of 78.98 watts. This is because the total wattage of each system added together will be 52.65 watts:
+The system must provide a total of 63.18 watts. This is because the total wattage of each system added together will be 52.65 watts:
 
 ~~~math
 Total System Power: (36 Watts) + (1.65 Watts) + (15 Watts) = 52. 65 Watts
 ~~~
 
-As stated above, the system will provide at least 1.2 times the amount of required power. This is why the system will need to provide 78.98 watts total. This will be done through two converters. The first will output a total of 24 watts. The systems it will support are the processor and communication systems, which require 16.65 watts. 24 watts is over 1.2 times that amount. The second will produce 48 watts. The system it supports requires 36 watts. 48 watts is over 1.2 times that amount. <sup>6</sup>
+As stated above, the system will provide at least 1.2 times the amount of required power. This is why the system will need to provide 63.18 watts total. This will be done through two converters. The first will output a total of 24 watts. The systems it will support are the processor and communication systems, which require 16.65 watts. 24 watts is over 1.2 times that amount. The second will produce 48 watts. The system it supports requires 36 watts. 48 watts is over 1.2 times that amount. <sup>3</sup>
 
-This system will have a power switch connected between the AC-DC transformers and there adjacent outputs. Both converters will controlled using the KRE2ANA1BBD switch rocker [7]. This switch is rated for a max of 28 volts/ 6 amps. These ratings will completely encapsulate the requirements for each convertor. <sup>7</sup>
+This system will have a power switch connected between the AC-DC transformers and there adjacent outputs. Both converters will controlled using the KRE2ANA1BBD switch rocker [7]. This switch is rated for a max of 28 volts/ 6 amps. These ratings will completely encapsulate the requirements for each convertor. <sup>4</sup>
 
-As stated in fulfilling constraints 2 and 3, the system must supply 5 volts/ 3 amps, and 3.3 volts/ 1 amp respectively. This will done by using the 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter to supply the 5 volt system, and the LM2596 to power the 3.3 volt system [2][3]. <sup>8</sup>
+The system must supply 5 volts/ 3 amps, and 3.3 volts/ 1 amp respectively. This will be accomplished by steping down the 12 volt/ 2 amp convertor in two different intervals. To supply 5 volts/ 3 amps the system will use the 12V to 5V DC USB Type-C Right Angle Step-Down Power Converter which takes a 12 volt input and outputs a 5 volt/ 3 amps signal [2]. To supply 3.3 volts / 1 amp the system will use the LM2596 which takes 12 volts and outputs a 3.3 volt signal at 1, 1.5 or 2 amp signal [3]. This system will output 1 amp.  <sup>5</sup>
 
-As stated in fulfilling constraint 4, the system must supply a 24 volt/ 1.5 amp signal. This will be done using the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC, as it produces a 24 volt/ 2 amp output [8]. <sup>9</sup>
+The system must supply a 24 volt/ 1.5 amp signal for the mechanical unit. This will be done using the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC, as it produces a 24 volt/ 2 amp output [8]. <sup>6</sup>
 
 ## Application
 
