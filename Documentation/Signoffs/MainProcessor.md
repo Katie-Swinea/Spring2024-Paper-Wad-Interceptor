@@ -6,7 +6,7 @@ Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of
 
 The Jetson Nano will also contain a pause switch, this pause switch is to stop the mechanism from firing anymore projectiles. It will be a physical switch that will interact with the Jetson Nano directly and alter scripts inside the Jetson to stop functionality.
 
-
+# **Buildable Schematic:**
 ![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
 
 *Figure 1: Jetson Nano Wiring Schematic*
@@ -43,7 +43,7 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 **Pause Switch Voltage:** The pause switch requires a reliable 5V for the Jetson Nano to take the input as an active high input, otherwise the Jetson Nano could incorrectly understand the input, and not pause the system. This would break the Pause State constraint creating an immediate issue with the rulebook, therefore causing a disqualification [9]. 
 
 
-## **Execution Using Jetson Nano:**
+## **Analysis of Using Jetson Nano:**
 
 Python remains the primary programming language for interfacing with the Jetson Nano due to its versatility and extensive libraries. Additionally, C++ may be employed for computationally intensive tasks, leveraging the Jetson Nano's GPU for accelerated computations. [5]
 
@@ -77,7 +77,7 @@ Distance = Speed * Time interval
 
 
 
-## **Board Component Integration:**
+## **Analysis of Board Component Integration:**
 
 **Pause Switch Analysis**
 
