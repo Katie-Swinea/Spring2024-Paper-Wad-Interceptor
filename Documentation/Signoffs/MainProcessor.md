@@ -69,9 +69,11 @@ Control of Golf Ball Interceptor Shooter: Based on the calculated trajectory dat
 
 **Integration:**
 
-The Jetson Nano seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism. Through GPIO communication, the Jetson Nano commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path.
+The Jetson Nano seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism [7]. Through GPIO communication, the Jetson Nano commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path.
 
-Real-time trajectory data received by the Jetson Nano guides precise motor movements, ensuring accurate interception. The compatibility between the Jetson Nano and TB6600 Stepper Motor Driver facilitates seamless communication and system integration.
+Real-time trajectory data calculated by the Jetson Nano guides precise motor movements, ensuring accurate interception. The compatibility between the Jetson Nano and TB6600 Stepper Motor Driver facilitates seamless communication and system integration.
+
+The stepper motor will be put into a zero position. While it is in its zero position, the jetson nano can count how many steps the motor takes to determine the correct aiming position. This can apply for the X-Axis and Y-Axis of the system to be able to reset the interceptor back to the zero position after each time it aims and fires at the incoming golf ball [6].
 
 
 **Cost Analysis:**
@@ -96,3 +98,7 @@ Real-time trajectory data received by the Jetson Nano guides precise motor movem
 [4] Walmart, https://www.walmart.com/ip/NVIDIA-Jetson-Nano-Developer-Kit/480691437?wmlspartner=wlpa&selectedSellerId=11832&adid=22222222227480691437_11832_146045225401_18612869729&wl0=&wl1=g&wl2=c&wl3=628562918858&wl4=aud-2225087348107%3Apla-1838654855916&wl5=1025954&wl6=&wl7=&wl8=&wl9=pla&wl10=117079748&wl11=online&wl12=480691437_11832&veh=sem&gad_source=1&gclid=Cj0KCQjwlN6wBhCcARIsAKZvD5jwTYJgdMQqUTOA0_bi87XId5dExtSr0RrJbe0Hu2oBk9rWw8MvXPMaAoahEALw_wcB (accessed Apr. 11, 2024).
 
 [5] Dr. M. Nazeer, M. Qayyum, and A. Ahad, “Real time object detection and recognition in machine learning using Jetson Nano,” SSRN, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4286087 (accessed Apr. 11, 2024). 
+
+[6] “TB6600 Stepper Motor Driver,” Bulkman, https://bulkman3d.com/wp-content/uploads/2019/06/TB6600-Stepper-Motor-Driver-BM3D-v1.1.pdf (accessed Apr. 8, 2024).
+
+[7] “TB6600 Stepper Motor Driver,” DFRobot, https://www.dfrobot.com/product-1547.html (accessed Apr. 8, 2024).
