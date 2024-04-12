@@ -4,11 +4,14 @@ The Jetson Nano plays a pivotal role in this project as the central processing u
 
 Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of the golf ball interceptor. Through the data it calculates and processes, it determines the optimal timing for activating the interceptor, ensuring precise targeting of the golf ball, particularly within the designated "kill zone."
 
+The Jetson Nano will also contain a pause switch, this pause switch is to stop the mechanism from firing anymore projectiles. It will be a physical switch that will interact with the Jetson Nano directly and alter scripts inside the Jetson to stop functionality.
+
 ![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
 
 Figure 1: Jetson Nano Wiring Schematic
 
-
+![System](../Images/MainProcessor/Switch_Buildable_2.png)
+Figure 2: Pause switch integration
 
 ## **Constraints:**
 
@@ -67,7 +70,13 @@ Distance = Speed * Time interval
 
 
 
-## **Integration:**
+## **Board Component Integration:**
+
+**Pause Switch Analysis**
+
+The pause switch component has many different switches that can be chosen. Switches range between single pole, single throw, and upwards. The switch that needs to be implemented for the pause switch should be a single pole double-throw switch that has a two on functions and an off function. This will ensure that with one connection the processor will be receiving 5V, which will count as a binary one, and when the switch is off the processor will be connected to ground which will be interpreted as a binary zero. The switch that was chosen for this task is the NTE Electronics, 54-571-2 [8]. This switch is rated for 20A and 12VDC which will be more than enough for this simple task. The other main portion of the pause switch is the implementation in the code of the processor. Because a processor has not been chosen now it is not possible to say exactly how this will be implemented, but pseudocode can be written to make the coding process easier. To be clear when the pause switch is on 5V or equivalent will be allowed to pass and when it is off the circuit will not be connected. This input will be interpreted as a variable and when the circuit is on the processor will be allowed to collect the data from the sensors. When the switch is off the processor will be in the pause state where it can not do anything but wait for the switch to be turned on.
+
+**Stepper Motor Integration**
 
 The Jetson Nano seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism [7]. Through GPIO communication, the Jetson Nano commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path.
 
@@ -102,3 +111,5 @@ The Jetson Nano offers an affordable yet powerful solution for system control, p
 [6] “TB6600 Stepper Motor Driver,” Bulkman, https://bulkman3d.com/wp-content/uploads/2019/06/TB6600-Stepper-Motor-Driver-BM3D-v1.1.pdf (accessed Apr. 8, 2024).
 
 [7] “TB6600 Stepper Motor Driver,” DFRobot, https://www.dfrobot.com/product-1547.html (accessed Apr. 8, 2024).
+
+[8] “Toggle switches,” NTE Electronics, https://www.nteinc.com/switches/pdf/toggle-std.pdf (accessed Apr. 6, 2024).
