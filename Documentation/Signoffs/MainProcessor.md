@@ -6,12 +6,14 @@ Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of
 
 The Jetson Nano will also contain a pause switch, this pause switch is to stop the mechanism from firing anymore projectiles. It will be a physical switch that will interact with the Jetson Nano directly and alter scripts inside the Jetson to stop functionality.
 
+
 ![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
 
-Figure 1: Jetson Nano Wiring Schematic
+*Figure 1: Jetson Nano Wiring Schematic*
 
 ![System](../Images/MainProcessor/Switch_Buildable_2.png)
-Figure 2: Pause switch integration
+
+*Figure 2: Pause switch integration*
 
 ## **Constraints:**
 
