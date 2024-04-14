@@ -39,11 +39,11 @@ For the pause switch component, there are many different switches that can be ch
 | **Items:** | **Quantity:** | **Price:** | **Total:** |
 | --- | --- | --- | --- |
 | CIT Relay and Switch, ANT11SF1CQE | 1 | $3.48 | $3.48 |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
+| Texas Instruments, CD74AC14E (Inverter) | 1 | $0.84 | $4.32 |
+| SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
+| Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
+| Vishay Dale, CMF5550R000FKEK70 (50 Ohm Resistor) | 20 | $7.56 | $18.28 |
+| Stackpole Electronics Inc, CF12JT150R (150 Ohm resistor | 1 | $0.10 | $18.38 |
 
 ## References
 1. 
