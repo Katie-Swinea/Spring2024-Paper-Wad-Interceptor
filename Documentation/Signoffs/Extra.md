@@ -1,6 +1,7 @@
 # Extra
 
 ![System](../Images/Extra_jrneal20.png)
+
 Figure 1: Extra subsystem and the pause switch can be seen in this figure.
 
 - The goal of this subsystem is to adhere to the rules as provided by the customer, Devcom, and to add lights and sounds to the design which will add to the point total as provided by Devcom. The system needs a pause switch to deactivate it between rounds. The system will also include lights and sounds before launching a projectile to add to the decoration portion of the design.
