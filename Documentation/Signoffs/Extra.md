@@ -1,4 +1,4 @@
-# Emergency Stop and Pause
+# Extra
 
 ![System](../Images/)
 Figure 1: Extra subsystem and the pause switch can be seen in this figure.
