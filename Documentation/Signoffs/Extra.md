@@ -48,8 +48,8 @@ The maximum current that can be handled by the LED's is 25mA for the green LED's
 | Texas Instruments, CD74AC14E (Inverter) | 1 | $0.84 | $4.32 |
 | SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
 | Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
-| Vishay Dale, CMF5550R000FKEK70 (50 Ohm Resistor) | 20 | $7.56 | $18.28 |
-| Stackpole Electronics Inc, CF12JT150R (150 Ohm resistor | 1 | $0.10 | $18.38 |
+| Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
+
 
 ## References
 1. https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396
