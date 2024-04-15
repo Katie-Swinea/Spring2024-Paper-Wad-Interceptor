@@ -22,7 +22,7 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure. The r
 4. To add to the total points for the competition, the interceptor must make sounds before firing. This constraint can be found in the official rulebook for the competition.
    
 ## Buildable Schematic
-![System](../Images/Extra-Buildable_Pause_Switch.png)
+![System](../Images/Buildable_Extra_jrneal.png)
 
 Figure 1: This represents the buildable schematic for the pause switch. This switch outputs 5V or ground that is sent to the processor block and the LED array. The 5V and ground will both come from the processor block.
 
