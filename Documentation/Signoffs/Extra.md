@@ -29,7 +29,7 @@ Figure 1: This represents the buildable schematic for the pause switch. This swi
 
 
 ## **Analysis**
-For the pause switch component, there are many different switches that can be chosen. Switches range between single pole single throw and upwards. The switch that needs to be implemented for the pause switch should be a single pole double-throw switch that has a two on functions and an off function. This will ensure that with one connection the processor will be receiving 5V, which will count as a binary one, and when the switch is off the processor will be connected to ground which will be interpreted as a binary zero. The switch that was chosen for this task is the CIT Relay and Switch, ANT11SF1CQE. This switch is rated for 5A and 28VDC which will be more than enough for this simple task. The other main portion of the pause switch is the implementation in the code of the processor. Because a processor has not been chosen now it is not possible to say exactly how this will be implemented, but pseudocode can be written to make the coding process easier. To be clear when the pause switch is on 5V or equivalent will be allowed to pass and when it is off the circuit will not be connected. This input will be interpreted as a variable and when the circuit is on the processor will be allowed to collect the data from the sensors. When the switch is off the processor will be in the pause state where it can not do anything but wait for the switch to be turned on. When the output of the switch is connected to 5V this will be sent to the processor and an array of red LED's that will indicate that the interceptor has been put into pause mode. When the output of the switch is connected to ground then the output will be sent to the processor and an invertor which will then turn on an array of green LED's to show that the interceptor is on and ready to fire.
+For the pause switch component, there are many different switches that can be chosen. Switches range between single pole single throw and upwards. The switch that needs to be implemented for the pause switch should be a single pole double-throw switch that has a two on functions and an off function. This will ensure that with one connection the processor will be receiving 5V, which will count as a binary one, and when the switch is off the processor will be connected to ground which will be interpreted as a binary zero. The switch that was chosen for this task is the CIT Relay and Switch, ANT11SF1CQE [1]. This switch is rated for 5A and 28VDC which will be more than enough for this simple task. The other main portion of the pause switch is the implementation in the code of the processor. Because a processor has not been chosen now it is not possible to say exactly how this will be implemented, but pseudocode can be written to make the coding process easier. To be clear when the pause switch is on 5V or equivalent will be allowed to pass and when it is off the circuit will not be connected. This input will be interpreted as a variable and when the circuit is on the processor will be allowed to collect the data from the sensors. When the switch is off the processor will be in the pause state where it can not do anything but wait for the switch to be turned on. When the output of the switch is connected to 5V this will be sent to the processor and an array of red LED's [2] and a current limiting resistor [3] that will indicate that the interceptor has been put into pause mode. When the output of the switch is connected to ground then the output will be sent to the processor and an invertor [4] and a 150Ohm current limiting resistor [5] which will then turn on an array of green LED's [6] to show that the interceptor is on and ready to fire.
 
 //Lights and Other sounds - HERE
 
@@ -46,7 +46,10 @@ For the pause switch component, there are many different switches that can be ch
 | Stackpole Electronics Inc, CF12JT150R (150 Ohm resistor | 1 | $0.10 | $18.38 |
 
 ## References
-1. 
-
-2. 
+1. https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396
+2. https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663
+3. https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606
+4. https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756
+5. https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF12JT150R/1741045
+6. https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838
 ‌
