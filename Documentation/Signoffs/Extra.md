@@ -54,8 +54,7 @@ The maximum current that can be handled by the LED's is 25mA for the green LED's
 ## References
 1. https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396
 2. https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663
-3. https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606
-4. https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756
-5. https://www.digikey.com/en/products/detail/stackpole-electronics-inc/CF12JT150R/1741045
-6. https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838
+3. https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756
+4. https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838
+5. https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029
 ‌
