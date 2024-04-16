@@ -30,6 +30,7 @@ uses a function called inRange to determine and limit the colors being found. It
 After this, a mask is established to search for the specific color being used using a bitwise and to detect the pixels with the color. Doing this for light
 colors like grey result in detection shown in the figure below.
 
+![Function](../Images/Image_Processing/Detecting_Grey.png)
 
 The level of color detection can be detemined by the number of pixels that are detected of a color using the upper and lower bounds. This can be adjusted to
 detect the ball at longer distances when the pixels are smaller. The Big O analysis of this function would be O(n) because it is an iterative function that
@@ -43,10 +44,11 @@ number of pixels is still the only variable being used and affecting the process
 used for the processor to determine the signals being sent to the launcher.
 
 The camera that is being used is an 1280 by 720 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
-102 frames per second to find color and process the image. This means it takes 9.8 ms to calculate the image information. The camera takes in 60 frames per 
-second so it takes 16.67 ms to get a new image [2]. The arithmetic processes for determining speed and other calculations to send to the launcher are considered 
-to have O(1). This means the most limiting time factor is the speed calculation which will take the time to get the two depths and make the calculation. This 
-will be 43.13 ms which is well within the 1/8 of time of the golf ball's speed that is necessary.
+102 frames per second to find color which is the same length as finding distance based on the Big O analysis. This means it takes 9.8 ms to process the
+image information. The camera takes in 60 frames per second so it takes 16.67 ms to get a new image [2]. The arithmetic processes for determining speed and
+other calculations to send to the launcher are considered to have O(1). This means the most limiting time factor is the speed calculation which will take
+the time to get the two depths and make the calculation. This will be 43.13 ms which is well within the 1/8 of time of the golf ball's speed that is
+necessary.
 
 **Bill of Materials:**
 
