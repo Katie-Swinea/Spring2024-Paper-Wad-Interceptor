@@ -35,7 +35,7 @@ For the pause switch component, there are many different switches that can be ch
 
 The maximum current that can be handled by the LED's is 25mA for the green LED's and for the red it is 30mA. Because of the 5V being used a resistor value was chosen that would keep the LED's within their ratings. Therefore, Ohm's Law shows that the current will be 5V divided by 250 Ohm's which will yield a current of 20mA of current which falls within the required maximums of 25mA and 30mA. The inverter has a maximum of 100mA of continuous current through Vcc or GND using the 250Ohm resistor means that a current of 20mA is calculated which will fall within the 100mA max.
 
-The interceptor sound controller will be an Arduino Uno r3 and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable. This sound would be played when the processor sends the proper signal. This means that the sounds will play for a defined amount of time that will start when the processor gives the proper signal to the Arduino. 
+The interceptor sound controller will be an Arduino Uno r3 [6] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable. This sound would be played when the processor sends the proper signal. This means that the sounds will play for a defined amount of time that will start when the processor gives the proper signal to the Arduino. The buzzer that was chosen is the CUI Devices CPI-137-83T piezo buzzer [7]. This buzzer is rated for 4V to 10V and a frequency of 3800Hz to 4800Hz. This means that the output of the Arduino should not exceed 10V and 4800Hz. 
 
 
 ## Bill of Materials
@@ -47,7 +47,8 @@ The interceptor sound controller will be an Arduino Uno r3 and it will be making
 | SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
 | Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
 | Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
-
+| | 1 |  |  |
+| CUI Devices, CPI-137-83T | 1 | $1.71 |  |
 
 ## References
 1. https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396
@@ -55,4 +56,6 @@ The interceptor sound controller will be an Arduino Uno r3 and it will be making
 3. https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756
 4. https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838
 5. https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029
+6. https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf
+7. https://www.cuidevices.com/product/resource/cpi-137-83t.pdf
 ‌
