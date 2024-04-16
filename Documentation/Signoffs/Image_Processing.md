@@ -72,6 +72,10 @@ This subsystem is implemented as part of the processor. No additional parts need
 
 **References:**
 
-[1] A. Rosebrock, “OpenCV and python color detection,” PyImageSearch, https://pyimagesearch.com/2014/08/04/opencv-python-color-detection/ (accessed Apr. 15, 2024). 
+[1] A. Rosebrock, “OpenCV and python color detection,” PyImageSearch, https://pyimagesearch.com/2014/08/04/opencv-python-color-detection/ 
+(accessed Apr. 15, 2024). 
+
 [2] “Blob detection with opencv,” HackMD, https://hackmd.io/@lKuOpplzSUWLhLim2Z7ZJw/SkL-qU2Wh (accessed Apr. 16, 2024). 
-[3] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software, https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
+
+[3] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
+https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
