@@ -56,14 +56,14 @@ information that is used for the processor to determine the signals being sent t
 Once the distance is obtained, a comparison can be made between a set object, like the sensor post, and the object. This will obtain an x coordinate for
 where the ball is located on the game board. This will be done by finding out how many pixels are between the ball and the sensor post. The team can then
 use the number of pixels repersenting the sensor posts height and the actual height of the post to get a repersentation of height for each pixel. The pixels
-between the golf ball and the ground can be used to find the height of the ball. This will provide x and y coordinates which can be used to determine which
-wire the golf ball is on.
+between the golf ball and the ground or some other set point at a set height can be used to find the height of the ball. This will provide x and y
+coordinates which can be used to determine which wire the golf ball is on.
 
-The camera that is being used is an 1280 by 720 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
+The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
 102 frames per second to find color which is the same length as finding distance based on the Big O analysis. This means it takes 9.8 ms to process the
-image information [3]. The camera takes in 60 frames per second so it takes 16.67 ms to get a new image. The arithmetic processes for determining speed and
+image information [3]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The arithmetic processes for determining speed and
 other calculations to send to the launcher are considered to have O(1). This means the most limiting time factor is the speed calculation which will take
-the time to get the two depths and make the calculation. This will be 43.13 ms which is well within the 1/8 of time of the golf ball's speed that is
+the time to get the two depths and make the calculation. This will be 76.46 ms which is well within the 1/8 of time of the golf ball's speed that is
 necessary.
 
 **Bill of Materials:**
