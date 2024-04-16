@@ -23,8 +23,7 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 | 2	| Processing Speed - Optimization for efficient calculations | System Constraint |
 | 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation | Programming Constraint |
 | 4	| Resource Utilization - Preventing overload of system resources | System Constraint |
-| 5 | Pause State: The interceptor shall have a switch that sets the system into a pause state that will keep the interceptor from firing. | Rulebook |
-| 6 | Pause Switch Voltage: The voltage switched by the pause switch shall be 5V. | System Constraint |
+| 5 | Pausing Processes: The system needs a pause state to stop other scripts from activating firing mechanisms. | Rulebook |
 
 
 
@@ -38,9 +37,7 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 
 **Resource Utilization:** With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness [2].
 
-**Pause State:** Since the rulebook from Devcom states the requirement for a pause switch integrated with the interceptor to stop the machine from firing, the system will require an integrated switch to halt operations inside the Jetson Nano [9].
-
-**Pause Switch Voltage:** The pause switch requires a reliable 5V for the Jetson Nano to take the input as an active high input, otherwise the Jetson Nano could incorrectly understand the input, and not pause the system. This would break the Pause State constraint creating an immediate issue with the rulebook, therefore causing a disqualification [9]. 
+**Pausing Processes:** Since the rulebook from Devcom states the requirement for a pause switch integrated with the interceptor to stop the machine from firing, the system will require an integrated switch to halt operations inside the Jetson Nano [9].
 
 
 ## **Analysis of Using Jetson Nano:**
@@ -81,7 +78,7 @@ Distance = Speed * Time interval
 
 **Pause Switch Analysis**
 
-The pause switch component has many different switches that can be chosen. Switches range between single pole, single throw, and upwards. The switch that needs to be implemented for the pause switch should be a single pole double-throw switch that has a two on functions and an off function. This will ensure that with one connection the processor will be receiving 5V, which will count as a binary one, and when the switch is off the processor will be connected to ground which will be interpreted as a binary zero. The switch that was chosen for this task is the NTE Electronics, 54-571-2 [8]. This switch is rated for 20A and 12VDC which will be more than enough for this simple task. The other main portion of the pause switch is the implementation in the code of the processor. Because a processor has not been chosen now it is not possible to say exactly how this will be implemented, but pseudocode can be written to make the coding process easier. To be clear when the pause switch is on 5V or equivalent will be allowed to pass and when it is off the circuit will not be connected. This input will be interpreted as a variable and when the circuit is on the processor will be allowed to collect the data from the sensors. When the switch is off the processor will be in the pause state where it can not do anything but wait for the switch to be turned on.
+When the switch gives a positive 5 Volts to the Jetson Nano, we need to stop scripts from enabling the interceptor firing mechanism to halt any innapropriate firing. This adds a safety measure that the rulebook was requesting [9].
 
 **Stepper Motor Integration**
 
@@ -96,11 +93,10 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 |Name|	Count|	Price |	Total |
 |---|---|---|---|
 |Jetson Nano 945-13450-0000-000|	1|	$229.38|	$229.38|
-| NTE Electronics, 54-571	 | 1 | $3.48 | $3.48 |
 |TB6600 Stepper Motor Driver|	3	|$24.07	|$72.21|
-| Total | | | 			$305.07|
+| Total | | | 			$301.59|
 
-The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $24.07 each [6] and the pause switch for $3.48 [10], the total cost amounts to $305.07, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $24.07 each [6], the total cost amounts to $301.59, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
 
 
 
@@ -123,5 +119,3 @@ The Jetson Nano offers an affordable yet powerful solution for system control, p
 [8] “Toggle switches,” NTE Electronics, https://www.nteinc.com/switches/pdf/toggle-std.pdf (accessed Apr. 6, 2024).
 
 [9] S. Hall, Devcom. Devcom, 2024. S31 Paper Wad Interceptor Challenge 2024, Rulebook, (accessed Apr. 8, 2024).
-
-[10] "54-571-2", DigiKey, https://www.digikey.com/en/products/detail/nte-electronics-inc/54-571-2/11654462 (accessed Apr. 12, 2024)
