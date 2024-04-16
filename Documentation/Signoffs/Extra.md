@@ -18,8 +18,8 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure. The r
    
 2. The circuit that is implemented by the pause switch needs to fall within the limitations of the processor block. Based on the processors that could be chosen the voltage that will be switched will be 5V.
 
-3. To add to the total points for the competition, the interceptor must have lights. This constraint can be found in the official rulebook for the competition. Any amount of lights is sufficient to count for the constraint. Therefore two arrays of ten LED's will be used for this.
-4. To add to the total points for the competition, the interceptor must make sounds before firing. This constraint can be found in the official rulebook for the competition.
+3. To add to the total points for the competition, the interceptor must have lights. This constraint can be found in the official rulebook for the competition. Any amount of lights is sufficient to count for the constraint. Therefore two arrays of ten LED's will be used for this. These LED's must be able to be powered by a 5V source that comes from the processor block. 
+4. To add to the total points for the competition, the interceptor must make sounds before firing. This constraint can be found in the official rulebook for the competition. The piezo buzzer must be able to work with an output of the Arduino Uno R3 which will be 5V. 
    
 ## Buildable Schematic
 ![System](../Images/Buildable_Extra_jrneal.png)
