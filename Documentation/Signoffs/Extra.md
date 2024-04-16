@@ -52,8 +52,8 @@ The interceptor sound controller will be an Arduino Uno r3 [6] and it will be ma
 | CUI Devices, CPI-137-83T | 1 | $1.71 | $51.37 |
 
 ## References
-1. https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396
-2. https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663
+1. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
+2. “Kingbright WP7113ID,” Digikey, https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663 (accessed Apr. 16, 2024). 
 3. https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756
 4. https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838
 5. https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029
