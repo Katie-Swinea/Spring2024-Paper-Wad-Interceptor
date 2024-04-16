@@ -11,8 +11,8 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure. The r
 | --- | --- | --- |
 | 1. |  The interceptor shall have a switch that sets the system into a pause state that will keep the interceptor from firing. | Rulebook |
 | 2. | The voltage switched by the pause switch shall be 5V. | System Constraint|
-| 3. | The interceptor must have lights. | Rulebook |
-| 4. | The interceptor must make sounds before firing. | Rulebook |
+| 3. | The interceptor must have lights. These lights must be powered by a 5V source from the processor block. | Rulebook |
+| 4. | The interceptor must make sounds before firing. The sounds will be powered by a Arduino uno r3 that has an output voltage of 5V. | Rulebook |
    
 1. One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have a pause switch that keeps the interceptor from firing when the board is being reset. This switch will need to be physical, but in the implementation, it will run to the processor where it will prevent it from outputting any signals. When the switch is engaged it will keep the processor block from outputting signals to the mechanical system. This will ensure that the interceptor does not fire while the judges are in the competition area.
    
