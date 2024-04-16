@@ -53,7 +53,7 @@ applied as a mask to the depth matrix. This will give the distance of the pixels
 be O(n) because the number of pixels is still the only variable being used and affecting the processing time. These calculations would result in the final
 information that is used for the processor to determine the signals being sent to the launcher.
 
-Once the distance is obtained, a comparison can be made between a set object, like the sensor post, and the object. This will obtain an x coordinate for
+Once the distance is obtained, a comparison can be made between a set object, like the sensor post, and the golf ball. This will obtain an x coordinate for
 where the ball is located on the game board. This will be done by finding out how many pixels are between the ball and the sensor post. The team can then
 use the number of pixels repersenting the sensor posts height and the actual height of the post to get a repersentation of height for each pixel. The pixels
 between the golf ball and the ground or some other set point at a set height can be used to find the height of the ball. This will provide x and y
