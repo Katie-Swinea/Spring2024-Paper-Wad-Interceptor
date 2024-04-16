@@ -40,7 +40,8 @@ In order to ensure the object is detected, detecting the shape of the object wil
 parameters to filter out objects based on size, shape, and contours. The golf ball can be detected using this since it should be the only spherical object in
 the field of view. The result of using blob detection algorithms avliable in OpenCV can be seen below.
 
-
+![Function](../Images/Image_Processing/Blob_1.png)
+![Function](../Images/Image_Processing/Blob_2.png)
 
 The level of detection can be adjusted as necessary to account for distance through experimentation. The Big O analysis for these algorithms are O(n) since
 it is another iterative algorithm that looks at each pixel [2].
