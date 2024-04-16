@@ -11,8 +11,8 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure. The r
 | --- | --- | --- |
 | 1. |  The interceptor shall have a switch that sets the system into a pause state that will keep the interceptor from firing. | Rulebook |
 | 2. | The voltage switched by the pause switch shall be 5V. | System Constraint|
-| 3. | The interceptor must have lights. These lights must be powered by a 5V source from the processor block. | Rulebook |
-| 4. | The interceptor must make sounds before firing. The sounds will be powered by a Arduino uno r3 that has an output voltage of 5V. | Rulebook |
+| 3. | The interceptor must have lights. These lights must be powered by a 5V source from the processor block. | Rulebook / System |
+| 4. | The interceptor must make sounds before firing. The sounds will be powered by a voltage of 5V. | Rulebook / System |
    
 1. One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have a pause switch that keeps the interceptor from firing when the board is being reset. This switch will need to be physical, but in the implementation, it will run to the processor where it will prevent it from outputting any signals. When the switch is engaged it will keep the processor block from outputting signals to the mechanical system. This will ensure that the interceptor does not fire while the judges are in the competition area.
    
@@ -36,7 +36,9 @@ $$V=IR$$
 
 The maximum current that can be handled by the LED's is 25mA for the green LED's and for the red it is 30mA. Because of the 5V being used a resistor value was chosen that would keep the LED's within their ratings. Therefore, Ohm's Law shows that the current will be 5V divided by 250 Ohm's which will yield a current of 20mA of current which falls within the required maximums of 25mA and 30mA. The inverter has a maximum of 100mA of continuous current through Vcc or GND using the 250Ohm resistor means that a current of 20mA is calculated which will fall within the 100mA max.
 
-![System](../Images/)
+![System](../Images/Buildable_Buzzer.png)
+
+Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound.
 
 The interceptor sound controller will be an Arduino Uno r3 [6] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable. This sound would be played when the processor sends the proper signal. This means that the sounds will play for a defined amount of time that will start when the processor gives the proper signal to the Arduino. The buzzer that was chosen is the CUI Devices CPI-137-83T piezo buzzer [7]. This buzzer is rated for 4V to 10V and a frequency of 3800Hz to 4800Hz. This means that the output of the Arduino should not exceed 10V and 4800Hz. 
 
@@ -56,9 +58,9 @@ The interceptor sound controller will be an Arduino Uno r3 [6] and it will be ma
 ## References
 1. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
 2. “Kingbright WP7113ID,” Digikey, https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663 (accessed Apr. 16, 2024). 
-3. https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756
-4. https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838
-5. https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029
-6. https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf
-7. https://www.cuidevices.com/product/resource/cpi-137-83t.pdf
+3. “CD74AC14E Texas Instruments | Integrated Circuits (ICS) | digikey marketplace,” Digikey, https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756 (accessed Apr. 16, 2024). 
+4. “SunLED XLUG12D,” Digikey, https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838 (accessed Apr. 16, 2024).
+5. “Ohmite WHD250FET,” Digikey, https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029 (accessed Apr. 16, 2024). 
+6. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
+7. “CPI-137-83T datasheet - audio indicators | buzzers - cui ...,” CUI Devices, https://www.cuidevices.com/product/resource/cpi-137-83t.pdf (accessed Apr. 16, 2024). 
 ‌
