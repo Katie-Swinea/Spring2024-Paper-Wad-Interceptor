@@ -47,7 +47,7 @@ The level of detection can be adjusted as necessary to account for distance thro
 it is another iterative algorithm that looks at each pixel [2].
 
 Next, the team needs to be able to determine the distance of the object. This can be done by coordinating the pixels of color detected from the image with 
-the distance of those pixels measured by the camera. The depth value is provided in a matrix for each pixel. The color detection and blob dection used to
+the distance of those pixels measured by the camera. The depth value is provided in a matrix for each pixel. The color detection or blob dection used to
 identify the object also goes through this array before determining which pixels are the object. The result of the mask for the pixels of the object will be
 applied as a mask to the depth matrix. This will give the distance of the pixels repersenting the object and provide the distance of the object. This would
 be O(n) because the number of pixels is still the only variable being used and affecting the processing time. These calculations would result in the final
