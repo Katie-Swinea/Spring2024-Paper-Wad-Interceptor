@@ -11,9 +11,6 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 
 *Figure 1: Jetson Nano Wiring Schematic*
 
-![System](../Images/MainProcessor/Switch_Buildable_2.png)
-
-*Figure 2: Pause switch integration*
 
 ## **Constraints:**
 
