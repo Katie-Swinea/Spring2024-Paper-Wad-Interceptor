@@ -47,8 +47,8 @@ The interceptor sound controller will be an Arduino Uno r3 [6] and it will be ma
 | SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
 | Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
 | Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
-| | 1 |  |  |
-| CUI Devices, CPI-137-83T | 1 | $1.71 |  |
+| Arduino Uno REV3 [A000066] | 1 | $27.60 | $49.66 |
+| CUI Devices, CPI-137-83T | 1 | $1.71 | $51.37 |
 
 ## References
 1. https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396
