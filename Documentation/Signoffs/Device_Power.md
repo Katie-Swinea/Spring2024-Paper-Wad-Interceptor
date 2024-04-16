@@ -59,7 +59,7 @@ The mechanical unit requires a voltage input of 24 volts. This system must be ab
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad3.png)
+![Function](../Images/Device_Power/kicad4.png)
 
 *power subsystem buildable schematic*
 
