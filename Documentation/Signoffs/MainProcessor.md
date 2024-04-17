@@ -33,7 +33,7 @@ The main processor unit is responsible for receiving, analyzing, and interpretin
 
 
 # **Buildable Schematic:**
-![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
+![System](../Images/MainProcessor/mainProcessorOverview2.png)
 
 *Figure 2: Jetson Nano Wiring Schematic*
 
