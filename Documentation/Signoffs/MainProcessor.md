@@ -12,9 +12,9 @@ The main processor unit is responsible for receiving, analyzing, and interpretin
 | NO. |	Constraint | Origin |
 |-----|------------|--------|
 | 1	| Time Constraints - Real-time data processing for trajectory prediction for the golf ball speed varying from 1.9 seconds to 7.4 seconds | System Constraint |
-| 2	| Processing Speed - Optimization for efficient calculations to calculate the speed, wire, and variable height in time| System Constraint |
-| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation that is received from external boards | Programming Constraint |
-| 4	| Resource Utilization - Preventing overload of system resources since the board has 1.43GHz with quad cores, want to utilize them for speed efficiency | System Constraint |
+| 2	| Processing Speed - Optimization for efficient programs to calculate the speed, wire, and variable height in time, not taking longer than 40 ms per calculation iteration | System Constraint |
+| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation that is received from the Arduino's needs to be 5 Volts | Programming Constraint |
+| 4	| Resource Utilization - Preventing overload of system resources since the board has 1.43GHz with quad cores and 4GB RAM, the system needs to utilize them for speed efficiency but not sacrifice stability | System Constraint |
 | 5 | Pausing Processes: The system needs a pause state to stop other scripts from activating firing mechanisms. | Rulebook |
 
 
@@ -23,9 +23,9 @@ The main processor unit is responsible for receiving, analyzing, and interpretin
 
 **Time Constraints:** Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. THe ball's travel time varies from 1.9 seconds to 7.4 seconds and the programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically [2].
 
-**Processing Speed:** Complex calculations and simultaneous tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. Optimizing algorithms and utilizing hardware and multi-core techniques can help minimize processing speed limitations.
+**Processing Speed:** Complex calculations and simultaneous tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. Optimizing algorithms and utilizing hardware and multi-core techniques can help minimize processing speed limitations. Making sure the processor can calculate each image iteration data fast enough to give the motors enough time to get into position for firing.
 
-**Signal Interpretation Challenges:** Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting sensor data. The Jetson Nano needs to be able to filter all signals, determine accurate data that it receives and predict the golf balls trajectory will require enormous testing and a versatile system. An accurate signal-processing algorithm and error-handling backup codes are going to be essential for creating reliable data for the system.
+**Signal Interpretation Challenges:** Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting Arduino data. The strength of signals from Arduinos should be 5V to confirm the signal was received by the Jetson Nano. 
 
 **Resource Utilization:** With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness [2].
 
