@@ -45,7 +45,13 @@ The results of such operations and algorithms can be seen below.
 ![Function](../Images/Image_Processing/Detecting_Red.png)
 
 This can be adjusted to detect the ball at longer distances when the amount of pixels repersenting the object are smaller. The Big O analysis of this
-function would be O(n) because it is an iterative function that will go through all of the pixels provided [1].
+function would be O(n) because it is an iterative function that will go through all of the pixels provided [1]. For more cluttered environments with a variety of color and lighting, objects can still be detected and tracked. An example of this can be seen below.
+
+
+![Function](../Images/Image_Processing/Detecting_Clutter.png)
+
+This uses the same algorithm, but applies it to an environment with varying light sources and colored backgrounds showing that the ball can still be
+identified.
 
 
 *Distance and Coordinates*
