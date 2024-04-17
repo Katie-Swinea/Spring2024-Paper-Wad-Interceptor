@@ -47,26 +47,26 @@ Python remains the primary programming language for interfacing with the Jetson 
 
 **Data Processing and Calculations:** Upon receiving the image detection data, the Jetson Nano executes trajectory calculations to determine the golf ball's velocity, height, distance, and direction. Mathematical algorithms will be used to accurately determine the data.
 
-The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the distance from the camera to the object. The physical height of the two possible positions [1].
+The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the physical height of the two possible positions [1]. The given information from the image processing will be the given X-Axis and Y-Axis that will be used to determine the object height. We can figure out the wire the ball is on and the height the ball will be on.
 ~~~math
-Object Height = ( Physical Height * Image Height )/( Distance * Sensor Height )
+Object Height = ( Physical Height * Y-Axis )/( Image Height ) + Ball offset
+
+Object Height = (4 inches * 730 pixels ) / ( 1080 pixels) + 42 inches
+= (2,920 pixel inches)/(1080 pixels) + 42 inches = 44.7 inches
 ~~~
 
-The Speed calcuations will be taking the distance or position of the object over time [1]. The frames of the objects lcoation can calculate the speed using the following equation.
+The Speed calculations will be taking the distance or position of the object over time [1]. The frames of the objects location can calculate the speed using the following equation. The speed calculations will be determined using different distances and time frames that have been sent from the image detection to figure out how fast the ball is traveling. While using backlogged data of testing speeds, the system will also figure out speeds and compare to increase the overall accuracy of the speed [1].
 ~~~math
-Speed = Change in Distance / Change in Time
-~~~
+Speed = (DistanceOne - DistanceTwo) / Change in Time Between Frames
 
-The distance calcuation will need to take the time interval between frames the object has traveled using the following equation to properly find the distance from the interceptor [1].
-~~~math
-Distance = Speed * Time interval
+Speed = (53 inches - 48 inches) / (0.1692 seconds)
+= (5 inches)/(0.1692 seconds) = 29.55 inches/second
 ~~~
-
 
 
 **Signal Interpretation:** The Jetson Nano will need signal processing techniques to interpret wireless sensor data accurately. Noise filtering and error correction mechanisms enhance signal clarity, enabling precise trajectory prediction.
 
-**Control of Golf Ball Interceptor Shooter:** Based on the calculated trajectory data, the Jetson Nano will control the timing and activation of the golf ball interceptor shooting mechanism. It needs to have the interceptor to be properly aligned towards the golf ball's predicted path, and fire at the appropriate time to hit the ball mid-air. This could use preset fire positions to optimize the interception process.
+**Control of Golf Ball Interceptor Shooter:** Based on the calculated trajectory data, the Jetson Nano will control the timing and activation of the golf ball interceptor shooting mechanism. It needs to have the interceptor to be properly aligned towards the golf ball's predicted path, and fire at the appropriate time to hit the ball mid-air. The Jetson Nano will send all the required data of the x-axis, y-axis, and firing signals to the arduino controlling the interceptor. This could use preset fire positions to optimize the interception process [6,7].
 
 
 
@@ -75,25 +75,23 @@ Distance = Speed * Time interval
 
 **Pause Switch Analysis**
 
-When the switch gives a positive 5 Volts to the Jetson Nano, we need to stop scripts from enabling the interceptor firing mechanism to halt any innapropriate firing. This adds a safety measure that the rulebook was requesting [9].
+When the switch gives a positive 5 Volts to the Jetson Nano, we need to stop scripts from enabling the interceptor firing mechanism to halt any inappropriate firing. This adds a safety measure that the rulebook was requesting [9].
 
-**Stepper Motor Integration**
+**Arduino Integration**
 
-The Jetson Nano seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism [7]. Through GPIO communication, the Jetson Nano commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path.
+The Jetson Nano will integrate with the interceptor's Arduino controller aiming mechanism [7]. Through GPIO communication, the Jetson Nano commands the Arduino  to adjust the interceptor's position, aligning it with the golf ball's predicted path.
 
-Real-time trajectory data calculated by the Jetson Nano guides precise motor movements, ensuring accurate interception. The compatibility between the Jetson Nano and TB6600 Stepper Motor Driver facilitates seamless communication and system integration.
+Real-time trajectory data calculated by the Jetson Nano will then wait for the Arduino to send back a confirmation signal to confirm the position of the interceptor. This can apply to the X-Axis and Y-Axis of the system to be able to know if the interceptor controller aimed to the correct position [6].
 
-The stepper motor will be put into a zero position. While it is in its zero position, the jetson nano can count how many steps the motor takes to determine the correct aiming position. This can apply for the X-Axis and Y-Axis of the system to be able to reset the interceptor back to the zero position after each time it aims and fires at the incoming golf ball [6].
-
+A second Arduino will control all the extras will send signals when aiming, and possibly firing signals for the extra subsystem that controls the sounds and lights.
 
 ## **Cost Analysis:**
 |Name|	Count|	Price |	Total |
 |---|---|---|---|
 |Jetson Nano 945-13450-0000-000|	1|	$229.38|	$229.38|
-|TB6600 Stepper Motor Driver|	3	|$24.07	|$72.21|
-| Total | | | 			$301.59|
+| Total | | | 			$229.38|
 
-The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. Coupled with the TB6600 Stepper Motor Driver which cost $24.07 each [6], the total cost amounts to $301.59, ensuring cost-effectiveness without compromising performance for doing image processing calculations.
+The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. This ensures cost-effectiveness without compromising performance for doing image processing calculations.
 
 
 
@@ -109,9 +107,9 @@ The Jetson Nano offers an affordable yet powerful solution for system control, p
 
 [5] Dr. M. Nazeer, M. Qayyum, and A. Ahad, “Real time object detection and recognition in machine learning using Jetson Nano,” SSRN, https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4286087 (accessed Apr. 11, 2024). 
 
-[6] “TB6600 Stepper Motor Driver,” Bulkman, https://bulkman3d.com/wp-content/uploads/2019/06/TB6600-Stepper-Motor-Driver-BM3D-v1.1.pdf (accessed Apr. 8, 2024).
+[6] “Five steps to connect Jetson Nano and Arduino,” Rareschool, https://blog.rareschool.com/2019/05/five-steps-to-connect-jetson-nano-and.html (accessed Apr. 17, 2024).
 
-[7] “TB6600 Stepper Motor Driver,” DFRobot, https://www.dfrobot.com/product-1547.html (accessed Apr. 8, 2024).
+[7] “Connecting Jetson Nano to Arduino Uno,” NVIDIA, https://forums.developer.nvidia.com/t/connecting-jetson-nano-to-arduino-uno/172775 (accessed Apr. 17, 2024).
 
 [8] “Toggle switches,” NTE Electronics, https://www.nteinc.com/switches/pdf/toggle-std.pdf (accessed Apr. 6, 2024).
 
