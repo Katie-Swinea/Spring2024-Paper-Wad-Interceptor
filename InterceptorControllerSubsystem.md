@@ -31,6 +31,7 @@ The goal of this subsystem is to take the outputs from the processer and convert
 
 
 ## **Buildable Schematics:**
+
 ![Elaboration Photo](../Images/Controller/Schematic2.png)
 Figure 2: Buildable Schematic [5]
 
@@ -39,6 +40,7 @@ Arduino Analysis:
 Due to the Arduinos variety of uses and applications it was the best choice to convert the analog data being provided from processor to digital logic that the mechanical system can understand. Shown in Figure 3 below we can see the JDIGITAL pins are the outputs of the Arduino but are the inputs for the mechanical system satisfying the first constraint. As for sending the signal back to the processer the analog side is used since that is the language the processer uses satisfying the third constraint. To ensure that the Arduino does not have any current going into the I/O pins a Motor Control chip, L293D Figure 4, is there to increase the current going into the motor to make it run as well as keep the current from going in reverse bias and frying the Arduino. Using these two devices speed, rotation, and direction can be changed. The speed is dictated my the power given to each motor *This measurement will be supplied by the ME team based on constraints and parameters of the competition* 
 ![Elaboration Photo](../Images/Controller/Arduino.png)
 Figure 3[2]
+
 ![Elaboration Photo](../Images/Controller/chip.png)
 Figure 4[1]
 
