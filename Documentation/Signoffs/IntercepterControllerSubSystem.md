@@ -14,9 +14,9 @@ The goal of this subsystem is to take the outputs from the processer and convert
 |1|The Interceptor Controller shall move firing mechanism to 1 of 30 locations |Conceptual Design|
 |2|Must send back signal when aiming is finished to initiate firing | Conceptual Design |
 |3|Must turn initiate firing| Conceptual Design
-|4|Must be powered with a 6 to 20V voltage source | Device Constraint|
-|5|Maximum current per I/O pin is 20mA| Device Constraint|
-|6|Maximum current per +3.3V pin is 50mA| Device Constraint|
+|4|Arduino must be powered with a 6 to 20V voltage source | Device Constraint|
+|5|Arduino's maximum current per I/O pin is 20mA| Device Constraint|
+|6|Arduino's maximum current per +3.3V pin is 50mA| Device Constraint|
 |7|Maximum voltage for the Stepper Motor 4 to 92V| Device Constraint|
 
 
