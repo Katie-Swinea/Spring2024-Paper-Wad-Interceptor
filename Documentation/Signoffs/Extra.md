@@ -26,6 +26,9 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure. The r
 
 Figure 1: This represents the buildable schematic for the pause switch. This switch outputs 5V or ground that is sent to the processor block and the LED array. The 5V and ground will both come from the processor block. In this example, the red LED's will be at the top, and the green LED's will be at the bottom.
 
+![System](../Images/Buildable_Buzzer.png)
+
+Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound.
 
 
 ## **Analysis**
@@ -36,10 +39,6 @@ $$V=IR$$
 
 The maximum current that can be handled by the LED's is 25mA for the green LED's and for the red it is 30mA. Because of the 5V being used a resistor value was chosen that would keep the LED's within their ratings. Therefore, Ohm's Law shows that the current will be 5V divided by 250 Ohm's which will yield a current of 20mA of current which falls within the required maximums of 25mA and 30mA. The inverter has a maximum of 100mA of continuous current through Vcc or GND using the 250Ohm resistor means that a current of 20mA is calculated which will fall within the 100mA max.
 
-![System](../Images/Buildable_Buzzer.png)
-
-Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound.
-
 The interceptor sound controller will be an Arduino Uno r3 [6] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable. This sound would be played when the processor sends the proper signal. This means that the sounds will play for a defined amount of time that will start when the processor gives the proper signal to the Arduino. The buzzer that was chosen is the CUI Devices CPI-137-83T piezo buzzer [7]. This buzzer is rated for 4V to 10V and a frequency of 3800Hz to 4800Hz. This means that the output of the Arduino should not exceed 10V and 4800Hz. 
 
 
@@ -47,13 +46,13 @@ The interceptor sound controller will be an Arduino Uno r3 [6] and it will be ma
 
 | **Items:** | **Quantity:** | **Price:** | **Total:** |
 | --- | --- | --- | --- |
-| CIT Relay and Switch, ANT11SF1CQE | 1 | $3.48 | $3.48 |
+| CIT Relay and Switch, ANT11SF1CQE (Switch) | 1 | $3.48 | $3.48 |
 | Texas Instruments, CD74AC14E (Inverter) | 1 | $0.84 | $4.32 |
 | SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
 | Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
 | Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
 | Arduino Uno REV3 [A000066] | 1 | $27.60 | $49.66 |
-| CUI Devices, CPI-137-83T | 1 | $1.71 | $51.37 |
+| CUI Devices, CPI-137-83T (Buzzer) | 1 | $1.71 | $51.37 |
 
 ## References
 1. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
