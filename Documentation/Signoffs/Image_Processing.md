@@ -8,7 +8,7 @@ The goal of this subsystem is to receive and process the data from the camera se
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1| Must be able to distinguish the golf ball from surroundings based on color| System Requirment|
+| 1| Must be able to distinguish the golf ball from surroundings based on golf ball characteristics| System Requirment|
 | 2| Must be able to extract the coordinates of the golf ball from the image| System Requirment|
 | 3| Must be able to perform calculations in 250 ms| System Requirment|
 
@@ -21,6 +21,13 @@ from the rest of the image.
 **Buildable Schematic**
 
 The system is purely software. Any connections for the processor should be shown in that subsystems schematic.
+
+A flow char of the code is given below.
+
+
+
+This shows the steps for each major calculation and what is necessary for each calculation. This process will be done twice to recieve two positions for the
+speed calculation done by the processor.
 
 **Analysis:**
 
