@@ -33,7 +33,7 @@ The goal of this subsystem is to take the outputs from the processer and convert
 ## **Buildable Schematics:**
 
 ![Elaboration Photo](../Images/Controllers/Schematic3.png)
-Figure 2: Buildable Schematic [4]
+Figure 2: Buildable Schematic
 
 ## **Analysis:**
 Arduino Analysis:
