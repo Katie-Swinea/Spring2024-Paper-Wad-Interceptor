@@ -126,13 +126,13 @@ To connect the mechanical unit to power, this system will utilize a soldered bre
 
 |Device     | Quantity | Price per  | Total price  |
 |-----------|----------|------------|--------------|
-|24 V/ 2 A supply | 1 | 9.99 | 9.99 |
+|AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm | 1 | 9.99 | 9.99 |
 |20 Pcs DC Power Cable 5A 12v DC Power Plug | 1 | 9.99 | 9.99|
-|power strip | 1 | 16.99 | 16.99 |
-|E-stop Switch | 1 | 10.89 | 10.89 |
-|5 V/ 4 A supply | 1 | 13.68 | 13.68 |
-|9V DC Power Supply | 1 | 12.69 | 12.69 |
-|Bread Board | 1 | 3.59 | 3.59 |
+|CCCEI Metal Power Strip Individual Switches 6 Outlets, Heavy Duty Power Strip Surge Protector for Appliances | 1 | 16.99 | 16.99 |
+|E-stop Switch, 7105SYZQE | 1 | 10.89 | 10.89 |
+|5V 4A Power Supply Adapter - COOLM AC 100-240V to DC 5V/4A 20W Charger Plug DC 5.5mm x 2.5mm | 1 | 13.68 | 13.68 |
+|Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter | 1 | 12.69 | 12.69 |
+|Double Sided ENIG Protoboard, Solderable Breadboard | 1 | 3.59 | 3.59 |
 |Total | 7 | --- | 77.82 |
 
 
