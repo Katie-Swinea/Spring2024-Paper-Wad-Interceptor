@@ -50,7 +50,6 @@ The stepper motor will be put into a zero position. While it is in its zero posi
 ![Elaboration Photo](../Images/Controllers/Arduino.png)
 Figure 3[2]
 
-![Elaboration Photo](../Images/Controllers/chip.png)
 
 ## **Bill of Materials:**
 
