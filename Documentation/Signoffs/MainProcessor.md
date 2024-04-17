@@ -92,10 +92,10 @@ Real-time trajectory data calculated by the Jetson Nano will then wait for the A
 
 A second Arduino will control all the extras will send signals when aiming, and possibly firing signals for the extra subsystem that controls the sounds and lights.
 
-## **Cost Analysis:**
-|Name|	Count|	Price |	Total |
-|---|---|---|---|
-|Jetson Nano 945-13450-0000-000|	1|	$229.38|	$229.38|
+## **BOM:**
+| Name |	Quantity |	Price |	Total | Used in which subsystem(s) | Part Number | Manufacturer |
+|------|-----------|--------|-------|----------------------------|-------------|--------------|
+|Jetson Nano 945-13450-0000-000|	1|	$229.38|	$229.38| Main Processor, Image Processing | 945-13450-0000-000 | NVIDIA |
 | Total | | | 			$229.38|
 
 The Jetson Nano offers an affordable yet powerful solution for system control, priced at $229.38 [4]. This ensures cost-effectiveness without compromising performance for doing image processing calculations.
