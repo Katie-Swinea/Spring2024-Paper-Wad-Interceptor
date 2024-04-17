@@ -51,6 +51,7 @@ The height calculations will need the height of the camera, the image height of 
 ~~~math
 Object Height = ( Physical Height * Y-Axis )/( Image Height ) + Ball Offset
 ~~~
+Test data from input from image processing axis data:
 ~~~math
 Object Height = (4 inches * 730 pixels ) / ( 1080 pixels) + 42 inches
 ~~~
@@ -62,6 +63,8 @@ The Speed calculations will be taking the distance or position of the object ove
 ~~~math
 Speed = (DistanceOne - DistanceTwo) / Change in Time Between Frames
 ~~~
+
+Test data from input from image processing distance data:
 ~~~math
 Speed = (53 inches - 48 inches) / (0.1692 seconds)
 ~~~
