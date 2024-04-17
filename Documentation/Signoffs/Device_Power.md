@@ -22,7 +22,7 @@ The goal of this subsystem is to convert AC power from the wall outlet to DC pow
 
 <sup>1</sup> The power system shall be controlled by an emergency stop which will de-energize the mechanical system. This will shut off the motors which will not allow any projectiles to be fired. This will only be used if the system threatens peoples safety  [Conceptual Design]
 
-One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the AC-DC convertor for the mechanical system to the motors themselves which will de-energize interceptor. This system will only be used as a last case option if the interceptor threatens peoples safety. 
+One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the AC-DC convertor for the mechanical system to the motors themselves which will de-energize the interceptor. This system will only be used as a last case option if the interceptor threatens peoples safety. 
 
 <sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 13.5 watts, which is required by the extra subsytem and 48 Watts DC, which is required by the mechanical unit [Conceptual Design]
 
@@ -46,7 +46,7 @@ The extra subsystem requires a voltage input of 9 volts. This system must be abl
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad4.png)
+![Function](../Images/Device_Power/kicad5.png)
 
 *power subsystem buildable schematic*
 
@@ -115,7 +115,7 @@ To supply the appropriate amount of power to the Jetson Nano, the system must pr
 
 The system must supply a 24 volt/ 1.5 amp signal for the mechanical unit. This will be done using the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC, as it produces a 24 volt/ 2 amp output [4]. <sup>5</sup>
 
-To supply the appropriate amount of power to the Arduino UNO R3, the system must produce 9 volts. To achieve this, the system will use the Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter for 9Vdc Arduino UNO R3 [1]. This convertor was designed to power Arduino UNO R3s and produces exactly what the extra system needs. <sup>6</sup>
+To supply the appropriate amount of power to the Arduino UNO R3, the system must produce 9 volts. To achieve this, the system will use the Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter for 9Vdc Arduino UNO R3 [1]. This convertor was designed to power Arduino UNO R3s and produces exactly what the extra system needs. The system only needs 0.5 A, but by using this supply, the Arduino will only draw what it needs. <sup>6</sup>
 
 
 ## Application
