@@ -56,8 +56,8 @@ information that is used for the processor to determine the signals being sent t
 Once the distance is obtained, a comparison can be made between a set object, like the sensor post, and the golf ball. This will obtain an x coordinate for
 where the ball is located on the game board. This will be done by finding out how many pixels are between the ball and the sensor post. The team can then
 use the number of pixels repersenting the sensor posts height and the actual height of the post to get a repersentation of height for each pixel. The pixels
-between the golf ball and the ground or some other set point at a set height can be used to find the height of the ball. This will provide x and y
-coordinates which can be used to determine which wire the golf ball is on.
+between the golf ball and the ground or some other set point at a set height like the sensor post or A-frame can be used to find the height of the ball.
+This will provide x and y coordinates which can be used to determine which wire the golf ball is on.
 
 The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
 102 frames per second to find color which is the same length as finding distance based on the Big O analysis. This means it takes 9.8 ms to process the
