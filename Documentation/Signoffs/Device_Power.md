@@ -123,17 +123,16 @@ To supply the appropriate amount of power to the Arduino UNO R3, the system must
 To connect the mechanical unit to power, this system will utilize a soldered bread board. This board will be the Double Sided ENIG Protoboard [5]. This board will also connect the E-stop to the two parts. The board will be encased in a 3-D printed box that will have the E-stop mounted on top for easy access. The other two systems will be powered directly from the power strip. 
 
 ## BOM
+|Item Name | Description | Subsystems | Part Number | Manufacturer | Quantity | Price | Total |
+|----------|-------------|------------|-------------|--------------|----------|-------|-------|
+|AC to DC 24V 2A Power Supply Adapter | Converts wall outlet power to a 24V/ 2A output | Mechanical | B07RTWD725 | Security-01 | 1 | 9.99 | 9.99 |
+|20 Pcs DC Power Cable | 20 DC plug socket wires to connect to Mechanical system | Mechanical | B0BTHSDF4S | CENTROPOWER | 1 | 9.99 | 19.98 |
+|CCCEI Metal Power Strip with 6 Outlets | Acts as the power switches between the AC adaptors and the wall for each system | Mechanical, Processor, Extra | B08HYLW3GX | CCCEI | 1 | 16.99 | 36.97 |
+| E-stop switch (7105SYZQE) | Toggle switch rated for 120 V/ 5A | Mechanical | 7105SYZQE | C&K | 1 | 10.89 | 47.86 |
+|5V 4A Power Supply Adapter | Converts wall outlet power to a 5V/ 4A output | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 61.54 |
+|Gonine 9V DC Power Supply Cord | Converts wall outlet power to a 9V/ 1.5A output | Extra | B099J3JCVX |69 Gonine | 1 | 12.69 | 74.23 |
+|Double Sided ENIG Protoboard | Will act as the connection between the AC adaptor, E-stop and mechanical system | Mechanical | B0BSHG21P5 | SchmalzTech, LLC | 1 | 3.59 | 77.82 |
 
-|Device     | Quantity | Price per  | Total price  |
-|-----------|----------|------------|--------------|
-|AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm | 1 | 9.99 | 9.99 |
-|20 Pcs DC Power Cable 5A 12v DC Power Plug | 1 | 9.99 | 9.99|
-|CCCEI Metal Power Strip Individual Switches 6 Outlets, Heavy Duty Power Strip Surge Protector for Appliances | 1 | 16.99 | 16.99 |
-|E-stop Switch, 7105SYZQE | 1 | 10.89 | 10.89 |
-|5V 4A Power Supply Adapter - COOLM AC 100-240V to DC 5V/4A 20W Charger Plug DC 5.5mm x 2.5mm | 1 | 13.68 | 13.68 |
-|Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter | 1 | 12.69 | 12.69 |
-|Double Sided ENIG Protoboard, Solderable Breadboard | 1 | 3.59 | 3.59 |
-|Total | 7 | --- | 77.82 |
 
 
 ## References 
