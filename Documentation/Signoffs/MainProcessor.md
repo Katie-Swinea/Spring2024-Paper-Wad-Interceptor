@@ -49,7 +49,7 @@ Python remains the primary programming language for interfacing with the Jetson 
 
 The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the physical height of the two possible positions [1]. The given information from the image processing will be the given X-Axis and Y-Axis that will be used to determine the object height. We can figure out the wire the ball is on and the height the ball will be on.
 ~~~math
-Object Height = ( Physical Height * Y-Axis )/( Image Height ) + Ball offset
+Object Height = ( Physical Height * Y-Axis )/( Image Height ) + Ball Offset
 ~~~
 ~~~math
 Object Height = (4 inches * 730 pixels ) / ( 1080 pixels) + 42 inches
