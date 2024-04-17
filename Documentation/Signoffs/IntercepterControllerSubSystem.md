@@ -2,6 +2,7 @@
 
 ## **Function:**
 ![Elaboration Photo](../Images/Controllers/InterceptorController.png)
+
 Figure 1: Interceptor Controller Subsystem
 
 The goal of this subsystem is to take the outputs from the processer and convert them into inputs that can be used for the mechanical system. 
@@ -33,6 +34,7 @@ The goal of this subsystem is to take the outputs from the processer and convert
 ## **Buildable Schematics:**
 
 ![Elaboration Photo](../Images/Controllers/Schematic3.png)
+
 Figure 2: Buildable Schematic
 
 ## **Analysis:**
@@ -45,6 +47,7 @@ Stepper Motor Integration:
 The Arduino UNO R3 seamlessly integrates with the TB6600 Stepper Motor Driver to control the interceptor's aiming mechanism [7]. Through GPIO communication, the Arduino UNO R3 commands the stepper motor driver to adjust the interceptor's position, aligning it with the golf ball's predicted path. Real-time trajectory data calculated by the Jetson Nano guides precise motor movements, ensuring accurate interception. The compatibility between theArduino UNO R3 and TB6600 Stepper Motor Driver facilitates seamless communication and system integration. The stepper motor will be put into a zero position. While it is in its zero position, the jetson nano can count how many steps the motor takes to determine the correct aiming position. This can apply for the X-Axis and Y-Axis of the system to be able to reset the interceptor back to the zero position after each time it aims and fires at the incoming golf ball [6].
 
 ![Elaboration Photo](../Images/Controllers/Arduino.png)
+
 Figure 3[1]
 
 
