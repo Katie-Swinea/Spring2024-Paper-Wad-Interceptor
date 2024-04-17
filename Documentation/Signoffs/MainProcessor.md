@@ -1,16 +1,10 @@
 # **Function:**
 
-The Jetson Nano plays a pivotal role in this project as the central processing unit responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the jetson.
+The main processor unit is responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the main processor.
 
-Moreover, the Jetson Nano is instrumental in controlling the firing mechanism of the golf ball interceptor. Through the data it calculates and processes, it determines the optimal timing for activating the interceptor, ensuring precise targeting of the golf ball, particularly within the designated "kill zone."
+![System](../Images/MainProcessor/mainProcessorOverview.png)
 
-The Jetson Nano will also contain a pause switch, this pause switch is to stop the mechanism from firing anymore projectiles. It will be a physical switch that will interact with the Jetson Nano directly and alter scripts inside the Jetson to stop functionality.
-
-# **Buildable Schematic:**
-![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
-
-*Figure 1: Jetson Nano Wiring Schematic*
-
+*Figure 1: Main Processor Overview*
 
 ## **Constraints:**
 
@@ -36,6 +30,11 @@ The Jetson Nano will also contain a pause switch, this pause switch is to stop t
 
 **Pausing Processes:** Since the rulebook from Devcom states the requirement for a pause switch integrated with the interceptor to stop the machine from firing, the system will require an integrated switch to halt operations inside the Jetson Nano [9].
 
+
+# **Buildable Schematic:**
+![System](../Images/MainProcessor/JetsonNanoGPIODiagram.png)
+
+*Figure 2: Jetson Nano Wiring Schematic*
 
 ## **Analysis of Using Jetson Nano:**
 
