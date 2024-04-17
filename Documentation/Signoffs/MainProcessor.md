@@ -47,7 +47,7 @@ Python remains the primary programming language for interfacing with the Jetson 
 
 **Data Processing and Calculations:** Upon receiving the image detection data, the Jetson Nano executes trajectory calculations to determine the golf ball's velocity, height, distance, and direction. Mathematical algorithms will be used to accurately determine the data.
 
-The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the physical height of the two possible positions [1]. The given information from the image processing will be the given X-Axis and Y-Axis that will be used to determine the object height. We can figure out the wire the ball is on and the height the ball will be on.
+The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the physical height of the two possible positions [1]. The given information from the image processing will be the given X-Axis and Y-Axis that will be used to determine the object height. Since the ball ranges from 43 inches to 50 inches in height, the system can figure out the wire the ball is on and the height the ball will be on.
 ~~~math
 Object Height = ( Physical Height * Y-Axis )/( Image Height ) + Ball Offset
 ~~~
