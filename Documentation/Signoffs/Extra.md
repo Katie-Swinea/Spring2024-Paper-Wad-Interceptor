@@ -5,6 +5,7 @@
 Figure 1: Extra subsystem and the pause switch can be seen in this figure. The resistor values will be 250 Ohm.
 
 - The goal of this subsystem is to adhere to the rules as provided by the customer, Devcom, and to add lights and sounds to the design which will add to the point total as provided by Devcom. The system needs a pause switch to deactivate it between rounds. The system will also include lights and sounds before launching a projectile to add to the decoration portion of the design.
+- 
 ## **Constraints:**
 
 | **Number:** | **Constraint:** | **Origin:** | 
@@ -53,6 +54,7 @@ The interceptor sound controller will be an Arduino Uno r3 [6] and it will be ma
 | Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
 | Arduino Uno REV3 [A000066] | 1 | $27.60 | $49.66 |
 | CUI Devices, CPI-137-83T (Buzzer) | 1 | $1.71 | $51.37 |
+| PCB | 1 | $ | $ |
 
 ## References
 1. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
