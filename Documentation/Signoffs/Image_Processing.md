@@ -22,9 +22,9 @@ from the rest of the image.
 
 The system is purely software. Any connections for the processor should be shown in that subsystems schematic.
 
-A flow char of the code is given below.
+A flow chart of the code is given below.
 
-
+![Function](../Images/Image_Processing/Flow_Chart.PNG)
 
 This shows the steps for each major calculation and what is necessary for each calculation. This process will be done twice to recieve two positions for the
 speed calculation done by the processor.
