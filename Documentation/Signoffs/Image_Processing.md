@@ -17,9 +17,9 @@ The goal of this subsystem is to receive and process the data from the camera se
 2. The program needs to use the coordinates from the camera to provide coordinates for aiming at the fishing line the golf ball is on which are about four
    inches apart at the start of the trajectory and know which variable height the ball is out which different by about seven inches. If the coordinates are
    off by an inch, the wire and height can be assumed to get the position of the golf ball.
-3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to aim
-   the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved and
-   interpreted.
+3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to
+   aim the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved
+   and interpreted.
 
 **Buildable Schematic**
 
@@ -44,9 +44,8 @@ The results of such operations and algorithms can be seen below.
 
 ![Function](../Images/Image_Processing/Detecting_Red.png)
 
-The level of color detection can be determined by the number of pixels that are detected of a color using the upper and lower bounds. This can be adjusted
-to detect the ball at longer distances when the pixels are smaller. The Big O analysis of this function would be O(n) because it is an iterative function
-that will go through all of the pixels provided [1].
+This can be adjusted to detect the ball at longer distances when the amount of pixels repersenting the object are smaller. The Big O analysis of this
+function would be O(n) because it is an iterative function that will go through all of the pixels provided [1].
 
 
 *Distance and Coordinates*
