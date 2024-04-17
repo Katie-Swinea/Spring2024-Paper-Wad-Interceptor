@@ -45,7 +45,6 @@ The interceptor sound controller will be an Arduino Uno r3 [8] and it will be ma
 
 
 ## Bill of Materials
-Quantity / URL / COST TOTAL
 
 | **Items:** | **Quantity:** | **Price:** | **Total:** |
 | --- | --- | --- | --- |
