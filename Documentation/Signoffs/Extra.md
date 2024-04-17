@@ -45,6 +45,7 @@ The interceptor sound controller will be an Arduino Uno r3 [8] and it will be ma
 
 
 ## Bill of Materials
+Quantity / URL / COST TOTAL
 
 | **Items:** | **Quantity:** | **Price:** | **Total:** |
 | --- | --- | --- | --- |
@@ -53,9 +54,20 @@ The interceptor sound controller will be an Arduino Uno r3 [8] and it will be ma
 | SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
 | Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
 | Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
-| Arduino Uno REV3 [A000066] | 1 | $27.60 | $49.66 |
-|  KINGSTATE KPEG242 (Buzzer) | 1 | $2.13 | $51.79 |
-| PCB | 1 | $10.00 | $61.79 |
+| Arduino Uno REV3 [A000066] (Arduino) | 1 | $27.60 | $49.66 |
+| KINGSTATE KPEG242 (Buzzer) | 1 | $2.13 | $51.79 |
+
+
+| **Item:** | **URL** |
+| --- | --- |
+| CIT Relay and Switch, ANT11SF1CQE (Switch) |  https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 |
+| Texas Instruments, CD74AC14E (Inverter) | https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756 |
+| SunLED, XLUG12D (Green LED) | https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838 |
+| Kingbright, WP7113ID (Red LED) | https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663 |
+| Ohmite, WHD250FET (250 Ohm Resistor) | https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029 |
+| Arduino Uno REV3 [A000066] (Arduino) | https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/ref=asc_df_B008GRTSV6?tag=bngsmtphsnus-20&linkCode=df0&hvadid=79852149837934&hvnetw=s&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583451676566041&th=1 |
+| KINGSTATE KPEG242 (Buzzer) | https://www.newark.com/kingstate/kpeg242/piezo-buzzer-4-1khz-70db/dp/61M7049?mckv=s_dc|pcrid||plid||kword||match|e|slid||product|61M7049|pgrid|1231453304461926|ptaid|pla-4580565455222458|&msclkid=4ff6ddb1429613a4db67bb914883a843&CMP=KNC-BUSA-GEN-Shopping-ALL |
+
 
 ## References
 1. A. Hadhazy, “What are the limits of human vision?,” BBC News, https://www.bbc.com/future/article/20150727-what-are-the-limits-of-human-vision (accessed Apr. 17, 2024). 
