@@ -1,10 +1,11 @@
-# **Function:**
-
-The main processor unit is responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the main processor.
 
 ![System](../Images/MainProcessor/mainProcessorOverview.png)
 
 *Figure 1: Main Processor Overview*
+
+# **Function:**
+
+The main processor unit is responsible for receiving, analyzing, and interpreting data from the image-detecting system to calculate and aim the interceptor. Its primary function revolves around processing data related to a golf ball's trajectory in real time. The Jetson Nano serves as the brain of the system, consolidating data from the local camera that passes the data to the main processor.
 
 ## **Constraints:**
 
