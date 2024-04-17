@@ -11,17 +11,17 @@ The main processor unit is responsible for receiving, analyzing, and interpretin
 
 | NO. |	Constraint | Origin |
 |-----|------------|--------|
-| 1	| Time Constraints - Real-time data processing for trajectory prediction | System Constraint |
-| 2	| Processing Speed - Optimization for efficient calculations | System Constraint |
-| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation | Programming Constraint |
-| 4	| Resource Utilization - Preventing overload of system resources | System Constraint |
+| 1	| Time Constraints - Real-time data processing for trajectory prediction for the golf ball speed varying from 1.9 seconds to 7.4 seconds | System Constraint |
+| 2	| Processing Speed - Optimization for efficient calculations to calculate the speed, wire, and variable height in time| System Constraint |
+| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation that is received from external boards | Programming Constraint |
+| 4	| Resource Utilization - Preventing overload of system resources since the board has 1.43GHz with quad cores, want to utilize them for speed efficiency | System Constraint |
 | 5 | Pausing Processes: The system needs a pause state to stop other scripts from activating firing mechanisms. | Rulebook |
 
 
 
 ## **Fulfilling Constraints:**
 
-**Time Constraints:** Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. The programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically. [2]
+**Time Constraints:** Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. THe ball's travel time varies from 1.9 seconds to 7.4 seconds and the programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically [2].
 
 **Processing Speed:** Complex calculations and simultaneous tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. Optimizing algorithms and utilizing hardware and multi-core techniques can help minimize processing speed limitations.
 
@@ -50,16 +50,22 @@ Python remains the primary programming language for interfacing with the Jetson 
 The height calculations will need the height of the camera, the image height of the bounding box in pixels, and the physical height of the two possible positions [1]. The given information from the image processing will be the given X-Axis and Y-Axis that will be used to determine the object height. We can figure out the wire the ball is on and the height the ball will be on.
 ~~~math
 Object Height = ( Physical Height * Y-Axis )/( Image Height ) + Ball offset
-
+~~~
+~~~math
 Object Height = (4 inches * 730 pixels ) / ( 1080 pixels) + 42 inches
+~~~
+~~~math
 = (2,920 pixel inches)/(1080 pixels) + 42 inches = 44.7 inches
 ~~~
 
 The Speed calculations will be taking the distance or position of the object over time [1]. The frames of the objects location can calculate the speed using the following equation. The speed calculations will be determined using different distances and time frames that have been sent from the image detection to figure out how fast the ball is traveling. While using backlogged data of testing speeds, the system will also figure out speeds and compare to increase the overall accuracy of the speed [1].
 ~~~math
 Speed = (DistanceOne - DistanceTwo) / Change in Time Between Frames
-
+~~~
+~~~math
 Speed = (53 inches - 48 inches) / (0.1692 seconds)
+~~~
+~~~math
 = (5 inches)/(0.1692 seconds) = 29.55 inches/second
 ~~~
 
