@@ -8,15 +8,18 @@ The goal of this subsystem is to receive and process the data from the camera se
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1| Must be able to distinguish the golf ball from surroundings based on golf ball's shape and size| System Requirment|
-| 2| Must be able to extract the coordinates of the golf ball from the image| System Requirment|
-| 3| Must be able to perform calculations in 250 ms| System Requirment|
+| 1| Must be able to distinguish the golf ball from surroundings based on golf ball's color| System Requirment|
+| 2| Must be able to extract the coordinates of the golf ball with an inch of accuracy| System Requirment|
+| 3| Must be able to recieve the data and perform calculations in 500 ms| System Requirment|
 
 1. In order for the system to properly detect the golf ball and extract the necessary information for aiming, the system needs to distinguish the golf ball
-from the rest of the image.
-2. The program needs to use the coordinates from the camera to provide coordinates for aiming.
+   from the rest of the image.
+2. The program needs to use the coordinates from the camera to provide coordinates for aiming at the fishing line the golf ball is on which are about four
+   inches apart at the start of the trajectory and know which variable height the ball is out which different by about seven inches. If the coordinates are
+   off by an inch, the wire and height can be assumed to get the position of the golf ball.
 3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to aim
-   the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire.
+   the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved and
+   interpreted.
 
 **Buildable Schematic**
 
@@ -31,47 +34,64 @@ speed calculation done by the processor.
 
 **Analysis:**
 
-The first issue is to detemine how the color of the object will be detected. Since the object is white, an HSV or hue, saturation, value scale will be used
-to determine the color scheme of the picture. There is an algorithm that can be used for this avliable in coordination with OpenCV resources. The algorithm 
-uses a function called inRange to determine and limit the colors being found. It takes in an image and the upper and lower limits of the color range. 
-After this, a mask is established to search for the specific color being used using a bitwise and to detect the pixels with the color. Doing this for light
-colors like grey result in detection shown in the figure below.
+*Detection*
 
-![Function](../Images/Image_Processing/Detecting_Grey.png)
+The golf ball will be wrapped in foil and painted matte red. This will allow the object to be tracked using color. This can be done using a red, green, and
+blue color detection. The boundaries for the color are determined and entered in as limits. For these purposes, red will have the highest boundaries while
+green and blue will be much lower but still there to account for slight shading differences in the environment. These parameters and the image are then sent
+to a function called inRange. This will apply a mask to the array of pixels repersenting the image with a maske to determine the objects with the color.
+The results of such operations and algorithms can be seen below.
 
-The level of color detection can be detemined by the number of pixels that are detected of a color using the upper and lower bounds. This can be adjusted to
-detect the ball at longer distances when the pixels are smaller. The Big O analysis of this function would be O(n) because it is an iterative function that
-will go through all of the pixels provided [1].
+![Function](../Images/Image_Processing/Detecting_Red.png)
 
-In order to ensure the object is detected, detecting the shape of the object will also be necessary. This can be done using blob detection which takes in
-parameters to filter out objects based on size, shape, and contours. The golf ball can be detected using this since it should be the only spherical object in
-the field of view in the small size range of a golf ball. The result of using blob detection algorithms avliable in OpenCV can be seen below.
+The level of color detection can be determined by the number of pixels that are detected of a color using the upper and lower bounds. This can be adjusted
+to detect the ball at longer distances when the pixels are smaller. The Big O analysis of this function would be O(n) because it is an iterative function
+that will go through all of the pixels provided [1].
 
-![Function](../Images/Image_Processing/Blob_1.png)
-![Function](../Images/Image_Processing/Blob_2.png)
 
-The level of detection can be adjusted as necessary to account for distance through experimentation. The Big O analysis for these algorithms are O(n) since
-it is another iterative algorithm that looks at each pixel [2].
+*Distance and Coordinates*
 
-Next, the team needs to be able to determine the distance of the object. This can be done by coordinating the pixels of color detected from the image with 
-the distance of those pixels measured by the camera. The depth value is provided in a matrix for each pixel. The color detection or blob dection used to
-identify the object also goes through this array before determining which pixels are the object. The result of the mask for the pixels of the object will be
-applied as a mask to the depth matrix. This will give the distance of the pixels repersenting the object and provide the distance of the object. This would
-be O(n) because the number of pixels is still the only variable being used and affecting the processing time. These calculations would result in the final
-information that is used for the processor to determine the signals being sent to the launcher.
+The distance of the object can be found using another iterative function for another linear algorithm. The camera returns an array with the depth of each 
+pixel. This array is compared with the array holding the pixels that repersent the golf ball. The result is the depth of each pixel of the golf ball.
 
-Once the distance is obtained, a comparison can be made between a set object, like the sensor post, and the golf ball. This will obtain an x coordinate for
-where the ball is located on the game board. This will be done by finding out how many pixels are between the ball and the sensor post. The team can then
-use the number of pixels repersenting the sensor posts height and the actual height of the post to get a repersentation of height for each pixel. The pixels
-between the golf ball and the ground or some other set point at a set height like the sensor post or A-frame can be used to find the height of the ball.
-This will provide x and y coordinates which can be used to determine which wire the golf ball is on.
+The object's coordinates can be determined through comparisons. Using edge of the field of view (FOV), the coordinates can be found. The pixels in between
+the edge and the object can be counted. Using the width of each pixel, the total distance can be found. The pixel width can be found using the equations 
+
+FOV width = 2 * tan(FOV/2) * distance and FOV height = 2 * tan(FOV/2) * distance
+
+width per pixel = FOV width/horizontal resolution and height per pixel = FOV height/vertical resolution
+
+For the distance of six feet the result will be
+
+FOV width = 2 * tan(69/2) * 6 = 8.25 feet and FOV height = 2 * tan(42/2) * 6 = 4.61 feet
+
+width per pixel = 8.25/1920 = 0.004296 feet/pixel * 12 = 0.05155 inches/pixel
+
+height per pixel = 4.61/1080 * 12 = 0.004265 feet/pixel = 0.05118 inches/pixel
+
+The amount of inches for the width and height of the pixels can be used to find out the x and y coordinates by multiplying the pixels by the numbers
+provided. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to find the
+distance. This should allow about 0.1 inches of error for the coordinates. These calculations are basic arthemetic and should be O(1). Counting the pixels is another O(n) operation.
+
+*Speed*
 
 The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
-102 frames per second to find color which is the same length as finding distance based on the Big O analysis. This means it takes 9.8 ms to process the
-image information [3]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The arithmetic processes for determining speed and
-other calculations to send to the launcher are considered to have O(1). This means the most limiting time factor is the speed calculation which will take
-the time to get the two depths and make the calculation. This will be 76.46 ms which is well within the 1/8 of time of the golf ball's speed that is
-necessary.
+102 frames per second to find color and do several image alterations which is the same length as finding distance based on the Big O analysis. This means it
+takes 9.8 ms to process the image information [2]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
+the processor and camera processes data at 4.8 Gbs. Each pixel is 8 bits and has 3 colors so the total is 
+
+8 * 3 * 1080 * 1920 = 0.4977 Gb. 
+
+Taking the amount of data over the rate of transfer gives 
+
+0.4977 Gb/4.8 Gbs = 103.68 ms. 
+
+The arithmetic processes for determining speed and other calculations to send to the launcher are considered to have O(1). This means the most limiting time
+factor is how long it takes to get two positions. 
+
+33.33 ms + 103.68 ms + 9.8 ms + 33.33 ms + 103.68 ms + 9.8ms = 293.62 ms. 
+
+This time period is well within the almost 1/4 time of the ball's travel given for the data to be collected and processed for the aiming and launching.
 
 **Bill of Materials:**
 
@@ -82,7 +102,5 @@ This subsystem is implemented as part of the processor. No additional parts need
 [1] A. Rosebrock, “OpenCV and python color detection,” PyImageSearch, https://pyimagesearch.com/2014/08/04/opencv-python-color-detection/ 
 (accessed Apr. 15, 2024). 
 
-[2] “Blob detection with opencv,” HackMD, https://hackmd.io/@lKuOpplzSUWLhLim2Z7ZJw/SkL-qU2Wh (accessed Apr. 16, 2024). 
-
-[3] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
+[2] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
 https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
