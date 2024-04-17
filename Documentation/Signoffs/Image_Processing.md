@@ -45,8 +45,8 @@ The results of such operations and algorithms can be seen below.
 ![Function](../Images/Image_Processing/Detecting_Red.png)
 
 This can be adjusted to detect the ball at longer distances when the amount of pixels repersenting the object are smaller. The Big O analysis of this
-function would be O(n) because it is an iterative function that will go through all of the pixels provided [1]. For more cluttered environments with a variety of color and lighting, objects can still be detected and tracked. An example of this can be seen below.
-
+function would be O(n) because it is an iterative function that will go through all of the pixels provided [1]. For more cluttered environments with
+variety of color and lighting, objects can still be detected and tracked. An example of this can be seen below [2].
 
 ![Function](../Images/Image_Processing/Detecting_Clutter.png)
 
@@ -82,7 +82,7 @@ distance. This should allow about 0.1 inches of error for the coordinates. These
 
 The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
 102 frames per second to find color and do several image alterations which is the same length as finding distance based on the Big O analysis. This means it
-takes 9.8 ms to process the image information [2]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
+takes 9.8 ms to process the image information [3]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
 the processor and camera processes data at 4.8 Gbs. Each pixel is 8 bits and has 3 colors so the total is 
 
 8 * 3 * 1080 * 1920 = 0.4977 Gb. 
@@ -107,5 +107,7 @@ This subsystem is implemented as part of the processor. No additional parts need
 [1] A. Rosebrock, “OpenCV and python color detection,” PyImageSearch, https://pyimagesearch.com/2014/08/04/opencv-python-color-detection/ 
 (accessed Apr. 15, 2024). 
 
-[2] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
+[2] A. Rosebrock, “Ball tracking with opencv,” PyImageSearch, https://pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/ (accessed Apr. 17, 2024). 
+
+[3] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
 https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
