@@ -46,7 +46,7 @@ The extra subsystem requires a voltage input of 9 volts. This system must be abl
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad5.png)
+![Function](../Images/Device_Power/kicad6.png)
 
 *power subsystem buildable schematic*
 
