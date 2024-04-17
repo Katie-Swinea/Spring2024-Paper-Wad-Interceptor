@@ -8,7 +8,7 @@ The goal of this subsystem is to receive and process the data from the camera se
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1| Must be able to distinguish the golf ball from surroundings based on golf ball characteristics| System Requirment|
+| 1| Must be able to distinguish the golf ball from surroundings based on golf ball's shape and size| System Requirment|
 | 2| Must be able to extract the coordinates of the golf ball from the image| System Requirment|
 | 3| Must be able to perform calculations in 250 ms| System Requirment|
 
@@ -45,7 +45,7 @@ will go through all of the pixels provided [1].
 
 In order to ensure the object is detected, detecting the shape of the object will also be necessary. This can be done using blob detection which takes in
 parameters to filter out objects based on size, shape, and contours. The golf ball can be detected using this since it should be the only spherical object in
-the field of view. The result of using blob detection algorithms avliable in OpenCV can be seen below.
+the field of view in the small size range of a golf ball. The result of using blob detection algorithms avliable in OpenCV can be seen below.
 
 ![Function](../Images/Image_Processing/Blob_1.png)
 ![Function](../Images/Image_Processing/Blob_2.png)
