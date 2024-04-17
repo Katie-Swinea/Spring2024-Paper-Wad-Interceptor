@@ -2,7 +2,7 @@
 
 ![System](../Images/Extra_jrneal20.png)
 
-Figure 1: Extra subsystem and the pause switch can be seen in this figure. The resistor values will be 250 Ohm.
+Figure 1: Extra subsystem and the pause switch can be seen in this figure.
 
 - The goal of this subsystem is to adhere to the rules as provided by the customer, Devcom, and to add lights and sounds to the design which will add to the point total as provided by Devcom. The system needs a pause switch to deactivate it between rounds. The system will also include lights and sounds before launching a projectile to add to the decoration portion of the design.
 - 
@@ -12,15 +12,16 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure. The r
 | --- | --- | --- |
 | 1. |  The interceptor shall have a switch that sets the system into a pause state that will keep the interceptor from firing. | Rulebook |
 | 2. | The voltage switched by the pause switch shall be 5V. | System Constraint|
-| 3. | The interceptor must have lights. These lights must be powered by a 5V source from the processor block. | Rulebook / System |
-| 4. | The interceptor must make sounds before firing. The sounds will be powered by a voltage of 5V. | Rulebook / System |
+| 3. | The interceptor must have lights that are bright enough to be seen by the judges. These lights must be powered by a 5V source from the processor block and must emit a light that falls within the visual light spectrum of 380 to 720 nanometers [1]. | Rulebook / System |
+| 4. | The interceptor must make sounds before firing. The sounds will be powered by a voltage of 5V and the sounds will need to fall within the range of human hearing which is 20 to 20,000Hz or 0 - 120db [2]. The sound that is played should not damage anyone's ears therefore it should not be over 85db for a long period of time [2]. | Rulebook / System |
    
 1. One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have a pause switch that keeps the interceptor from firing when the board is being reset. This switch will need to be physical, but in the implementation, it will run to the processor where it will prevent it from outputting any signals. When the switch is engaged it will keep the processor block from outputting signals to the mechanical system. This will ensure that the interceptor does not fire while the judges are in the competition area.
    
 2. The circuit that is implemented by the pause switch needs to fall within the limitations of the processor block. Based on the processors that could be chosen the voltage that will be switched will be 5V.
 
-3. To add to the total points for the competition, the interceptor must have lights. This constraint can be found in the official rulebook for the competition. Any amount of lights is sufficient to count for the constraint. Therefore two arrays of ten LED's will be used for this. These LED's must be able to be powered by a 5V source that comes from the processor block. 
-4. To add to the total points for the competition, the interceptor must make sounds before firing. This constraint can be found in the official rulebook for the competition. The piezo buzzer must be able to work with an output of the Arduino Uno R3 which will be 5V. 
+3. To add to the total points for the competition, the interceptor must have lights. This constraint can be found in the official rulebook for the competition. Any amount of visual light is sufficient to count for the constraint. Therefore two arrays of ten LED's will be used for this. These LED's must be able to be powered by a 5V source that comes from the processor block. These LED’s emit light with a wavelength of 565nm for the green LED and 617nm for the red LED. This is with 10mA of current and in the current setup 20mA are being supplied which is more than enough to show these lights will be visible.
+   
+5. To add to the total points for the competition, the interceptor must make sounds before firing. This constraint can be found in the official rulebook for the competition. The piezo buzzer must be able to work with an output of the Arduino Uno R3 which will be 5V. It must also fall within the human hearing range which is 20 to 20,000Hz or 0 to 120db and must not exceed 85db for long periods which will keep the noise at a save level [2]. The buzzer that has been chosen operates from  to 16 VDC and operates at a minimum of 70db at 12V therefore at the voltage that is being used, the sounds will be at a safe level for the small periods of time that they will be used. 
    
 ## Buildable Schematic
 ![System](../Images/Buildable_Extra_jrneal.png)
@@ -40,7 +41,7 @@ $$V=IR$$
 
 The maximum current that can be handled by the LED's is 25mA for the green LED's and for the red it is 30mA. Because of the 5V being used a resistor value was chosen that would keep the LED's within their ratings. Therefore, Ohm's Law shows that the current will be 5V divided by 250 Ohm's which will yield a current of 20mA of current which falls within the required maximums of 25mA and 30mA. The inverter has a maximum of 100mA of continuous current through Vcc or GND using the 250Ohm resistor means that a current of 20mA is calculated which will fall within the 100mA max.
 
-The interceptor sound controller will be an Arduino Uno r3 [6] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable. This sound would be played when the processor sends the proper signal. This means that the sounds will play for a defined amount of time that will start when the processor gives the proper signal to the Arduino. The buzzer that was chosen is the CUI Devices CPI-137-83T piezo buzzer [7]. This buzzer is rated for 4V to 10V and a frequency of 3800Hz to 4800Hz. This means that the output of the Arduino should not exceed 10V and 4800Hz. 
+The interceptor sound controller will be an Arduino Uno r3 [6] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code and documentation. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable. This sound would be played when the processor sends the proper signal. This means that the sounds will play for a defined amount of time that will start when the processor gives the proper signal to the Arduino. The buzzer that was chosen is the KINGSTATE KPEG242 [7]. This buzzer is rated for 3V to 16V DC and a frequency of 3600Hz to 4600Hz. This means that the output of the Arduino should not exceed 16V and 4600Hz.  
 
 
 ## Bill of Materials
@@ -53,15 +54,17 @@ The interceptor sound controller will be an Arduino Uno r3 [6] and it will be ma
 | Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
 | Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
 | Arduino Uno REV3 [A000066] | 1 | $27.60 | $49.66 |
-| CUI Devices, CPI-137-83T (Buzzer) | 1 | $1.71 | $51.37 |
-| PCB | 1 | $ | $ |
+|  KINGSTATE KPEG242 (Buzzer) | 1 | $2.13 | $51.79 |
+| PCB | 1 | $10.00 | $61.79 |
 
 ## References
+1. A. Hadhazy, “What are the limits of human vision?,” BBC News, https://www.bbc.com/future/article/20150727-what-are-the-limits-of-human-vision (accessed Apr. 17, 2024). 
+2. “What is the human hearing range in hz and DB?: Miracle-ear,” Miracle Ear, https://www.miracle-ear.com/blog-news/human-hearing-range (accessed Apr. 17, 2024). 
 1. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
 2. “Kingbright WP7113ID,” Digikey, https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663 (accessed Apr. 16, 2024). 
 3. “CD74AC14E Texas Instruments | Integrated Circuits (ICS) | digikey marketplace,” Digikey, https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756 (accessed Apr. 16, 2024). 
 4. “SunLED XLUG12D,” Digikey, https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838 (accessed Apr. 16, 2024).
 5. “Ohmite WHD250FET,” Digikey, https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029 (accessed Apr. 16, 2024). 
 6. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
-7. “CPI-137-83T datasheet - audio indicators | buzzers - cui ...,” CUI Devices, https://www.cuidevices.com/product/resource/cpi-137-83t.pdf (accessed Apr. 16, 2024). 
+7. https://www.newark.com/kingstate/kpeg242/piezo-buzzer-4-1khz-70db/dp/61M7049?mckv=s_dc|pcrid||plid||kword||match|e|slid||product|61M7049|pgrid|1231453304461926|ptaid|pla-4580565455222458|&msclkid=4ff6ddb1429613a4db67bb914883a843&CMP=KNC-BUSA-GEN-Shopping-ALL
 ‌
