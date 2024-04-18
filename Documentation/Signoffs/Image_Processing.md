@@ -10,7 +10,7 @@ The goal of this subsystem is to receive and process the data from the camera se
 |-----|---------------------------------------------------------------------|------------------|
 | 1| Must be able to distinguish the golf ball from surroundings based on golf ball's color| System Requirment|
 | 2| Must be able to extract the x,y coordinates of the golf ball with an inch of accuracy to distinguish between the wires and variable height| System Requirment|
-| 3| Must be able to recieve the data and perform calculations in 500 ms to allow the interceptor time to aim and shoot based on the calculations| System Requirment|
+| 3| Must be able to recieve the data and perform calculations in 250 ms to allow the interceptor time to aim and shoot based on the calculations| System Requirment|
 
 1. In order for the system to properly detect the golf ball and extract the necessary information for aiming, the system needs to distinguish the golf ball
    from the rest of the image.
@@ -83,20 +83,20 @@ distance. This should allow about 0.1 inches of error for the coordinates. These
 The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
 102 frames per second to find color and do several image alterations which is the same length as finding distance based on the Big O analysis. This means it
 takes 9.8 ms to process the image information [3]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
-the processor and camera processes data at 4.8 Gbs. Each pixel is 8 bits and has 3 colors so the total is 
+the processor and camera processes data at 5 Gbs. Each pixel is 8 bits and has 2 color repersentation bytes so the total is 
 
-8 * 3 * 1080 * 1920 = 0.4977 Gb. 
+8 * 2 * 1080 * 1920 = 0.03318 Gb. 
 
 Taking the amount of data over the rate of transfer gives 
 
-0.4977 Gb/4.8 Gbs = 103.68 ms. 
+0.03318 Gb/5 Gbs = 6.64 ms. 
 
 The arithmetic processes for determining speed and other calculations to send to the launcher are considered to have O(1). This means the most limiting time
 factor is how long it takes to get two positions. 
 
-33.33 ms + 103.68 ms + 9.8 ms + 33.33 ms + 103.68 ms + 9.8ms = 293.62 ms. 
+33.33 ms + 6.64 ms + 9.8 ms + 33.33 ms + 6.64 ms + 9.8ms = 99.54 ms. 
 
-This time period is well within the almost 1/4 time of the ball's travel given for the data to be collected and processed for the aiming and launching.
+This time period is well within the almost 1/8 time of the ball's travel given for the data to be collected and processed for the aiming and launching.
 
 **Bill of Materials:**
 
