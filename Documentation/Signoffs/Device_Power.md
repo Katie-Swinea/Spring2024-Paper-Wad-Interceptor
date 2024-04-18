@@ -46,7 +46,7 @@ The extra subsystem requires a voltage input of 9 volts. This system must be abl
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad7.png)
+![Function](../Images/Device_Power/kicad8.png)
 
 *power subsystem buildable schematic*
 
@@ -105,7 +105,7 @@ The total power of the entire subsystem will be:
 
 ## Fulfilling Constraints
 
-This switch has one purpose and that is to de-energize the mechanical system. This can be done by cutting off the power from the AC-DC convertor to the motors themselves. This will be accomplished with the 7105SYZQE [6]. This switch is rated for 5 amps/ 28 volts DC. This will completely encapsulate the power produced by the mechanical transformer. <sup>1</sup>
+This switch has one purpose and that is to de-energize the mechanical system. This can be done by cutting off the power from the AC-DC convertor to the motors themselves. This will be accomplished with the 7105SYZQE [5]. This switch is rated for 5 amps/ 28 volts DC. This will completely encapsulate the power produced by the mechanical transformer. <sup>1</sup>
 
 The system must convert AC power from the wall outlet and output a DC signal. This system will use three separate AC to DC converters. The first will produce a signal of 5 volts/ 4 amps (20 watts). This converter will power the main/processor. The transformer will be the 5V 4A Power Supply Adapter - COOLM AC 100-240V to DC 5V/4A 20W Charger Plug DC 5.5mm x 2.5mm Universal [2]. This transformer was designed to power a Jetson Nano. The second will produce a signal of 24 volts/ 2 amps (48 watts). This converter will power the mechanical unit. The transformer will be the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC [4]. The final will produce a 9 volt/ 1.5 amp signal (13.5 watts). This convertor will be the Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter for 9Vdc Arduino UNO R3 [1]. This transformer was designed to power the Arduino UNO R3. <sup>2</sup>
 
@@ -117,21 +117,16 @@ The system must supply a 24 volt/ 1.5 amp signal for the mechanical unit. This w
 
 To supply the appropriate amount of power to the Arduino UNO R3, the system must produce 9 volts. To achieve this, the system will use the Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter for 9Vdc Arduino UNO R3 [1]. This convertor was designed to power Arduino UNO R3s and produces exactly what the extra system needs. The system only needs 0.5 A, but by using this supply, the Arduino will only draw what it needs. <sup>6</sup>
 
-
-## Application
-
-To connect the mechanical unit to power, this system will utilize a soldered bread board. This board will be the Double Sided ENIG Protoboard [5]. This board will also connect the E-stop to the two parts. The board will be encased in a 3-D printed box that will have the E-stop mounted on top for easy access. The other two systems will be powered directly from the power strip. 
-
 ## BOM
 |Item Name | Description | Subsystems | Part Number | Manufacturer | Quantity | Price | Total |
 |----------|-------------|------------|-------------|--------------|----------|-------|-------|
 |AC to DC 24V 2A Power Supply Adapter | Converts wall outlet power to a 24V/ 2A output | Mechanical | B07RTWD725 | Security-01 | 1 | 9.99 | 9.99 |
-|20 Pcs DC Power Cable | 20 DC plug socket wires to connect to Mechanical system | Mechanical | B0BTHSDF4S | CENTROPOWER | 1 | 9.99 | 19.98 |
-|CCCEI Metal Power Strip with 6 Outlets | Acts as the power switches between the AC adaptors and the wall for each system | Mechanical, Processor, Extra | B08HYLW3GX | CCCEI | 1 | 16.99 | 36.97 |
-| E-stop switch (7105SYZQE) | Toggle switch rated for 120 V/ 5A | Mechanical | 7105SYZQE | C&K | 1 | 10.89 | 47.86 |
-|5V 4A Power Supply Adapter | Converts wall outlet power to a 5V/ 4A output | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 61.54 |
-|Gonine 9V DC Power Supply Cord | Converts wall outlet power to a 9V/ 1.5A output | Extra | B099J3JCVX |69 Gonine | 1 | 12.69 | 74.23 |
-|Double Sided ENIG Protoboard | Will act as the connection between the AC adaptor, E-stop and mechanical system | Mechanical | B0BSHG21P5 | SchmalzTech, LLC | 1 | 3.59 | 77.82 |
+|12V DC Power Connector | 10 male and 10 female 12V DC Power Connectors | Mechanical | ‎DCPLUG-MF | CENTROPOWER | 1 | 7.99 | 17.98 |
+|CCCEI Metal Power Strip with 6 Outlets | Acts as the power switches between the AC adaptors and the wall for each system | Mechanical, Processor, Extra | B08HYLW3GX | CCCEI | 1 | 16.99 | 34.97 |
+| E-stop switch (7105SYZQE) | Toggle switch rated for 120 V/ 5A | Mechanical | 7105SYZQE | C&K | 1 | 10.89 | 45.86 |
+|5V 4A Power Supply Adapter | Converts wall outlet power to a 5V/ 4A output | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 59.54 |
+|Gonine 9V DC Power Supply Cord | Converts wall outlet power to a 9V/ 1.5A output | Extra | B099J3JCVX |69 Gonine | 1 | 12.69 | 72.23 |
+
 
 
 
@@ -145,8 +140,6 @@ To connect the mechanical unit to power, this system will utilize a soldered bre
 
 [4] “AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC,” Amazon, https://www.amazon.com/Power-Supply-Adapter-5-5mm-Listed/dp/B08T636YVR/ref=asc_df_B08T636YVR/?tag=hyprod-20&linkCode=df0&hvadid=507792222889&hvpos=&hvnetw=g&hvrand=12806499727394812437&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1262398291870&psc=1&mcid=edd9d085cf3b3cc6915cbdb81a548b03&gclid=Cj0KCQjwq86wBhDiARIsAJhuphlXeLT83NoSYTl9ESdo2cRMDwrTjeLdDQEmibtQ-LtuMLKLdhcwaioaAohBEALw_wcB (accessed Apr. 8, 2024). 
 
-[5] “Schmalztech premium solderless breadboard/Electronics Prototyping Bread Board for quick circuit building, Arduino, or Raspberry Pi, st-BB (470 position): Amazon.com: Industrial & Scientific,” Amazon, https://www.amazon.com/SchmalzTech-Solderless-Breadboard-Electronics-Prototyping/dp/B0C3YZRMR5 (accessed Apr. 8, 2024). 
+[5] 7000 series miniature toggle switches, https://www.ckswitches.com/media/1394/7000toggle.pdf (accessed Apr. 16, 2024). ‌
 
-[6] 7000 series miniature toggle switches, https://www.ckswitches.com/media/1394/7000toggle.pdf (accessed Apr. 16, 2024). ‌
-
-[7] Amazon, https://www.amazon.com/dp/B0BTHSDF4S/ref=sspa_dk_detail_1?pd_rd_i=B0BTHRYSDX&pd_rd_w=hEv4T&content-id=amzn1.sym.386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_p=386c274b-4bfe-4421-9052-a1a56db557ab&pf_rd_r=ZRBWFE7QM0A3Z2BGD3RQ&pd_rd_wg=E86ve&pd_rd_r=a270ba38-3242-4719-bd84-0cc3408e87f7&s=electronics&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1 (accessed Apr. 15, 2024).  
+[6] Amazon, https://www.amazon.com/Power-Connector-Female-Adapter-Camera/dp/B07C61434H/ref=asc_df_B07C61434H/?tag=&linkCode=df0&hvadid=366410038949&hvpos=&hvnetw=g&hvrand=13676490397966405418&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-802228450796&mcid=6bdef984700c3733812519939dcd2cd0&ref=&adgrpid=75347436719&gclid=CjwKCAjw5v2wBhBrEiwAXDDoJfHTcq-kv3VJspmvW-KItjRY-NGxdCKbqlVLe42_jJeCY38wutk-CRoCieQQAvD_BwE&th=1 (accessed Apr. 17, 2024).  
