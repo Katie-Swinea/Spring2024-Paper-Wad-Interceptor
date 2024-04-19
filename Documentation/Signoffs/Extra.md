@@ -38,8 +38,7 @@ For the pause switch component, there are many different switches that can be ch
 
 When the output of the switch is connected to 5V this will be sent to the processor and an array of ten red LED's [4] and ten current limiting resistors of RESISTANCE [5] that will indicate that the interceptor has been put into pause mode. This set of resistors will be connected to ground. When the output of the switch is connected to ground, when it is turned off, then the ground, or 0V, will be sent to the processor. In this state, the LED that is connected to the 5V source on the other side will turn on. This will power the ten RESISTANCE current limiting resistor which will then turn on the array of ten green LED's [6] to show that the interceptor is on and ready to fire.
 
-INSERT IMAGE
-
+![System](../Images/Led_Equation.png)
 
 The maximum current that can be handled by the LED's is 25mA for the green LED's and for the red it is 30mA. Because of the 5V being used a resistor value was chosen that would keep the LED's within their ratings. Therefore, Ohm's Law shows that the current will be 5V divided by 250 Ohm's which will yield a current of 20mA of current which falls within the required maximums of 25mA and 30mA. The inverter has a maximum of 24mA of output current, using the 250 Ohm resistors means that the current will be 20mA which falls within this parameter.
 
