@@ -34,14 +34,14 @@ Figure 2: This image shows the buildable schematic for the buzzer system. This b
 
 
 ## **Analysis**
-For the pause switch component, there are many different switches that can be chosen. Switches range between single pole single throw and upwards. The switch that needs to be implemented for the pause switch should be a single pole double-throw switch that has a two on functions and an off function. This will ensure that with one connection the processor will be receiving 5V, which will count as a binary one, and when the switch is off the processor will be connected to ground which will be interpreted as a binary zero. The switch that was chosen for this task is the CIT Relay and Switch, ANT11SF1CQE [3]. This switch is rated for 5A and 28VDC which will be more than enough for this simple task. The other main portion of the pause switch is the implementation in the code of the processor. Because a processor has not been chosen now it is not possible to say exactly how this will be implemented, but pseudocode can be written to make the coding process easier. To be clear when the pause switch is on 5V or equivalent will be allowed to pass and when it is off the circuit will not be connected. This input will be interpreted as a variable and when the circuit is on the processor will be allowed to collect the data from the sensors. When the switch is off the processor will be in the pause state where it can not do anything but wait for the switch to be turned on. When the output of the switch is connected to 5V this will be sent to the processor and an array of ten red LED's [4] and ten current limiting resistors of 250Ohm [5] that will indicate that the interceptor has been put into pause mode. When the output of the switch is connected to ground then the output will be sent to the processor and an inverter [6], which is powered by the 5V source. This inverter will power the ten 250Ohm current limiting resistor which will then turn on the array of ten green LED's [7] to show that the interceptor is on and ready to fire.
+For the pause switch component, there are many different switches that can be chosen. Switches range between single pole single throw and upwards. The switch that needs to be implemented for the pause switch should be a single pole double-throw switch that has a two on functions and an off function. This will ensure that with one connection the processor will be receiving 5V, which will count as a binary one, and when the switch is off the processor will be connected to ground which will be interpreted as a binary zero. The switch that was chosen for this task is the CIT Relay and Switch, ANT11SF1CQE [3]. This switch is rated for 5A and 28VDC which will be more than enough for this simple task. The other main portion of the pause switch is the implementation in the code of the processor. Because a processor has not been chosen now it is not possible to say exactly how this will be implemented, but pseudocode can be written to make the coding process easier. To be clear when the pause switch is on 5V or equivalent will be allowed to pass and when it is off the circuit will not be connected. This input will be interpreted as a variable and when the circuit is on the processor will be allowed to collect the data from the sensors. When the switch is off the processor will be in the pause state where it can not do anything but wait for the switch to be turned on. When the output of the switch is connected to 5V this will be sent to the processor and an array of ten red LED's [4] and ten current limiting resistors of 250Ohm [5] that will indicate that the interceptor has been put into pause mode. When the output of the switch is connected to ground then the output will be sent to the processor  which is powered by the 5V source. This inverter will power the ten 250Ohm current limiting resistor which will then turn on the array of ten green LED's [6] to show that the interceptor is on and ready to fire.
 
 
 $$V=IR$$
 
 The maximum current that can be handled by the LED's is 25mA for the green LED's and for the red it is 30mA. Because of the 5V being used a resistor value was chosen that would keep the LED's within their ratings. Therefore, Ohm's Law shows that the current will be 5V divided by 250 Ohm's which will yield a current of 20mA of current which falls within the required maximums of 25mA and 30mA. The inverter has a maximum of 24mA of output current, using the 250 Ohm resistors means that the current will be 20mA which falls within this parameter.
 
-The interceptor sound controller will be an Arduino Uno r3 [8] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code and documentation. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable and falls within the frequency requirements of the piezo buzzer. This sound would be played for a defined period of time when the processor sends the proper signal. The buzzer that was chosen is the KINGSTATE KPEG242 [9]. This buzzer is rated for 3V to 16V DC and a frequency of 3600Hz to 4600Hz. This means that the output of the Arduino should not exceed 16V and 4600Hz to ensure that the buzzer is operating properly. 
+The interceptor sound controller will be an Arduino Uno r3 [7] and it will be making a sound using a piezo buzzer. The Arduino r3 was chosen because of its ease of use and the availability of open-source code and documentation. The schematic can be seen in figure two. The wiring diagram is very simple and only involves a few connections. The first connection would be from the GPIO (General Purpose Input Output) pins to the positive connection of the buzzer and then the ground would be connected to the ground of the board. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable and falls within the frequency requirements of the piezo buzzer. This sound would be played for a defined period of time when the processor sends the proper signal. The buzzer that was chosen is the KINGSTATE KPEG242 [8]. This buzzer is rated for 3V to 16V DC and a frequency of 3600Hz to 4600Hz. This means that the output of the Arduino should not exceed 16V and 4600Hz to ensure that the buzzer is operating properly. 
 
 
 ## Bill of Materials
@@ -49,18 +49,16 @@ The interceptor sound controller will be an Arduino Uno r3 [8] and it will be ma
 | **Items:** | **Quantity:** | **Price:** | **Total:** |
 | --- | --- | --- | --- |
 | CIT Relay and Switch, ANT11SF1CQE (Switch) | 1 | $3.48 | $3.48 |
-| Texas Instruments, CD74AC14E (Inverter) | 1 | $0.84 | $4.32 |
-| SunLED, XLUG12D (Green LED) | 10 | $3.00 | $7.32 |
-| Kingbright, WP7113ID (Red LED) | 10 | $3.40 | $10.72 |
-| Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 | $22.06 |
-| Arduino Uno REV3 [A000066] (Arduino) | 1 | $27.60 | $49.66 |
-| KINGSTATE KPEG242 (Buzzer) | 1 | $2.13 | $51.79 |
+| SunLED, XLUG12D (Green LED) | 10 | $3.00 |  |
+| Kingbright, WP7113ID (Red LED) | 10 | $3.40 |  |
+| Ohmite, WHD250FET (250 Ohm Resistor) | 21 | $11.34 |  |
+| Arduino Uno REV3 [A000066] (Arduino) | 1 | $27.60 |  |
+| KINGSTATE KPEG242 (Buzzer) | 1 | $2.13 | |
 
 
 | **Item:** | **URL** |
 | --- | --- |
 | CIT Relay and Switch, ANT11SF1CQE (Switch) |  https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 |
-| Texas Instruments, CD74AC14E (Inverter) | https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756 |
 | SunLED, XLUG12D (Green LED) | https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838 |
 | Kingbright, WP7113ID (Red LED) | https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663 |
 | Ohmite, WHD250FET (250 Ohm Resistor) | https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029 |
@@ -73,9 +71,8 @@ The interceptor sound controller will be an Arduino Uno r3 [8] and it will be ma
 2. “What is the human hearing range in hz and DB?: Miracle-ear,” Miracle Ear, https://www.miracle-ear.com/blog-news/human-hearing-range (accessed Apr. 17, 2024). 
 3. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
 4. “Kingbright WP7113ID,” Digikey, https://www.digikey.com/en/products/detail/kingbright/WP7113ID/1747663 (accessed Apr. 16, 2024). 
-5. “Ohmite WHD250FET,” Digikey, https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029 (accessed Apr. 16, 2024).
-6. “CD74AC14E Texas Instruments | Integrated Circuits (ICS) | digikey marketplace,” Digikey, https://www.digikey.com/en/products/detail/texas-instruments/CD74AC14E/1691756 (accessed Apr. 16, 2024). 
-7. “SunLED XLUG12D,” Digikey, https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838 (accessed Apr. 16, 2024).
-8. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
-9. “KPEG242 - Transducer, Piezo, buzzer, audio indicator, continuous, 3 V, 16 V, 7 ma, 70 DB,” Newark, https://www.newark.com/kingstate/kpeg242/piezo-buzzer-4-1khz-70db/dp/61M7049?mckv=s_dc%7Cpcrid%7C%7Cplid%7C%7Ckword%7C%7Cmatch%7Ce%7Cslid%7C%7Cproduct%7C61M7049%7Cpgrid%7C1231453304461926%7Cptaid%7Cpla-4580565455222458%7C&msclkid=4ff6ddb1429613a4db67bb914883a843&CMP=KNC-BUSA-GEN-Shopping-ALL (accessed Apr. 17, 2024). 
+5. “Ohmite WHD250FET,” Digikey, https://www.digikey.com/en/products/detail/ohmite/WHD250FET/16839029 (accessed Apr. 16, 2024). 
+6. “SunLED XLUG12D,” Digikey, https://www.digikey.com/en/products/detail/sunled/XLUG12D/4745838 (accessed Apr. 16, 2024).
+7. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
+8. “KPEG242 - Transducer, Piezo, buzzer, audio indicator, continuous, 3 V, 16 V, 7 ma, 70 DB,” Newark, https://www.newark.com/kingstate/kpeg242/piezo-buzzer-4-1khz-70db/dp/61M7049?mckv=s_dc%7Cpcrid%7C%7Cplid%7C%7Ckword%7C%7Cmatch%7Ce%7Cslid%7C%7Cproduct%7C61M7049%7Cpgrid%7C1231453304461926%7Cptaid%7Cpla-4580565455222458%7C&msclkid=4ff6ddb1429613a4db67bb914883a843&CMP=KNC-BUSA-GEN-Shopping-ALL (accessed Apr. 17, 2024). 
 ‌
