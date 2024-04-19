@@ -11,10 +11,10 @@ The main processor unit is responsible for receiving, analyzing, and interpretin
 
 | NO. |	Constraint | Origin |
 |-----|------------|--------|
-| 1	| Time Constraints - Real-time data processing for trajectory prediction for the golf ball speed varying from 1.9 seconds to 7.4 seconds | System Constraint |
-| 2	| Processing Speed - Optimization for efficient programs to calculate the speed, wire, and variable height in time, not taking longer than 40 ms per calculation iteration | System Constraint |
-| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation that is received from the Arduino's needs to be 5 Volts | Programming Constraint |
-| 4	| Resource Utilization - Preventing overload of system resources since the board has 1.43GHz with quad cores and 4GB RAM, the system needs to utilize them for speed efficiency but not sacrifice stability | System Constraint |
+| 1	| Time Constraints - Real-time data processing for trajectory prediction for the golf ball can take around 40 ms for each image. The main processor needs to calculate the ball data before the ball reaches the end which varies from 1.9 seconds to 7.4 seconds | System Constraint |
+| 2	| Processing Speed - The main processor scripts and programs have to be optimized for efficient calculations. The scripts get the speed, wire, and variable height from input data. These calculations should not take longer than 40 ms per calculation iteration | System Constraint |
+| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation that is received from the Arduino's needs to be 5 Volts otherwise the main processor will not accept the data and could react inappropriately | Programming Constraint |
+| 4	| Resource Utilization - Since the board has 1.43GHz with quadcores and 4GB RAM, the main processor needs to be utilized properly to prevent an overload of system resources. The system needs to use all cores and not overload the RAM for speed efficiency but not sacrifice stability | System Constraint |
 | 5 | Pausing Processes: The system needs a pause state to stop other scripts from activating firing mechanisms. | Rulebook |
 
 
