@@ -19,7 +19,7 @@ The goal of this subsystem is to receive and process the data from the camera se
    off by an inch, the wire and height can be assumed to get the position of the golf ball.
 3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to
    aim the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved
-   and interpreted.
+   and interpreted which is expected to take half a second each.
 
 **Buildable Schematic**
 
