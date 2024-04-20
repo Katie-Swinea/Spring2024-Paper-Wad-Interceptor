@@ -12,37 +12,21 @@ The goal of this subsystem is to convert AC power from the wall outlet to DC pow
 
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
-| 1   | The power system shall be controlled by an emergency stop which will de-energize the mechanical system.This will shut off the motors which will not allow any projectiles to be fired. This will only be used if the system threatens peoples safety |Conceptual Design |
-| 2   | The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 13.5 watts, which is required by the extra subsytem and 48 Watts DC, which is required by the mechanical unit |Conceptual Design |
+| 1   | The power system shall be controlled by an emergency stop which will de-energize the mechanical system. This will shut off the motors which will not allow any projectiles to be fired. This will only be used if the system threatens peoples safety |Conceptual Design |
+| 2   | The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsytem and a minimum of 312 Watts DC, which is required by the mechanical unit |Conceptual Design |
 | 3   | The system shall be controlled by a power switch                 |Conceptual Design |
-| 4   | The system shall be able to produce 5 volts to power the main/processor unit (required voltage of that unit) |Design Constraint |
-| 5   | The system shall be able to produce 24 volts to power the mechanical unit (required voltage of that unit)    |Design Constraint |
-| 6   | The system shall be able to produce 9 volts to power the extra subsystem (required voltage of that unit) |Design Constraint |
-
 
 <sup>1</sup> The power system shall be controlled by an emergency stop which will de-energize the mechanical system. This will shut off the motors which will not allow any projectiles to be fired. This will only be used if the system threatens peoples safety  [Conceptual Design]
 
 One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the AC-DC convertor for the mechanical system to the motors themselves which will de-energize the interceptor. This system will only be used as a last case option if the interceptor threatens peoples safety. 
 
-<sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 13.5 watts, which is required by the extra subsytem and 48 Watts DC, which is required by the mechanical unit [Conceptual Design]
+<sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsystem and a minimum of 312 Watts DC, which is required by the mechanical unit [Conceptual Design]
 
-This system will take the 100-120 AC voltage supplied from the wall outlet and then through three seperate AC-DC adaptors will output 20 watts, 13.5 watts and 48 watts respectively.
+The overall system must be able to provide a total of 336.5 watts. The processor of this system requires a power draw of 20 watts and will be powered by its on supply. The extra system requires a power draw of 4.5 watts and will be powered by its on supply. The mechanical unit ill consist of one DC motor that will do the firing and two motor controllers that will operate on the aim system. The total combined draw of this system is at least 312 watts. 
 
 <sup>3</sup>  The system shall be controlled by a power switch  [Conceptual Design]
 
 The system will be controlled by an on/off switch. This switch will allow the wall power to be connected or disconnected from each system that this subsystem powers.  
-
-<sup>4</sup>  The system shall be able to produce 5 volts to power the main/processor unit (required voltage of that unit)  [Design Constraint]
-
-The main/processor unit requires a voltage input of 5 volts. This system must be able to produce the 5 V DC signal from the wall outlet.
-
-<sup>5</sup> The system shall be able to produce 24 volts to power the mechanical unit  [Design Constraint]
-
-The mechanical unit requires a voltage input of 24 volts. This system must be able to produce the 24 V DC signal from the wall outlet.
-
-<sup>6</sup> The system shall be able to produce 9 volts to power the extra subsystem (required voltage of that unit) [Design Constraint]
-
-The extra subsystem requires a voltage input of 9 volts. This system must be able to produce the 9 V DC signal from the wall outlet.
 
 ## Buildable schematic 
 
@@ -54,68 +38,68 @@ The extra subsystem requires a voltage input of 9 volts. This system must be abl
 
 | System        | Voltage    | Current   | Power       | 
 |---------------|------------|-----------|-------------|
-| mechanical    | 24 Volts   | 1.5 Amps  | 36 Watts    |
-| Communication | 9 Volts  | 500 mAmps | 4.5 Watts  |
+| Mechanical    | 24 Volts   | 13 Amps  | 312 Watts    |
+| Extra | 9 Volts  | 500 mAmps | 4.5 Watts  |
 | Processor     | 5 Volts    | 4 Amps    | 20 Watts    |
-| Total         | 38 | 6    | 60.5 Watts |
+| Total         |  |     | 336.5 Watts |
 
 The above table details the different power draws that is required from this system. 
 
-Mechanical:
+### Mechanical:
 
-The mechanical unit requires 24 volts and 1.5 amps. This means the total power needed will be:
+This power system will supply power to three main componets of the mechanical system. These componets are the firing mechanism's DC motor, and two stepper driver controllers that will control the aiming of the interceptor. The DC motor has voltage requirement of 24 volts with an amperage draw of 10 amps. This means the power draw of this system will be:
 
-~~~ math
-
-(24 Volts) * (1.5 Amps) = 36 Watts
-
-~~~
-
-Communication:
-
-The communication unit requires 9 volts and 500 mAmps. This means the total power needed will be:
-
-~~~math
-
-(9 Volts) * (500 mAmps) = 4.5 Watts
-
-~~~
-
-Processor:
-
-The processor unit requires 5 Volts and 4 Amps. This means the total power needed will be:
-
-~~~math
-
-(5 Volts) * (4 Amps) = 15 Watts
-
-~~~
-
-Total subsystem power:
-
-The total power of the entire subsystem will be:
-
-~~~math
-
-(36 Watts) + (4.5 Watts) + (20 Watts) = 60.5 Watts
-
-~~~
+<p align="center">DC Motor Power Draw: (24 volts) * (10 amps) = 240 watts</p>
 
 
+The two stepper driver controllers have a voltage requirment of 24 volts with an amprage draw of 1.5 amps. This means the total power of draw of both controllers will be:
 
-## Fulfilling Constraints
+<p align="center">Single Controller Power Draw: (24 volts) * (1.5 amps) = 36 watts</p>
 
-This switch has one purpose and that is to de-energize the mechanical system. This can be done by cutting off the power from the AC-DC convertor to the motors themselves. This will be accomplished with the 7105SYZQE [5]. This switch is rated for 5 amps/ 28 volts DC. This will completely encapsulate the power produced by the mechanical transformer. <sup>1</sup>
+<p align="center">Total Controller Power Draw: (36 watts) + (36 watts) = 72 watts</p>
 
-The system must convert AC power from the wall outlet and output a DC signal. This system will use three separate AC to DC converters. The first will produce a signal of 5 volts/ 4 amps (20 watts). This converter will power the main/processor. The transformer will be the 5V 4A Power Supply Adapter - COOLM AC 100-240V to DC 5V/4A 20W Charger Plug DC 5.5mm x 2.5mm Universal [2]. This transformer was designed to power a Jetson Nano. The second will produce a signal of 24 volts/ 2 amps (48 watts). This converter will power the mechanical unit. The transformer will be the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC [4]. The final will produce a 9 volt/ 1.5 amp signal (13.5 watts). This convertor will be the Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter for 9Vdc Arduino UNO R3 [1]. This transformer was designed to power the Arduino UNO R3. <sup>2</sup>
 
-This system will have three power switchs connected between the AC-DC transformers and the wall outlet. All converters will be controlled using the CCCEI Metal Power Strip Individual Switches 6 Outlets [3]. This power switch is rated for a max of 125 volts/ 15 amps, or 1875 watts. These ratings will completely encapsulate the requirements for each convertor. <sup>3</sup>
+This places the maximum power of draw of the entire system at:
 
-To supply the appropriate amount of power to the Jetson Nano, the system must produce 5 volts. To achieve this, the system will use the 5V 4A Power Supply Adapter - COOLM AC 100-240V to DC 5V/4A 20W Charger Plug DC 5.5mm x 2.5mm Universal [2]. This convertor was designed to power Jetson Nanos and produces exactly what the processor needs. <sup>4</sup>
+<p align="center">Total Power of draw of the Mechanical System: (240 watts) + (72 watts) = 312 watts</p>
 
-The system must supply a 24 volt/ 1.5 amp signal for the mechanical unit. This will be done using the AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC, as it produces a 24 volt/ 2 amp output [4]. <sup>5</sup>
+To acomplish the total power draw required, this system will utilize a power supply capable of supplying 360 watts of power. This will give the system plenty of freedom as there will be an excess of 48 watts [4].
 
-To supply the appropriate amount of power to the Arduino UNO R3, the system must produce 9 volts. To achieve this, the system will use the Gonine 9V DC Power Supply Cord, 9Volt 1.5A AC DC Adapter for 9Vdc Arduino UNO R3 [1]. This convertor was designed to power Arduino UNO R3s and produces exactly what the extra system needs. The system only needs 0.5 A, but by using this supply, the Arduino will only draw what it needs. <sup>6</sup>
+### Extra:
+
+The extra system will be controlled by an Ardunio Uno R3. This Ardunio has a voltage requirement of 9 volts and a minimum amperage draw of 0.5 amps. This means the total power draw of this system will be:
+
+<p align="center">Total Power of draw of the Extra System: (9 volts) * (0.5 amps) = 4.5 watts</p>
+
+The buildable schematic shows this system will supply a 9 volt signal at 1.5 amps rather than 0.5 amps. This is becuase the Adaptor choosen [1] is built for this specfic Ardunio and the Ardunio itself is able to limit the current draw from this adaptor to the acceptable current load. 
+
+### Processor:
+The processor system will be controlled by a Jetson Nano developer kit. This Jetson Nano requires a voltage of 5 volts and an amperage draw of 4 amps. The total power draw of this system will then be:
+
+<p align="center">(5 volts) * (4 amps) = 20 watts</p>
+
+To acomplish this power draw, the system will utilize an adaptor that was designed for this specfic Jetson Nano [2]. This adaptor supplys a voltage of 5 volts and a maximum current of 4 amps [2]. 
+
+### Total Power
+
+To achieve everything this system is required to do, the total power draw of this system will be:
+
+<p align="center">(312 watts) + (4.5 watts) + (20 watts) = 336.5 watts</p>
+
+This will be accomplished by using three seperate power supplies. The first will supply a total of 360 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these three supplies will be:
+
+<p align="center">(360 watts) + (13.5 watts) + (20 watts) = 393.5 watts</p>
+
+The total supplied power of 393.5 watts will completely encapsulate the required wattage of 336.5 watts, and will allow the system to function correctly and accurately.
+
+### Power Switch 
+
+To accomplish the power switch constraint this system will utilize a power strip. This power strip will have six seperate plug ins each with it's own power switch. This system will utilize three of the six plugs as there are three power supplies being used in this system. The power strip selected is rated for 1875 watts of power which will be comfortably encapsulate the three supplies being utilzed as the maximum power draw for this system is 336.5 watts. [3]
+
+### Emergency Stop
+
+To accomplish the emergency stop contsraint this system will connect the DC motor power input to a switch that will effectively cut the power to the motor. This will stop the interceptor from firing any projectiles. The switch that will be 
+utilized for this system is rated for a maximum of 30 volts and a DC current maximum of 20 amps. The DC motors will receive 24 volts at a 10 amps. The voltage and current rating of the switch will be more than enough to support what the motor requires to funtion. [5]
 
 ## BOM
 |Item Name | Description | Subsystems | Part Number | Manufacturer | Quantity | Price | Total |
