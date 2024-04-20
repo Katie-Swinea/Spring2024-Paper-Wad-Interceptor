@@ -30,9 +30,18 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad8.png)
+![Function](../Images/Device_Power/Buildable.2.png)
 
 *power subsystem buildable schematic*
+
+### Schematic Notes
+
+1. Each power plug will have its own power switch. This will allow each power supply to be easily turned on or turned off.
+2. The cord that will be used to connect the power strip and the 24 volt 15 amp supply will need to have the plugin removed to allow access to the ground wire, AC neutral wire (AC N) and AC line wire (AC L). These wires will be connected to the power supply.
+3. This switch will act as the emergency switch between the power supply and the firing motors. Only the postive voltage wire will be connected to the switch. This will allow the circuit to become a complete loop between the supply, postive voltage wire, negative voltage wire and actual motor when the switch is closed.
+4. The red and black wires are the postive voltage (red) and negative voltage (black) connections.
+5. These adaptors are physically connected to the power strip. There is no cord between them, these will be plugged straight in.
+6. The barrel plug connectors will be physically plugged into the barrel jack connectors. The barrel jack connectors are physically soldered on the Jetson Nano board and Ardunio board.
 
 ## Analysis
 
@@ -61,7 +70,7 @@ The two stepper driver controllers have a voltage requirment of 24 volts with an
 
 This places the maximum power of draw of the entire system at:
 
-<p align="center">Total Power of draw of the Mechanical System: (240 watts) + (72 watts) = 312 watts</p>
+<p align="center">Total Power draw of the Mechanical System: (240 watts) + (72 watts) = 312 watts</p>
 
 To acomplish the total power draw required, this system will utilize a power supply capable of supplying 360 watts of power. This will give the system plenty of freedom as there will be an excess of 48 watts [4].
 
@@ -69,7 +78,7 @@ To acomplish the total power draw required, this system will utilize a power sup
 
 The extra system will be controlled by an Ardunio Uno R3. This Ardunio has a voltage requirement of 9 volts and a minimum amperage draw of 0.5 amps. This means the total power draw of this system will be:
 
-<p align="center">Total Power of draw of the Extra System: (9 volts) * (0.5 amps) = 4.5 watts</p>
+<p align="center">Total Power draw of the Extra System: (9 volts) * (0.5 amps) = 4.5 watts</p>
 
 The buildable schematic shows this system will supply a 9 volt signal at 1.5 amps rather than 0.5 amps. This is becuase the Adaptor choosen [1] is built for this specfic Ardunio and the Ardunio itself is able to limit the current draw from this adaptor to the acceptable current load. 
 
@@ -94,24 +103,22 @@ The total supplied power of 393.5 watts will completely encapsulate the required
 
 ### Power Switch 
 
-To accomplish the power switch constraint this system will utilize a power strip. This power strip will have six seperate plug ins each with it's own power switch. This system will utilize three of the six plugs as there are three power supplies being used in this system. The power strip selected is rated for 1875 watts of power which will be comfortably encapsulate the three supplies being utilzed as the maximum power draw for this system is 336.5 watts. [3]
+To accomplish the power switch constraint this system will utilize a power strip. This power strip will have six seperate plug ins each with it's own power switch. This system will utilize three of the six plugs as there are three power supplies being used in this system. The power strip selected is rated for 1875 watts of power which will comfortably encapsulate the three supplies being utilzed as the maximum power draw for this system is 336.5 watts. [3]
 
 ### Emergency Stop
 
 To accomplish the emergency stop contsraint this system will connect the DC motor power input to a switch that will effectively cut the power to the motor. This will stop the interceptor from firing any projectiles. The switch that will be 
-utilized for this system is rated for a maximum of 30 volts and a DC current maximum of 20 amps. The DC motors will receive 24 volts at a 10 amps. The voltage and current rating of the switch will be more than enough to support what the motor requires to funtion. [5]
+utilized for this system is rated for a maximum of 30 volts and a DC current maximum of 20 amps. The DC motors will receive 24 volts at 10 amps. The voltage and current rating of the switch will be more than enough to support what the motor requires to funtion. [5]
 
 ## BOM
 |Item Name | Description | Subsystems | Part Number | Manufacturer | Quantity | Price | Total |
 |----------|-------------|------------|-------------|--------------|----------|-------|-------|
-|AC to DC 24V 2A Power Supply Adapter | Converts wall outlet power to a 24V/ 2A output | Mechanical | B07RTWD725 | Security-01 | 1 | 9.99 | 9.99 |
-|12V DC Power Connector | 10 male and 10 female 12V DC Power Connectors | Mechanical | ‎DCPLUG-MF | CENTROPOWER | 1 | 7.99 | 17.98 |
-|CCCEI Metal Power Strip with 6 Outlets | Acts as the power switches between the AC adaptors and the wall for each system | Mechanical, Processor, Extra | B08HYLW3GX | CCCEI | 1 | 16.99 | 34.97 |
-| E-stop switch (7105SYZQE) | Toggle switch rated for 120 V/ 5A | Mechanical | 7105SYZQE | C&K | 1 | 10.89 | 45.86 |
-|5V 4A Power Supply Adapter | Converts wall outlet power to a 5V/ 4A output | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 59.54 |
-|Gonine 9V DC Power Supply Cord | Converts wall outlet power to a 9V/ 1.5A output | Extra | B099J3JCVX |69 Gonine | 1 | 12.69 | 72.23 |
-
-
+|CCCEI Metal Power Strip Individual Switches 6 Outlets | 6 plugin power strip with 6 switches | Mechanical, Extra, Processor | B08HYLW3GX | CCCEI | 1 | 16.99 | 16.99 |
+|Emergency stop switch | Switch rated for 30 volts and 20 amps | Mechanical | 360-1887-ND | NKK Switches | 1 | 7.03 | 24.02 |
+|5V 4A Power Supply Adapter | Jetson Nano power supply rated for 5 volts and 4 amps | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 37.70 |
+|Gonine 9V DC Power Supply | Arduino Uno R3 power supply rated for 9 volts and 1.5 amps | Extra | B099J3JCVX | wei dian | 1 | 12.69 | 50.39 |
+|ALITOVE DC 24V 15A 360W Power Supply | 360 watt power supply | Mechanical | B06XK2ZNKC | ALITOVE | 1 | 23.99 | 74.38 |
+|16 AWG wire | 16 AWG wire to hook up mechanical system | Mechanical | B07D73ZRDP | GS Power | 1 | 8.49 | 82.87 |
 
 
 ## References 
@@ -122,8 +129,10 @@ utilized for this system is rated for a maximum of 30 volts and a DC current max
 
 [3] Amazon, https://www.amazon.com/Individual-Switches-Protector-Appliances-Extension/dp/B08HYLW3GX/ref=asc_df_B08HYLW3GX/?tag=hyprod-20&linkCode=df0&hvadid=647192999967&hvpos=&hvnetw=g&hvrand=12971397952727350175&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-2013978108223&mcid=3f30a49c0078360ebf82f79cd802428d&th=1 (accessed Apr. 16, 2024). 
 
-[4] “AC to DC 24V 2A Power Supply Adapter, Plug 5.5mm x 2.1mm UL Listed FCC,” Amazon, https://www.amazon.com/Power-Supply-Adapter-5-5mm-Listed/dp/B08T636YVR/ref=asc_df_B08T636YVR/?tag=hyprod-20&linkCode=df0&hvadid=507792222889&hvpos=&hvnetw=g&hvrand=12806499727394812437&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1262398291870&psc=1&mcid=edd9d085cf3b3cc6915cbdb81a548b03&gclid=Cj0KCQjwq86wBhDiARIsAJhuphlXeLT83NoSYTl9ESdo2cRMDwrTjeLdDQEmibtQ-LtuMLKLdhcwaioaAohBEALw_wcB (accessed Apr. 8, 2024). 
+[4] Amazon, https://www.amazon.com/ALITOVE-Universal-Regulated-Switching-Transformer/dp/B06XK2ZNKC/ref=asc_df_B06XK2ZNKC/?tag=hyprod-20&linkCode=df0&hvadid=241935719665&hvpos=&hvnetw=g&hvrand=6310000027683861751&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-401426217092&mcid=324cb35da40333b298d63ebf99c464f1&gclid=CjwKCAjwz42xBhB9EiwA48pT786SSbMxG2WTaF_n8CQgsneQMYSm_EulaxHUTGMk5KMV0CFH-mvGDhoCHmgQAvD_BwE&th=1 (accessed Apr. 20, 2024). 
 
-[5] 7000 series miniature toggle switches, https://www.ckswitches.com/media/1394/7000toggle.pdf (accessed Apr. 16, 2024). ‌
+[5] S1F NKK switches - digikey, https://www.digikey.com/en/products/detail/nkk-switches/S1F/1006965 (accessed Apr. 20, 2024). 
 
-[6] Amazon, https://www.amazon.com/Power-Connector-Female-Adapter-Camera/dp/B07C61434H/ref=asc_df_B07C61434H/?tag=&linkCode=df0&hvadid=366410038949&hvpos=&hvnetw=g&hvrand=13676490397966405418&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-802228450796&mcid=6bdef984700c3733812519939dcd2cd0&ref=&adgrpid=75347436719&gclid=CjwKCAjw5v2wBhBrEiwAXDDoJfHTcq-kv3VJspmvW-KItjRY-NGxdCKbqlVLe42_jJeCY38wutk-CRoCieQQAvD_BwE&th=1 (accessed Apr. 17, 2024).  
+[6] Amazon, https://www.amazon.com/American-Aluminum-Primary-Amplifier-Available/dp/B07D73ZRDP/ref=sr_1_2_sspa?crid=H80LENUU6197&dib=eyJ2IjoiMSJ9.0LnrB1pSbZfctUIBZoggXpFtF6rNKA5WSjlZ1BAxa5VLNFYzVeSdHbTsxIQpBpOHzXC3YJbnzAa_KSkYleJmfalTRC9e7IBhriGkN5cIdJByBwJBxLefuZR3uARHY3WuPzhVAXu12tEcI4Wv8BbEOHL121_mpBof-J1BaaBkTpbt3_WxFslTWzDCWcemV1DMtBLuySWdO_Ky-T0tlHlHxXulC8i8DlvqhMharC0pRcQ-3uMR8DgiFz2wJZ-PH6kPn4uHzeBoAxzH3pkFlQdPqg6ym2pBhJvBym3UzcEjujM.eUjEa-tsRWWr0zni-ns4wD1nVYVzsPe6mKV8hno2oPM&dib_tag=se&keywords=16%2Bawg%2Bwire&qid=1713650740&refinements=p_36%3A-1000&rnid=1243644011&sprefix=16%2Bawg%2B%2Caps%2C90&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1 (accessed Apr. 20, 2024). 
+
+[7] Digikey, https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/13/451,452_Series_Header&Socket.pdf (accessed Apr. 20, 2024). 
