@@ -79,7 +79,9 @@ height per pixel = 4.61/1080 * 12 = 0.004265 feet/pixel = 0.05118 inches/pixel
 
 The amount of inches for the width and height of the pixels can be used to find out the x and y coordinates by multiplying the pixels by the numbers
 provided. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to find the
-distance. This should allow about 0.1 inches of error for the coordinates. These calculations are basic arthemetic and should be O(1). Counting the pixels is another O(n) operation.
+distance. This should allow about 0.1 inches of error for the coordinates if there is a missing pixel at the edge of the camera's view and by the golf
+ball. Six feet is the maximum distance the golf ball will be from the camera, so the one inch of error will be achievable. These calculations are basic
+arthemetic and should be O(1). Counting the pixels is another O(n) operation.
 
 *Speed*
 
