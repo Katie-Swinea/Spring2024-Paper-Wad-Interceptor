@@ -14,9 +14,12 @@ The goal of this subsystem is to receive and process the data from the camera se
 
 1. In order for the system to properly detect the golf ball and extract the necessary information for aiming, the system needs to distinguish the golf ball
    from the rest of the image.
-2. The program needs to use the coordinates from the camera to provide coordinates for aiming at the fishing line the golf ball is on which are about four
-   inches apart at the start of the trajectory and know which variable height the ball is out which different by about seven inches. If the coordinates are
-   off by an inch, the wire and height can be assumed to get the position of the golf ball.
+2. The program needs to use the coordinates from the camera to provide coordinates for aiming at the appropriate fishing line the golf ball is on. The
+   fishing lines are about four inches apart at the start of the trajectory. The coordinates also locate which variable height the ball is at which differ
+   by about seven inches. If the coordinates are off by an inch, the correct wire can be adjusted to the closest wire for those coordinates. One inch allows
+   the wire to be determined since it will not be in between two wires. If it was two inches of error, the ball could be two inches to the right or left
+   and could be one of two wires. The variable height differs by seven inches, so an inch away from the correct variable height can be corrected to the
+   proper height from the data. A correction to the closest possible coordinates of the golf ball can be made from the detection with this error allowance.
 3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to
    aim the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved
    and interpreted which is expected to take half a second each.
@@ -60,13 +63,13 @@ The distance of the object can be found using another iterative function for ano
 pixel. This array is compared with the array holding the pixels that repersent the golf ball. The result is the depth of each pixel of the golf ball.
 
 The object's coordinates can be determined through comparisons. Using edge of the field of view (FOV), the coordinates can be found. The pixels in between
-the edge and the object can be counted. Using the width of each pixel, the total distance can be found. The pixel width can be found using the equations 
+the edge and the object can be counted. Using the width each pixel repersents, the total distance can be found. The pixel width repersentation can be found using the equations 
 
 FOV width = 2 * tan(FOV/2) * distance and FOV height = 2 * tan(FOV/2) * distance
 
 width per pixel = FOV width/horizontal resolution and height per pixel = FOV height/vertical resolution
 
-For the distance of six feet the result will be
+The distance detemination will be used to fill in the distance variable in the equation. For the distance of six feet the result will be
 
 FOV width = 2 * tan(69/2) * 6 = 8.25 feet and FOV height = 2 * tan(42/2) * 6 = 4.61 feet
 
