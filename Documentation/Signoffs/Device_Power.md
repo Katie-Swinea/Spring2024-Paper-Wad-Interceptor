@@ -22,7 +22,7 @@ One of the requirements in the rulebook, given to us by the customer, is that th
 
 <sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsystem and a minimum of 312 Watts DC, which is required by the mechanical unit [Conceptual Design]
 
-The overall system must be able to provide a total of 336.5 watts. The processor of this system requires a power draw of 20 watts and will be powered by its on supply. The extra system requires a power draw of 4.5 watts and will be powered by its on supply. The mechanical unit ill consist of one DC motor that will do the firing and two motor controllers that will operate on the aim system. The total combined draw of this system is at least 312 watts. 
+The overall system must be able to provide a total of 336.5 watts. The processor of this system requires a power draw of 20 watts and will be powered by its on supply. The extra system requires a power draw of 4.5 watts and will be powered by its on supply. The mechanical unit will consist of one DC motor that will do the firing and two motor controllers that will operate on the aiming system. The total combined power draw of this system is at least 312 watts. 
 
 <sup>3</sup>  The system shall be controlled by a power switch  [Conceptual Design]
 
@@ -61,14 +61,14 @@ This power system will supply power to three main componets of the mechanical sy
 <p align="center">DC Motor Power Draw: (24 volts) * (10 amps) = 240 watts</p>
 
 
-The two stepper driver controllers have a voltage requirment of 24 volts with an amprage draw of 1.5 amps. This means the total power of draw of both controllers will be:
+The two stepper driver controllers have a voltage requirment of 24 volts with an amprage draw of 1.5 amps. This means the total power draw of both controllers will be:
 
 <p align="center">Single Controller Power Draw: (24 volts) * (1.5 amps) = 36 watts</p>
 
 <p align="center">Total Controller Power Draw: (36 watts) + (36 watts) = 72 watts</p>
 
 
-This places the maximum power of draw of the entire system at:
+This places the maximum power draw of the entire system at:
 
 <p align="center">Total Power draw of the Mechanical System: (240 watts) + (72 watts) = 312 watts</p>
 
@@ -119,6 +119,7 @@ utilized for this system is rated for a maximum of 30 volts and a DC current max
 |Gonine 9V DC Power Supply | Arduino Uno R3 power supply rated for 9 volts and 1.5 amps | Extra | B099J3JCVX | wei dian | 1 | 12.69 | 50.39 |
 |ALITOVE DC 24V 15A 360W Power Supply | 360 watt power supply | Mechanical | B06XK2ZNKC | ALITOVE | 1 | 23.99 | 74.38 |
 |16 AWG wire | 16 AWG wire to hook up mechanical system | Mechanical | B07D73ZRDP | GS Power | 1 | 8.49 | 82.87 |
+|AC power cord | Power cord that will connect the power strip and Mechanical power supply | Mechanical | B09VRLJD7J | LORDTRONICS | 1 | 6.99 | 89.86 |
 
 
 ## References 
@@ -136,3 +137,5 @@ utilized for this system is rated for a maximum of 30 volts and a DC current max
 [6] Amazon, https://www.amazon.com/American-Aluminum-Primary-Amplifier-Available/dp/B07D73ZRDP/ref=sr_1_2_sspa?crid=H80LENUU6197&dib=eyJ2IjoiMSJ9.0LnrB1pSbZfctUIBZoggXpFtF6rNKA5WSjlZ1BAxa5VLNFYzVeSdHbTsxIQpBpOHzXC3YJbnzAa_KSkYleJmfalTRC9e7IBhriGkN5cIdJByBwJBxLefuZR3uARHY3WuPzhVAXu12tEcI4Wv8BbEOHL121_mpBof-J1BaaBkTpbt3_WxFslTWzDCWcemV1DMtBLuySWdO_Ky-T0tlHlHxXulC8i8DlvqhMharC0pRcQ-3uMR8DgiFz2wJZ-PH6kPn4uHzeBoAxzH3pkFlQdPqg6ym2pBhJvBym3UzcEjujM.eUjEa-tsRWWr0zni-ns4wD1nVYVzsPe6mKV8hno2oPM&dib_tag=se&keywords=16%2Bawg%2Bwire&qid=1713650740&refinements=p_36%3A-1000&rnid=1243644011&sprefix=16%2Bawg%2B%2Caps%2C90&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1 (accessed Apr. 20, 2024). 
 
 [7] Digikey, https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/13/451,452_Series_Header&Socket.pdf (accessed Apr. 20, 2024). 
+
+[8] Amazon, https://www.amazon.com/Standard-Electronics-Computer-Printer-Monitor/dp/B09VRLJD7J/ref=asc_df_B09VRLJD7J/?tag=hyprod-20&linkCode=df0&hvadid=563656015384&hvpos=&hvnetw=g&hvrand=18295324020142779198&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1674555517194&psc=1&mcid=45cb6e5d55683eab850fcc240ea659f4&gclid=Cj0KCQjw8pKxBhD_ARIsAPrG45l9_eElMxkK2B0lfPSFFqoQLkjJyrHErvuGgWtmSExOTyspiT-g-f4aAjSZEALw_wcB (accessed Apr. 21, 2024). 
