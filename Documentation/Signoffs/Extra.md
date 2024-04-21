@@ -75,13 +75,13 @@ The interceptor sound controller will be an Arduino Uno r3 [7] and it will be ma
 1. A. Hadhazy, “What are the limits of human vision?,” BBC News, https://www.bbc.com/future/article/20150727-what-are-the-limits-of-human-vision (accessed Apr. 17, 2024). 
 2. “What is the human hearing range in hz and DB?: Miracle-ear,” Miracle Ear, https://www.miracle-ear.com/blog-news/human-hearing-range (accessed Apr. 17, 2024). 
 3. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
-4. https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/VLCS5130/4073547  (RED LED)
-5. https://www.digikey.com/en/products/detail/american-bright-optoelectronics-corporation/BL-BGX3V1/9678159 (GREEN LED)
-6. https://theengineeringmindset.com/led-resistor-calculator/ (FORMULA)
-7. https://www.vishay.com/docs/81938/vlcs5130.pdf (RED DATA SHEET)
-8. https://www.americanbrightled.com/pdffiles/led-components/through-hole/BL-BGX3V1.pdf (GREEN DATA SHEET)
-9. https://www.digikey.com/en/products/detail/lumimax-optoelectronic-technology/MF1-8W75RFTB/16708261 (75 OHM RESISTOR)
-10. https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606 (50 OHM RESISTOR)
+4. “VLCS5130,” DigiKey, https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/VLCS5130/4073547 (accessed Apr. 21, 2024).
+5. “BL-BGX3V1,” DigiKey, https://www.digikey.com/en/products/detail/american-bright-optoelectronics-corporation/BL-BGX3V1/9678159 (accessed Apr. 21, 2024). 
+6. V. Lynch, “Led resistor calculator,” The Engineering Mindset, https://theengineeringmindset.com/led-resistor-calculator/ (accessed Apr. 21, 2024). 
+7. “VLCS5130,” Vishay, https://www.vishay.com/docs/81938/vlcs5130.pdf (accessed Apr. 21, 2024). 
+8. “BL-BGX3V1,” BRIGHT LED ElLECTRONICS CORP., https://www.americanbrightled.com/pdffiles/led-components/through-hole/BL-BGX3V1.pdf (accessed Apr. 21, 2024). 
+9. “RNF18FTD75R0,” DigiKey, https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNF18FTD75R0/1682997 (accessed Apr. 21, 2024). 
+10. “CMF5550R000FKEK70,” DigiKey, https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606 (accessed Apr. 21, 2024). 
 11. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
 12. “KPEG242 - Transducer, Piezo, buzzer, audio indicator, continuous, 3 V, 16 V, 7 ma, 70 DB,” Newark, https://www.newark.com/kingstate/kpeg242/piezo-buzzer-4-1khz-70db/dp/61M7049?mckv=s_dc%7Cpcrid%7C%7Cplid%7C%7Ckword%7C%7Cmatch%7Ce%7Cslid%7C%7Cproduct%7C61M7049%7Cpgrid%7C1231453304461926%7Cptaid%7Cpla-4580565455222458%7C&msclkid=4ff6ddb1429613a4db67bb914883a843&CMP=KNC-BUSA-GEN-Shopping-ALL (accessed Apr. 17, 2024).
 
