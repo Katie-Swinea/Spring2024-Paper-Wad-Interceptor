@@ -78,7 +78,7 @@ width per pixel = 8.25/1920 = 0.004296 feet/pixel * 12 = 0.05155 inches/pixel
 height per pixel = 4.61/1080 * 12 = 0.004265 feet/pixel = 0.05118 inches/pixel
 
 The amount of inches for the width and height of the pixels can be used to find out the x and y coordinates by multiplying the pixels by the numbers
-provided. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to find the
+provided [3 & 4]. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to find the
 distance. This should allow about 0.1 inches of error for the coordinates if there is a missing pixel at the edge of the camera's view and by the golf
 ball. Six feet is the maximum distance the golf ball will be from the camera, so the one inch of error will be achievable. These calculations are basic
 arthemetic and should be O(1). Counting the pixels is another O(n) operation.
@@ -87,7 +87,7 @@ arthemetic and should be O(1). Counting the pixels is another O(n) operation.
 
 The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
 102 frames per second to find color and do several image alterations which is the same length as finding distance based on the Big O analysis. This means it
-takes 9.8 ms to process the image information [3]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
+takes 9.8 ms to process the image information [6]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
 the processor and camera processes data at 5 Gbs. Each pixel is 8 bits and has 2 color repersentation bytes so the total is 
 
 8 * 2 * 1080 * 1920 = 0.03318 Gb. 
@@ -114,5 +114,13 @@ This subsystem is implemented as part of the processor. No additional parts need
 
 [2] A. Rosebrock, “Ball tracking with opencv,” PyImageSearch, https://pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/ (accessed Apr. 17, 2024). 
 
-[3] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
+[3] R. Awati, “What is field of view (FOV)?,” WhatIs, https://www.techtarget.com/whatis/definition/field-of-view-FOV (accessed Apr. 20, 2024). 
+
+[4] “Understanding image quality on the MV32,” Cisco Meraki Documentation,
+https://documentation.meraki.com/MV/Viewing_Video/Understanding_Image_Quality_on_the_MV32 (accessed Apr. 20, 2024). 
+
+[5] “How to measure pixels on your screen with screen ruler,” ZDNET, https://www.zdnet.com/article/how-to-measure-pixels-on-your-screen-with-screen-ruler/
+(accessed Apr. 20, 2024). 
+
+[6] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
 https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
