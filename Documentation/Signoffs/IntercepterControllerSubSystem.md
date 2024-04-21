@@ -5,7 +5,7 @@
 
 Figure 1: Interceptor Controller Subsystem
 
-The goal of this subsystem is to take the outputs from the processer and convert them into inputs that can be used for the mechanical system. 
+The goal of this subsystem is to take the analog outputs produced by the processor and convert them into digital logic that can be used by the mechanical system to move the mechanism , this is due to it only being able to process digital inputs. 
 
 ## **Constraints:**
 
