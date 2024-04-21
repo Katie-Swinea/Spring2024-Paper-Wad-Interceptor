@@ -1,60 +1,84 @@
-# {Name of the Project} - Your project should have a catchy and functional name
-
-The descriptions and information in all readme files in the starter repo (including this one) must be edited. All section descriptions must be deleted. Any failure to remove the description information (like the statement that you are currently reading) will be heavily penalized!
+# Paper Wad Interceptor
 
 ## Executive Summary
 
-Give the elevator pitch and abstract for the project. It should allow interested visitors to broadly understand the motivation for the project and what the project has accomplished.
+**We need an elevator pitch but I have the abstract for this section**
 
+The goal of this project is to replicate a missile defense system to interest children in STEM, specifically the department of defense. This is done be
+scaling the original problem down to a smaller area. This scale down is proposed as a paper wad interceptor in a classroom. However, this project is
+incredibly ambitious for the time provided to the team. Due to this, the project was then simplified further. Instead of a paper wad that could come from
+anywhere in a large classroom, the object being tracked was replaced with a plastic practice golf ball. The golf ball will be coming from a structure with
+fifteen possible start point and two variable heights. The narrows down the possible trajectories to 30. The space was also contained to a 64 inch by 78
+inch rectangle. This resulted in a project focused on small object tracking with the added challenge of the object's material properties and speed. Since
+the project was already being scaled down, the project was also turned into a competition between two teams. 
 
 ## Capabilities
 
 Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
 
+In it's current state, the team's project is not capable of doing anything. The designs have not yet been completed and the project has not been built. 
 
 ## Salient Outcomes
 
-Projects often have some outcomes that are more interesting than others. Here, highlight those things that you found interesting!
-
+The team has learned about tracking smaller objects through this project. The object's size was not an issue the team anticipated to be such a challenge.
+While there are several sensors that are capable of tracking objects, very few can reliably track a small object like a plastic golf ball. This issue was
+highlighted even further with the limitation sensors that can detect plastic. Research shows that vision detection is the most reliable and used technology
+for small object tracking. This was an outcome the team was not expecting from the project. This difficulty was something the team had to overcome and learn
+from to achieve the goal of the project.
 
 ## Project Demonstration & Images
 
-Give a link to a video of the project being demonstrated. The video should be hosted on the capstone youtube.
-
-Below the video link show some well-taken, appropriately sized images of the project.
-
+This project has not yet been fully designed and built. Once the project has been built and can be properly demonstrated, video demonstartions will be shown
+via links. Picures of the project while it is not in use will also be included.
 
 ## About Us
 
 ### Team
 
-Give a brief bio for each team member and their broad contribution to the project (no need to be terribly specifc).
+Garrett Armstrong: Electrical Engineering major who focused on the power for the system created.
+
+Savannah Metlzer: Electrical Engineering major who focused on seperate assitance devices and their power.
+
+Jonathan Neal: Electrical Engineering major who focused on interfacing the extra lights and sound into the system.
+
+Finlay Patoto: Computer Engineering major who focused on the processor and basic mathmatical calculations from the sensor data.
+
+Katie Swinea: Computer Engineering major who focused on the computer vision algorithms to detect the object and convey the sensor data.
+
+Kevin Ulrich: Computer Engineering major who focused on the research and calibration of a sensor to detect the object.
 
 ### Faculty Supervisor
 
-Tell who the faculty supervisor was for the project
+The team's faculty supervisor is Dr. Jesse Roberts.
 
 ### Stakeholders
 
-Tell a bit about the customer for the project. Also discuss any other groups (specific or general) that are expected to be impacted by the project.
+The customer for this project is Devcom who also created and proposed this project.
 
 ### Recognitions
 
-Use this space to recognize anyone that you feel has had an impact on the project. Be sure to recognize the work of previous teams if you referenced it for style or content. 
+The team wants to acknowledge the contributions of the partnered Mecahanical Engineering team. The team consists of: Ishak Lamei, Samuel Rainey, Steven
+Tucker, and Austin Williams.
 
 ## Repo Organization
 
-Give the layout of the repo and what can be found where. Make it easy on those who are interested by making the headings of the various things in this section clickable links to the relevant folder or file in the repo.
+The timeline that was used as a template for the team's more detailed timeline and this README are present in main with the following repository.
 
 
 ### Reports
 
-In the reports section of this repository information about the individual expectations for the reports and how they should be housed is provided.
+This repository contains the original Project Proposal, the revised Proposal, the Conceptual Design and Planning draft, and the final Conceptual Design and
+Planning document. All of these files are included as pdf documents. There are also several markdown files containing instructions for furture documents. 
+These include the Lessons Learned and Acquired, Experimentation, Final Presentation, and Poster Documents. Lastly, there is another repository called Poster
+Template present.
 
 ### Documentation
 
-In the documentaion section information regarding the documentation that is required and how it should be organized is given.
+This repository contains several repositories inside of it. One is 3D models which will include all the final designs for 3D models. Next is Electrical which
+contains two repositories called PCB and Schematics. PCB will house all final PCB designs. Schematics will house all final designs for wiring schematics. The
+Images repository is used to store the images of the final project. The team has also used this repository to house all images used in documentation. Meeting
+Minutes are included in a repository here as well. Signoffs contains the approved final design of each subsystem. 
 
 ### Software
 
-In the software directory of the repo information regarding how each team is expected to document software can be found.
+This repository contains the necessary software and designed software for the project. 
