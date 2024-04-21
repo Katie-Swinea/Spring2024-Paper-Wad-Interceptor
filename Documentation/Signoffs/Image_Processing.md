@@ -119,8 +119,8 @@ This subsystem is implemented as part of the processor. No additional parts need
 [4] “Understanding image quality on the MV32,” Cisco Meraki Documentation,
 https://documentation.meraki.com/MV/Viewing_Video/Understanding_Image_Quality_on_the_MV32 (accessed Apr. 20, 2024). 
 
-[5] “How to measure pixels on your screen with screen ruler,” ZDNET, https://www.zdnet.com/article/how-to-measure-pixels-on-your-screen-with-screen-ruler/
-(accessed Apr. 20, 2024). 
+[5] “How to measure pixel size for image processing? | Researchgate,” ResearchGate,
+https://www.researchgate.net/post/How_to_measure_pixel_size_for_image_processing (accessed Apr. 20, 2024). 
 
 [6] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
 https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
