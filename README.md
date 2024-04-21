@@ -81,4 +81,5 @@ Minutes are included in a repository here as well. Signoffs contains the approve
 
 ### Software
 
-This repository contains the necessary software and designed software for the project. 
+This repository contains the necessary software and designed software for the project. The ReadMe in this section has not been changes since the team has
+not yet used the repository.
