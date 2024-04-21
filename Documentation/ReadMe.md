@@ -59,3 +59,7 @@ Will be included in the Image repository which also contains the images used in 
 
 Currently, the only additional documents that are being included are the Meeting Minutes. Any other documents that fall into the documentation category will 
 be included in the future.
+
+## One final note
+
+The ReadMe file for the individual repositories 3D Models and Electrical remain unchanged due to the team not having worked in the repostiory yet. 
