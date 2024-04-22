@@ -1,7 +1,8 @@
 ## Meeting Minutes
 
-Each meeting must have a minutes markdown file in this folder. Teams are required to meet at least once per week. 
+Each meeting had minutes taken to document the team's progress and discussions. There was at least one meeting a week aside from weeks such as spring break.
+For these weeks, a document was uploaded indicating the reason for a lack of meetings that week.
 
-- file must be named "Minutes - yyyy-mm-dd.md"
-- must contain brief notes on discussion 
-- must contain all group decisions made (regardless of what the decision is - yes, no, wait and see etc.)
+- The file is titled "Minutes - YYYY-MM-DD" in the readable format of either a pdf or md file.
+- All meeting discussions are briefly summarized in the minutes
+- All decisions, tasks, and progress are documented in the meeting minutes.
