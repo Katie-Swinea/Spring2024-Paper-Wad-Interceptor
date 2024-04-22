@@ -16,10 +16,13 @@ The goal of this subsystem is to receive and process the data from the camera se
    from the rest of the image.
 2. The program needs to use the coordinates from the camera to provide coordinates for aiming at the appropriate fishing line the golf ball is on. The
    fishing lines are about four inches apart at the start of the trajectory. The coordinates also locate which variable height the ball is at which differ
-   by about seven inches. If the coordinates are off by an inch, the correct wire can be adjusted to the closest wire for those coordinates. One inch allows
-   the wire to be determined since it will not be in between two wires. If it was two inches of error, the ball could be two inches to the right or left
-   and could be one of two wires. The variable height differs by seven inches, so an inch away from the correct variable height can be corrected to the
-   proper height from the data. A correction to the closest possible coordinates of the golf ball can be made from the detection with this error allowance.
+   by about seven inches. If the coordinates are off by an inch, the correct wire can be adjusted to the closest wire for those coordinates. This can be
+   done for both an inch to the left and an inch to the right for the x coordinate and an inch above or below for the y. The possible coordinates for the
+   ball on the wire will be stored in the processor. If the ball is one inch from a wire and three inches from another, the processor can compare these
+   coordinates and find the closest wire location. If it was two inches of error, the ball could be two inches to the right or left and could be one of two
+   wires. The variable height differs by seven inches, so an inch away from the correct variable height can be corrected to the proper height from the
+   data as well using the same logic. A correction to the closest possible coordinates of the golf ball can be made from the detection with this error
+   allowance.
 3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to
    aim the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved
    and interpreted which is expected to take half a second each.
@@ -39,22 +42,16 @@ speed calculation done by the processor.
 
 *Detection*
 
-The golf ball will be wrapped in foil and painted matte red. This will allow the object to be tracked using color. This can be done using a red, green, and
-blue color detection. The boundaries for the color are determined and entered in as limits. For these purposes, red will have the highest boundaries while
-green and blue will be much lower but still there to account for slight shading differences in the environment. These parameters and the image are then sent
-to a function called inRange. This will apply a mask to the array of pixels repersenting the image with a maske to determine the objects with the color.
-The results of such operations and algorithms can be seen below.
+The golf ball will be illuminated with lights from the device. This will allow the object to be tracked using color since the white golf ball can be
+distinguished from the light altered background. This can be done using hue, saturation, and variation color detection. The boundaries for the color are
+determined and entered in as limits. These parameters and the image are then sent to a function called inRange. This will apply a mask to the array of 
+pixels repersenting the image with a mask to determine the objects with the color. The results of such operations and algorithms can be seen below to
+detect a light color like grey.
 
-![Function](../Images/Image_Processing/Detecting_Red.png)
+![Function](../Images/Image_Processing/Detecting_Grey.png)
 
 This can be adjusted to detect the ball at longer distances when the amount of pixels repersenting the object are smaller. The Big O analysis of this
-function would be O(n) because it is an iterative function that will go through all of the pixels provided [1]. For more cluttered environments with
-variety of color and lighting, objects can still be detected and tracked. An example of this can be seen below [2].
-
-![Function](../Images/Image_Processing/Detecting_Clutter.png)
-
-This uses the same algorithm, but applies it to an environment with varying light sources and colored backgrounds showing that the ball can still be
-identified.
+function would be O(n) because it is an iterative function that will go through all of the pixels provided [1].
 
 *Distance and Coordinates*
 
@@ -79,7 +76,7 @@ width per pixel = 8.25/1920 = 0.004296 feet/pixel * 12 = 0.05155 inches/pixel
 height per pixel = 4.61/1080 * 12 = 0.004265 feet/pixel = 0.05118 inches/pixel
 
 The amount of inches for the width and height repersented by the pixels can be used to find out the x and y coordinates by multiplying the pixels by the
-numbers provided [3 & 4]. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to
+numbers provided [2 & 3]. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to
 find the distance. This should allow about 0.1 inches of error for the coordinates if there is a missing pixel at the edge of the camera's view and by the
 golf ball. Six feet is the maximum distance the golf ball will be from the camera, so the one inch of error will be achievable. These calculations are basic
 arthemetic and should be O(1). Counting the pixels is another O(n) operation.
@@ -88,7 +85,7 @@ arthemetic and should be O(1). Counting the pixels is another O(n) operation.
 
 The camera that is being used is an 1920 by 1080 pixels. Benchmarks for the Jetson Nano Developer Kit show that for a 1920 by 1080 pixel image can process 
 102 frames per second to find color and do several image alterations which is the same length as finding distance based on the Big O analysis. This means it
-takes 9.8 ms to process the image information [6]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
+takes 9.8 ms to process the image information [5]. The camera takes in 30 frames per second so it takes 33.33 ms to get a new image. The USB cord connecting
 the processor and camera processes data at 5 Gbs. Each pixel is 8 bits and has 2 color repersentation bytes so the total is 
 
 8 * 2 * 1080 * 1920 = 0.03318 Gb. 
@@ -113,15 +110,13 @@ This subsystem is implemented as part of the processor. No additional parts need
 [1] A. Rosebrock, “OpenCV and python color detection,” PyImageSearch, https://pyimagesearch.com/2014/08/04/opencv-python-color-detection/ 
 (accessed Apr. 15, 2024). 
 
-[2] A. Rosebrock, “Ball tracking with opencv,” PyImageSearch, https://pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/ (accessed Apr. 17, 2024). 
+[2] R. Awati, “What is field of view (FOV)?,” WhatIs, https://www.techtarget.com/whatis/definition/field-of-view-FOV (accessed Apr. 20, 2024). 
 
-[3] R. Awati, “What is field of view (FOV)?,” WhatIs, https://www.techtarget.com/whatis/definition/field-of-view-FOV (accessed Apr. 20, 2024). 
-
-[4] “Understanding image quality on the MV32,” Cisco Meraki Documentation,
+[3] “Understanding image quality on the MV32,” Cisco Meraki Documentation,
 https://documentation.meraki.com/MV/Viewing_Video/Understanding_Image_Quality_on_the_MV32 (accessed Apr. 20, 2024). 
 
-[5] “How to measure pixel size for image processing? | Researchgate,” ResearchGate,
+[4] “How to measure pixel size for image processing? | Researchgate,” ResearchGate,
 https://www.researchgate.net/post/How_to_measure_pixel_size_for_image_processing (accessed Apr. 20, 2024). 
 
-[6] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
+[5] F. Serzhenko, “✅ Jetson nano benchmarks for image processing,” fastcompression.com - GPU Image Processing Software,
 https://www.fastcompression.com/blog/jetson-nano-benchmarks-image-processing.htm (accessed Apr. 15, 2024). 
