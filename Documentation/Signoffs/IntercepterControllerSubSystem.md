@@ -5,7 +5,7 @@
 
 Figure 1: Interceptor Controller Subsystem
 
-The goal of this subsystem is to take the analog outputs produced by the processor and convert them into digital logic that can be used by the mechanical system to move the mechanism , this is due to it only being able to process digital inputs. 
+The goal of this subsystem is to take the analog outputs produced by the processor and the Arduino converts them the into digital outputs that can be used by the mechanical system to move the firing mechanism. The Arduino and Stepper Motor will allow the specific motors the Mechanical Engineering team has picked to change speed, direction to one of the 30 set positions, and drop the ammunition when the firing sequence is activated .
 
 ## **Constraints:**
 
