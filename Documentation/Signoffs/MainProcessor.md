@@ -13,23 +13,20 @@ The main processor unit is responsible for receiving, analyzing, and interpretin
 |-----|------------|--------|
 | 1	| Time Constraints - Real-time data processing for trajectory prediction for the golf ball can take around 40 ms for each image. The main processor needs to calculate the ball data before the ball reaches the end which varies from 1.9 seconds to 7.4 seconds | System Constraint |
 | 2	| Processing Speed - The main processor scripts and programs have to be optimized for efficient calculations. The scripts get the speed, wire, and variable height from input data. These calculations should not take longer than 40 ms per calculation iteration | System Constraint |
-| 3	| Signal Interpretation Challenges - Ensuring accurate data interpretation that is received from the Arduino's needs to be 5 Volts otherwise the main processor will not accept the data and could react inappropriately | Programming Constraint |
-| 4	| Resource Utilization - Since the board has 1.43GHz with quadcores and 4GB RAM, the main processor needs to be utilized properly to prevent an overload of system resources. The system needs to use all cores and not overload the RAM for speed efficiency but not sacrifice stability | System Constraint |
-| 5 | Pausing Processes: The system needs a pause state to stop other scripts from activating firing mechanisms. | Rulebook |
+| 3	| Resource Utilization - Since the board has 1.43GHz with quad-cores and 4GB RAM, the main processor needs to be utilized properly to prevent an overload of system resources. The system needs to use all cores and not overload the RAM for speed efficiency but not sacrifice stability | System Constraint |
+| 4 | Pausing Processes: The system needs a pause state to stop other scripts from activating firing mechanisms. | Rulebook |
 
 
 
 ## **Fulfilling Constraints:**
 
-**Time Constraints:** Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 the processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. THe ball's travel time varies from 1.9 seconds to 7.4 seconds and the programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically [2].
+**Time Constraints:** The Jetson Nano has a worst-case scenario of 1.9 seconds to find the golf ball and calculate and aim the interceptor's position before the ball reaches the end, given by Devcom. Real-time processing of sensor data and trajectory calculations impose time constraints on the Jetson Nano. Since it has to be able to detect and calculate the proper position of the ball. Its 1.43GHz quad-core ARM Cortex-A57 processor needs to be able to receive, process, calculate the interceptor’s path, and aim the interceptor before the golf ball gets too far down the string [3]. The ball's travel time varies from 1.9 seconds to 7.4 seconds and the programs and data transmission needs to be optimized for an accurate and efficient system to be able to run fast enough. Delays in data acquisition, processing, or interceptor firing may affect the interception accuracy dramatically [2].
 
-**Processing Speed:** Complex calculations and simultaneous tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. Optimizing algorithms and utilizing hardware and multi-core techniques can help minimize processing speed limitations. Making sure the processor can calculate each image iteration data fast enough to give the motors enough time to get into position for firing.
+**Processing Speed:** The data gathered and calculated from the image processing is the worst case of 99.54ms from the image processing subsystem. The Jetson Nano needs to calculate and simultaneously send data to the firing mechanism Arduino. These tasks may strain the processing capabilities of the Jetson Nano, potentially leading to performance bottlenecks. The algorithms needs to utilize the hardware and run scripts on multi-core to limit any speed limitations.
 
-**Signal Interpretation Challenges:** Variability in wireless signal strength, interference, and environmental factors may pose challenges in accurately interpreting Arduino data. The strength of signals from Arduinos should be 5V to confirm the signal was received by the Jetson Nano. 
+**Resource Utilization:** With a limited 4GB of LPDDR4 RAM, the Jetson Nano needs to use the resources but with image processing, it could easily have a resource overload. The memory and CPU load cannot be overloaded or the system's responsiveness will hinder its operation [2].
 
-**Resource Utilization:** With 4GB of LPDDR4 RAM, the Jetson Nano offers ample memory for concurrent tasks. However, efficient resource management is imperative to prevent resource overload. Optimization strategies focus on minimizing memory usage and CPU load, preserving system responsiveness [2].
-
-**Pausing Processes:** Since the rulebook from Devcom states the requirement for a pause switch integrated with the interceptor to stop the machine from firing, the system will require an integrated switch to halt operations inside the Jetson Nano [9].
+**Pausing Processes:** The rulebook from Devcom states the requirement for a pause switch integrated with the interceptor to stop the machine from firing. The constraint is pausing the script or scripts from running and operating as it is intended when the switch is on [9].
 
 
 # **Buildable Schematic:**
