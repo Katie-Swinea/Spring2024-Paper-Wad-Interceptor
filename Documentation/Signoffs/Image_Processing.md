@@ -24,9 +24,11 @@ The goal of this subsystem is to receive and process the data from the camera se
    addition and subtraction comparisons will also be adjusted where if x'+1 is less than or equal to x+1 and x'-1 is greater than or eqaul to x-1 if the
    difference is less than an inch between them. If x = x' then the value will be what was detected without a correction being performed. If it was two
    inches of error, the ball could be two inches to the right or left and could be one of two wires using this method. If each x value is four inches
-   apart, x'-2 could be equal to x1-2 and x2-2. This would make the proper wire detection indeterminable. The variable height differs by seven
-   inches, so an inch away from the correct variable height can be corrected to the proper height from the data as well using the same logic and processes.
-   A correction to the closest possible coordinates of the golf ball can be made from the detection with this error allowance.
+   apart, x'-2 could be equal to x1-2 and x2+2. An example of this would be if x' is 3, x1 is 5, and x2 is 1. While the two wire positions are still four
+   inches apart, the error margin would not be able to determine the exact wire the golf ball is on. This would make the proper wire detection
+   indeterminable. The variable height differs by seven inches, so an inch away from the correct variable height can be corrected to the proper height from
+   the data as well using the same logic and processes. A correction to the closest possible coordinates of the golf ball can be made from the detection
+   with this error allowance.
 3. The fastest speed of the golf ball is 1.95 seconds from empirical data from the customer. The ball needs to be detected in enough time for the team to
    aim the launcher and launch the projectile. This minimum allows time for the motors to make adjustments and fire after the information has been recieved
    and interpreted which is expected to take half a second each.
