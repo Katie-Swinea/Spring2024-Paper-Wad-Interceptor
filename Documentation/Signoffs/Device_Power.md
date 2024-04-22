@@ -30,7 +30,7 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/Buildable.2.png)
+![Function](../Images/Device_Power/kicad9.png)
 
 *power subsystem buildable schematic*
 
@@ -58,7 +58,7 @@ The above table details the different power draws that is required from this sys
 
 ### Mechanical:
 
-This power system will supply power to three main componets of the mechanical system. These componets are the firing mechanism's DC motor, and two stepper driver controllers that will control the aiming of the interceptor. The DC motor has voltage requirement of 24 volts with an amperage draw of 10 amps. This means the power draw of this system will be:
+This power system will supply power to three main componets of the mechanical system. These componets are the firing mechanism's DC motor, and two stepper driver controllers that will control the aiming of the interceptor. The DC motor has a maximum voltage requirement of 24 volts with an amperage draw of 10 amps. This means the power draw of this system will be:
 
 <p align="center">DC Motor Power Draw: (24 volts) * (10 amps) = 240 watts</p>
 
@@ -97,7 +97,7 @@ To achieve everything this system is required to do, the total power draw of thi
 
 <p align="center">(480 watts) + (4.5 watts) + (20 watts) = 504.5 watts</p>
 
-This will be accomplished by using three seperate power supplies. The first will supply a total of 360 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these three supplies will be:
+This will be accomplished by using three seperate power supplies. The first will supply a total of 600 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these three supplies will be:
 
 <p align="center">(600 watts) + (13.5 watts) + (20 watts) = 633.5 watts</p>
 
@@ -132,7 +132,7 @@ utilized for this system is rated for a maximum of 30 volts and a DC current max
 
 [3] Amazon, https://www.amazon.com/Individual-Switches-Protector-Appliances-Extension/dp/B08HYLW3GX/ref=asc_df_B08HYLW3GX/?tag=hyprod-20&linkCode=df0&hvadid=647192999967&hvpos=&hvnetw=g&hvrand=12971397952727350175&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-2013978108223&mcid=3f30a49c0078360ebf82f79cd802428d&th=1 (accessed Apr. 16, 2024). 
 
-[4] Amazon, https://www.amazon.com/ALITOVE-Universal-Regulated-Switching-Transformer/dp/B06XK2ZNKC/ref=asc_df_B06XK2ZNKC/?tag=hyprod-20&linkCode=df0&hvadid=241935719665&hvpos=&hvnetw=g&hvrand=6310000027683861751&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-401426217092&mcid=324cb35da40333b298d63ebf99c464f1&gclid=CjwKCAjwz42xBhB9EiwA48pT786SSbMxG2WTaF_n8CQgsneQMYSm_EulaxHUTGMk5KMV0CFH-mvGDhoCHmgQAvD_BwE&th=1 (accessed Apr. 20, 2024). 
+[4] Amazon, https://www.amazon.com/Switching-%EF%BC%88SMPS%EF%BC%89Monitoring-Industrial-Transformer-220VAC-DC24V/dp/B0786LMNR2/ref=asc_df_B0786LMNR2/?tag=hyprod-20&linkCode=df0&hvadid=312128003944&hvpos=&hvnetw=g&hvrand=8859139017483582435&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-573585158574&psc=1&mcid=2000dd6590d83024ac5f590c09878b0f&gclid=Cj0KCQjw8pKxBhD_ARIsAPrG45kRdCWz99DhDEafjpnV7ArQy55SFNEh73GzbDIk_U8pW8H17HLCgPkaAkBvEALw_wcB (accessed Apr. 21, 2024). 
 
 [5] S1F NKK switches - digikey, https://www.digikey.com/en/products/detail/nkk-switches/S1F/1006965 (accessed Apr. 20, 2024). 
 
