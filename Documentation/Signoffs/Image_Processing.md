@@ -56,14 +56,15 @@ variety of color and lighting, objects can still be detected and tracked. An exa
 This uses the same algorithm, but applies it to an environment with varying light sources and colored backgrounds showing that the ball can still be
 identified.
 
-
 *Distance and Coordinates*
 
 The distance of the object can be found using another iterative function for another linear algorithm. The camera returns an array with the depth of each 
 pixel. This array is compared with the array holding the pixels that repersent the golf ball. The result is the depth of each pixel of the golf ball.
 
 The object's coordinates can be determined through comparisons. Using edge of the field of view (FOV), the coordinates can be found. The pixels in between
-the edge and the object can be counted. Using the width each pixel repersents, the total distance can be found. The pixel width repersentation can be found using the equations 
+the edge and the object can be counted. Each pixel will appear to be a certain width. The distance of the object being repersented by the pixel from the
+camera determines how many inches that pixels repersents. Using the width each pixel repersents, the total distance can be found when counting the pixels
+from the edge of the field of view to the object. The pixel width repersentation can be found using the equations
 
 FOV width = 2 * tan(FOV/2) * distance and FOV height = 2 * tan(FOV/2) * distance
 
@@ -77,10 +78,10 @@ width per pixel = 8.25/1920 = 0.004296 feet/pixel * 12 = 0.05155 inches/pixel
 
 height per pixel = 4.61/1080 * 12 = 0.004265 feet/pixel = 0.05118 inches/pixel
 
-The amount of inches for the width and height of the pixels can be used to find out the x and y coordinates by multiplying the pixels by the numbers
-provided [3 & 4]. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to find the
-distance. This should allow about 0.1 inches of error for the coordinates if there is a missing pixel at the edge of the camera's view and by the golf
-ball. Six feet is the maximum distance the golf ball will be from the camera, so the one inch of error will be achievable. These calculations are basic
+The amount of inches for the width and height repersented by the pixels can be used to find out the x and y coordinates by multiplying the pixels by the
+numbers provided [3 & 4]. The accuracy of this method is high because it uses the size of the pixel based on the distance and should have enough pixels to
+find the distance. This should allow about 0.1 inches of error for the coordinates if there is a missing pixel at the edge of the camera's view and by the
+golf ball. Six feet is the maximum distance the golf ball will be from the camera, so the one inch of error will be achievable. These calculations are basic
 arthemetic and should be O(1). Counting the pixels is another O(n) operation.
 
 *Speed*
