@@ -2,7 +2,10 @@
 
 ## Executive Summary
 
-**We need an elevator pitch but I have the abstract for this section**
+It is a common problem that students that are currently in school lack interest in STEM subjects. This is a problem for society as it hinders innovation and
+discovery in future generations. It also negatively affects current infrastructure and systems in place. Without students who are interested in these fields
+of study and existing structures, failures in infrastructure and government programs could occur. This project aims to spark students interest in STEM
+fields and applying the principles to existing infrastructure.
 
 The goal of this project is to replicate a missile defense system to interest children in STEM, specifically the department of defense. This is done be
 scaling the original problem down to a smaller area. This scale down is proposed as a paper wad interceptor in a classroom. However, this project is
@@ -14,9 +17,9 @@ the project was already being scaled down, the project was also turned into a co
 
 ## Capabilities
 
-Here explain in more detail (though not as much as will be given in the datasheet) what the version of this project in this repo is capable of doing.
-
-In it's current state, the team's project is not capable of doing anything. The designs have not yet been completed and the project has not been built. 
+In it's current state, the team's project is not capable of powering the devices that will be used. The designs have not yet been completed and the project
+has not been built, so all the capabilities are theoritcal and proven through datasheets and analysis. The capabilities of the system will be updated
+through the design process and culminate in a final summary for the final design.
 
 ## Salient Outcomes
 
@@ -37,7 +40,7 @@ via links. Picures of the project while it is not in use will also be included.
 
 Garrett Armstrong: Electrical Engineering major who focused on the power for the system created.
 
-Savannah Metlzer: Electrical Engineering major who focused on seperate assitance devices and their power.
+Savannah Metlzer: Electrical Engineering major who focused on providing the signal conversions and aiming coordinates for the motors.
 
 Jonathan Neal: Electrical Engineering major who focused on interfacing the extra lights and sound into the system.
 
