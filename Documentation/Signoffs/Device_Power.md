@@ -13,16 +13,16 @@ The goal of this subsystem is to convert AC power from the wall outlet to DC pow
 | NO. | Constraint                                                          | Origin           |
 |-----|---------------------------------------------------------------------|------------------|
 | 1   | The power system shall be controlled by an emergency stop which will de-energize the mechanical system. This will shut off the motors which will not allow any projectiles to be fired. This will only be used if the system threatens peoples safety |Conceptual Design |
-| 2   | The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsytem and a maximum of 480 Watts DC, which is required by the mechanical unit |Conceptual Design |
+| 2   | The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsytem, 50 watts, which is required by the emergency stop system and a maximum of 480 Watts DC, which is required by the mechanical unit |Conceptual Design |
 | 3   | The system shall be controlled by a power switch                 |Conceptual Design |
 
 <sup>1</sup> The power system shall be controlled by an emergency stop which will de-energize the mechanical system. This will shut off the motors which will not allow any projectiles to be fired. This will only be used if the system threatens peoples safety  [Conceptual Design]
 
 One of the requirements in the rulebook, given to us by the customer, is that the interceptor needs to have an emergency stop that de-energizes the interceptor. This emergency stop will cut power from the AC-DC convertor for the mechanical system to the motors themselves which will de-energize the interceptor. This system will only be used as a last case option if the interceptor threatens peoples safety. 
 
-<sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsystem and a minimum of 480 Watts DC, which is required by the mechanical unit [Conceptual Design]
+<sup>2</sup> The system shall convert 100-120 wall outlet AC voltage to 20 watts, which is required by the main/processor unit, 4.5 watts, which is required by the extra subsytem, 50 watts, which is required by the emergency stop system and a maximum of 480 Watts DC, which is required by the mechanical unit [Conceptual Design]
 
-The overall system must be able to provide at least 504.5 watts. The processor of this system requires a power draw of 20 watts and will be powered by its on supply. The extra system requires a power draw of 4.5 watts and will be powered by its on supply. The mechanical unit will consist of one DC motor that will do the firing and two motor controllers that will operate on the aiming system. The total combined power draw of this system is at least 480 watts. 
+The overall system must be able to provide at least 554.5 watts. The processor of this system requires a power draw of 20 watts and will be powered by its on supply. The extra system requires a power draw of 4.5 watts and will be powered by its on supply. The emergency system requires a power draw of 50 watts and will be powered by its on supply. The mechanical unit will consist of one DC motor that will do the firing and two motor controllers that will operate on the aiming system. The total combined power draw of this system is at least 480 watts. 
 
 <sup>3</sup>  The system shall be controlled by a power switch  [Conceptual Design]
 
@@ -30,20 +30,15 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad9.png)
+![Function](../Images/Device_Power/kicad10.png)
 
 *power subsystem buildable schematic*
 
-### Schematic Notes
+![Function](../Images/Device_Power/power_phase.png)
 
-1. Each power plug will have its own power switch. This will allow each power supply to be easily turned on or turned off.
-2. The cord that will be used to connect the power strip and the 24 volt 15 amp supply will need to have the plugin removed to allow access to the ground wire, AC neutral wire (AC N) and AC line wire (AC L). These wires will be connected to the power supply.
-3. This switch will act as the emergency switch between the power supply and the firing motors. Only the postive voltage wire will be connected to the switch. This will allow the circuit to become a complete loop between the supply, postive voltage wire, negative voltage wire and actual motor when the switch is closed.
-4. The red and black wires are the postive voltage (red) and negative voltage (black) connections.
-5. These adaptors are physically connected to the power strip. There is no cord between them, these will be plugged straight in.
-6. The barrel plug connectors will be physically plugged into the barrel jack connectors. The barrel jack connectors are physically soldered on the Jetson Nano board and Ardunio board.
-7. The firing motor is controlled by a potentiometer that will regulate the voltage going into it. This will allow the control of the RPMs generated by the motor, which will give the ability to change how fast the projectile is fired.
-8. This system will power the driver controllers which will control the amount of voltage and current going to the actual motor. 
+*Entire project power schematic*
+
+This is to show the power system is supplying power to everything it needs to power in order to accomplish everything this project is required to do.
 
 ## Analysis
 
@@ -52,7 +47,8 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 | Mechanical    | 24 Volts   | 20 Amps  | 480 Watts    |
 | Extra | 9 Volts  | 500 mAmps | 4.5 Watts  |
 | Processor     | 5 Volts    | 4 Amps    | 20 Watts    |
-| Total         |  |     | 504.5 Watts |
+|Emergency      | 5 Volts    | 10 Amps   | 50 Watts    |
+| Total         |  |     | 554.5 Watts |
 
 The above table details the different power draws that is required from this system. 
 
@@ -74,7 +70,7 @@ This places the maximum power draw of the entire system at:
 
 <p align="center">Total Power draw of the Mechanical System: (240 watts) + (240 watts) = 480 watts</p>
 
-To acomplish the total power draw required, this system will utilize a power supply capable of supplying 600 watts of power[4]. This will give the system plenty of head room in power the three componets as it will supply 120 more watts then is required.
+To acomplish the total power draw required, this system will utilize a power supply capable of supplying 600 watts of power[4]. This will give the system plenty of head room in powering the three componets as it will supply 120 more watts then is required.
 
 ### Extra:
 
@@ -91,37 +87,43 @@ The processor system will be controlled by a Jetson Nano developer kit. This Jet
 
 To acomplish this power draw, the system will utilize an adaptor that was designed for this specfic Jetson Nano [2]. This adaptor supplys a voltage of 5 volts and a maximum current of 4 amps [2]. 
 
+### Emergency Stop
+
+In order for the emergency stop to properly de-energize the entire mechanical system, one switch must be able to operate on three seperate circuits. The way this system will accomplish this is through the use of a 4-channel relay componet. This four channel relay takes a 5 volt 10 amp input to charge the coil. This will be acomplished using a 5 volt 10 amp power supply [10]. This means the power draw of this system will be:
+
+<p align="center">Total Power draw of the Emergency System: (5 volts) * (10 amps) = 50 watts</p>
+
+The three outputs of the 24 volt power supply will be connected to the three channel inputs of the relay and there connected outputs will connected to the NO (normally open) input. This will cause the 24 volt signal to output whenever the coil is not being connected to the 5 volt input. This is important as the emergency switch is supposed to shut power off when the switch is closed. Becuase of this when the emergency switch is closed the coil will begin charging causing the channel switch to close. This will output the NC (normally closed) signal, which will not be connected to the motors. [9][5]
+
 ### Total Power
 
 To achieve everything this system is required to do, the total power draw of this system will be:
 
-<p align="center">(480 watts) + (4.5 watts) + (20 watts) = 504.5 watts</p>
+<p align="center">(480 watts) + (4.5 watts) + (20 watts) + (50 watts) = 554.5 watts</p>
 
-This will be accomplished by using three seperate power supplies. The first will supply a total of 600 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these three supplies will be:
+This will be accomplished by using four seperate power supplies. The first will supply a total of 600 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The third will supply 50 watts and will power the emergency system that is connected to the mechanical system [10]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these four supplies will be:
 
-<p align="center">(600 watts) + (13.5 watts) + (20 watts) = 633.5 watts</p>
+<p align="center">(600 watts) + (13.5 watts) + (20 watts) + (50 watts) = 683.5 watts</p>
 
-The total supplied power of 633.5 watts will completely encapsulate the required wattage of 504.5 watts, and will allow the system to function correctly and accurately.
+The total supplied power of 683.5 watts will completely encapsulate the required wattage of 554.5 watts, and will allow the system to function correctly and accurately.
 
 ### Power Switch 
 
-To accomplish the power switch constraint this system will utilize a power strip. This power strip will have six seperate plug ins each with it's own power switch. This system will utilize three of the six plugs as there are three power supplies being used in this system. The power strip selected is rated for 1875 watts of power which will comfortably encapsulate the three supplies being utilzed as the maximum power draw for this system is 504.5 watts. [3]
-
-### Emergency Stop
-
-To accomplish the emergency stop contsraint this system will connect the DC motor power input to a switch that will effectively cut the power to the motor. This will stop the interceptor from firing any projectiles. The switch that will be 
-utilized for this system is rated for a maximum of 30 volts and a DC current maximum of 20 amps. The DC motors will receive 24 volts at 10 amps. The voltage and current rating of the switch will be more than enough to support what the motor requires to funtion. [5]
+To accomplish the power switch constraint this system will utilize a power strip. This power strip will have six seperate plug ins each with it's own power switch. This system will utilize four of the six plugs as there are four power supplies being used in this system. The power strip selected is rated for 1875 watts of power which will comfortably encapsulate the three supplies being utilzed as the maximum power draw for this system is 554.5 watts. [3]
 
 ## BOM
 |Item Name | Description | Subsystems | Part Number | Manufacturer | Quantity | Price | Total |
 |----------|-------------|------------|-------------|--------------|----------|-------|-------|
 |CCCEI Metal Power Strip Individual Switches 6 Outlets | 6 plugin power strip with 6 switches | Mechanical, Extra, Processor | B08HYLW3GX | CCCEI | 1 | 16.99 | 16.99 |
-|Emergency stop switch | Switch rated for 30 volts and 20 amps | Mechanical | 360-1887-ND | NKK Switches | 1 | 7.03 | 24.02 |
-|5V 4A Power Supply Adapter | Jetson Nano power supply rated for 5 volts and 4 amps | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 37.70 |
-|Gonine 9V DC Power Supply | Arduino Uno R3 power supply rated for 9 volts and 1.5 amps | Extra | B099J3JCVX | wei dian | 1 | 12.69 | 50.39 |
-|ALITOVE DC 24V 25A 600W Power Supply | 600 watt power supply | Mechanical | B0786LMNR2 | MEISHILE | 1 | 31.99 | 82.38 |
-|16 AWG wire | 16 AWG wire to hook up mechanical system | Mechanical | B07D73ZRDP | GS Power | 1 | 8.49 | 90.87 |
-|AC power cord | Power cord that will connect the power strip and Mechanical power supply | Mechanical | B09VRLJD7J | LORDTRONICS | 1 | 6.99 | 97.86 |
+|Emergency stop switch | Switch will cause the relay to disconnect the power to the Mechanical system | Mechanical | B079FKJG26 | API Electric | 1 | 9.99 | 26.98 |
+|5V 4A Power Supply Adapter | Jetson Nano power supply rated for 5 volts and 4 amps | Processor | B07RTWD725 | COOLM | 1 | 13.68 | 40.66 |
+|Gonine 9V DC Power Supply | Arduino Uno R3 power supply rated for 9 volts and 1.5 amps | Extra | B099J3JCVX | wei dian | 1 | 12.69 | 53.35 |
+|ALITOVE DC 24V 25A 600W Power Supply | 600 watt power supply | Mechanical | B0786LMNR2 | MEISHILE | 1 | 31.99 | 85.34 |
+|16 AWG wire | 16 AWG wire to hook up mechanical system | Mechanical | B07D73ZRDP | GS Power | 1 | 8.49 | 93.83 |
+|AC power cord | Power cord that will connect the power strip and Mechanical power supply | Mechanical | B09VRLJD7J | LORDTRONICS | 1 | 6.99 | 100.82 |
+| 2x2 Solderable bread board | Bread board that will connect the switch's outputs to three inputs of the relay | Mechanical | B0BSHG21P5 | SchmalzTech, LLC | 1 | 3. 49 | 104.31 |
+| 5V 10A power Supply | Relay coil power supply | Mechanical | B0CJRZPJSY | Henxlco | 1 | 13.99 | 118.30 |
+| 4-channel relay | Relay that will disconnect the power to the motors | Mechanical | B08PP8HXVD | ANMBEST | 1 | 12.99 | 131.29 |
 
 
 ## References 
@@ -134,10 +136,18 @@ utilized for this system is rated for a maximum of 30 volts and a DC current max
 
 [4] Amazon, https://www.amazon.com/Switching-%EF%BC%88SMPS%EF%BC%89Monitoring-Industrial-Transformer-220VAC-DC24V/dp/B0786LMNR2/ref=asc_df_B0786LMNR2/?tag=hyprod-20&linkCode=df0&hvadid=312128003944&hvpos=&hvnetw=g&hvrand=8859139017483582435&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-573585158574&psc=1&mcid=2000dd6590d83024ac5f590c09878b0f&gclid=Cj0KCQjw8pKxBhD_ARIsAPrG45kRdCWz99DhDEafjpnV7ArQy55SFNEh73GzbDIk_U8pW8H17HLCgPkaAkBvEALw_wcB (accessed Apr. 21, 2024). 
 
-[5] S1F NKK switches - digikey, https://www.digikey.com/en/products/detail/nkk-switches/S1F/1006965 (accessed Apr. 20, 2024). 
+[5] APIELE 22mm NC red mushroom emergency stop push button switch 600V 10 amp XB2-01ZS: Amazon.com: Industrial & Scientific, https://www.amazon.com/a12082000ux0309-Mushroom-Emergency-Button-ZB2-BE102C/dp/B079FKJG26 (accessed Apr. 23, 2024). 
 
 [6] Amazon, https://www.amazon.com/American-Aluminum-Primary-Amplifier-Available/dp/B07D73ZRDP/ref=sr_1_2_sspa?crid=H80LENUU6197&dib=eyJ2IjoiMSJ9.0LnrB1pSbZfctUIBZoggXpFtF6rNKA5WSjlZ1BAxa5VLNFYzVeSdHbTsxIQpBpOHzXC3YJbnzAa_KSkYleJmfalTRC9e7IBhriGkN5cIdJByBwJBxLefuZR3uARHY3WuPzhVAXu12tEcI4Wv8BbEOHL121_mpBof-J1BaaBkTpbt3_WxFslTWzDCWcemV1DMtBLuySWdO_Ky-T0tlHlHxXulC8i8DlvqhMharC0pRcQ-3uMR8DgiFz2wJZ-PH6kPn4uHzeBoAxzH3pkFlQdPqg6ym2pBhJvBym3UzcEjujM.eUjEa-tsRWWr0zni-ns4wD1nVYVzsPe6mKV8hno2oPM&dib_tag=se&keywords=16%2Bawg%2Bwire&qid=1713650740&refinements=p_36%3A-1000&rnid=1243644011&sprefix=16%2Bawg%2B%2Caps%2C90&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1 (accessed Apr. 20, 2024). 
 
 [7] Digikey, https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/13/451,452_Series_Header&Socket.pdf (accessed Apr. 20, 2024). 
 
-[8] Amazon, https://www.amazon.com/Standard-Electronics-Computer-Printer-Monitor/dp/B09VRLJD7J/ref=asc_df_B09VRLJD7J/?tag=hyprod-20&linkCode=df0&hvadid=563656015384&hvpos=&hvnetw=g&hvrand=18295324020142779198&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1674555517194&psc=1&mcid=45cb6e5d55683eab850fcc240ea659f4&gclid=Cj0KCQjw8pKxBhD_ARIsAPrG45l9_eElMxkK2B0lfPSFFqoQLkjJyrHErvuGgWtmSExOTyspiT-g-f4aAjSZEALw_wcB (accessed Apr. 21, 2024). 
+[8] Amazon, https://www.amazon.com/Bergen-Industries-Inc-PS613163-Appliance/dp/B07C9D6CXY/ref=pd_bxgy_d_sccl_1/136-1250652-4143303?pd_rd_w=FTiWP&content-id=amzn1.sym.2b132e63-5dcd-4ba1-be9f-9e044543d59f&pf_rd_p=2b132e63-5dcd-4ba1-be9f-9e044543d59f&pf_rd_r=G8JXM35373BJ3AMGBE8N&pd_rd_wg=ocuCJ&pd_rd_r=83d5ef2c-44e7-47a2-9db3-9f26b09cc7f7&pd_rd_i=B07C9D6CXY&th=1 (accessed Apr. 22, 2024). 
+
+[9] Amazon, https://www.amazon.com/dp/B08PP8HXVD/ref=sspa_dk_hqp_detail_aax_0?sp_csd=d2lkZ2V0TmFtZT1zcF9ocXBfc2hhcmVk&th=1 (accessed Apr. 22, 2024). 
+
+[10] Amazon.com: Henxlco AC100-240V to DC 5V 10A 50W power supply adapter converter transformer with 5.5 x 2.5mm plug for led strip light，cctv security camera system : Electronics, https://www.amazon.com/Henxlco-AC100-240V-Converter-Transformer-Light%EF%BC%8CCCTV/dp/B0CJRZPJSY (accessed Apr. 23, 2024). 
+
+[11] Schmalztech double sided Enig protoboard, solderable breadboard, electronic circuit board for DIY prototype circuit, FR4, plated through Hole Solder Prototype Board, St-Proto (1" x 2"): Amazon.com: Industrial & Scientific, https://www.amazon.com/SchmalzTech-Protoboard-Solderable-Breadboard-Electronic/dp/B0C3YYG6CV (accessed Apr. 23, 2024). 
+
+[12] “Top Embedded Institute in Bangalore,” IIES, https://iies.in/blog/how-to-use-relay-module-without-arduino/#:~:text=To%20use%20a%20relay%20module,and%20the%20number%20of%20channels (accessed Apr. 22, 2024). 
