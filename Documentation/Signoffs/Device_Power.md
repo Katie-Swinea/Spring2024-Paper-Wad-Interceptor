@@ -89,11 +89,11 @@ To acomplish this power draw, the system will utilize an adaptor that was design
 
 ### Emergency Stop
 
-In order for the emergency stop to properly de-energize the entire mechanical system, one switch must be able to operate on three seperate circuits. The way this system will accomplish this is through the use of a 4-channel relay componet. This four channel relay takes a 5 volt 10 amp input to charge the coil. This will be acomplished using a 5 volt 10 amp power supply [10]. This means the power draw of this system will be:
+In order for the emergency stop to properly de-energize the entire mechanical system, one switch must be able to operate on three seperate circuits. The way this system will accomplish this is through the use of a 4-channel relay componet. This four channel relay takes a 5 volt 10 amp input to charge the coil. This will be acomplished using a 5 volt 10 amp power supply [9]. This means the power draw of this system will be:
 
 <p align="center">Total Power draw of the Emergency System: (5 volts) * (10 amps) = 50 watts</p>
 
-The three outputs of the 24 volt power supply will be connected to the three channel inputs of the relay and there connected outputs will connected to the NO (normally open) input. This will cause the 24 volt signal to output whenever the coil is not being connected to the 5 volt input. This is important as the emergency switch is supposed to shut power off when the switch is closed. Becuase of this when the emergency switch is closed the coil will begin charging causing the channel switch to close. This will output the NC (normally closed) signal, which will not be connected to the motors. [9][5]
+The three outputs of the 24 volt power supply will be connected to the three channel inputs of the relay and there connected outputs will connected to the NO (normally open) input. This will cause the 24 volt signal to output whenever the coil is not being connected to the 5 volt input. This is important as the emergency switch is supposed to shut power off when the switch is closed. Becuase of this when the emergency switch is closed the coil will begin charging causing the channel switch to close. This will output the NC (normally closed) signal, which will not be connected to the motors. [8][5]
 
 ### Total Power
 
@@ -101,7 +101,7 @@ To achieve everything this system is required to do, the total power draw of thi
 
 <p align="center">(480 watts) + (4.5 watts) + (20 watts) + (50 watts) = 554.5 watts</p>
 
-This will be accomplished by using four seperate power supplies. The first will supply a total of 600 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The third will supply 50 watts and will power the emergency system that is connected to the mechanical system [10]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these four supplies will be:
+This will be accomplished by using four seperate power supplies. The first will supply a total of 600 watts and will power the Mechanical system [4]. The second will supply a total of 13.5 watts and will power the extra system [1]. The third will supply 50 watts and will power the emergency system that is connected to the mechanical system [9]. The final adaptor will supply 20 watts and will power the processor system [2]. The total power draw of these four supplies will be:
 
 <p align="center">(600 watts) + (13.5 watts) + (20 watts) + (50 watts) = 683.5 watts</p>
 
@@ -140,14 +140,12 @@ To accomplish the power switch constraint this system will utilize a power strip
 
 [6] Amazon, https://www.amazon.com/American-Aluminum-Primary-Amplifier-Available/dp/B07D73ZRDP/ref=sr_1_2_sspa?crid=H80LENUU6197&dib=eyJ2IjoiMSJ9.0LnrB1pSbZfctUIBZoggXpFtF6rNKA5WSjlZ1BAxa5VLNFYzVeSdHbTsxIQpBpOHzXC3YJbnzAa_KSkYleJmfalTRC9e7IBhriGkN5cIdJByBwJBxLefuZR3uARHY3WuPzhVAXu12tEcI4Wv8BbEOHL121_mpBof-J1BaaBkTpbt3_WxFslTWzDCWcemV1DMtBLuySWdO_Ky-T0tlHlHxXulC8i8DlvqhMharC0pRcQ-3uMR8DgiFz2wJZ-PH6kPn4uHzeBoAxzH3pkFlQdPqg6ym2pBhJvBym3UzcEjujM.eUjEa-tsRWWr0zni-ns4wD1nVYVzsPe6mKV8hno2oPM&dib_tag=se&keywords=16%2Bawg%2Bwire&qid=1713650740&refinements=p_36%3A-1000&rnid=1243644011&sprefix=16%2Bawg%2B%2Caps%2C90&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1 (accessed Apr. 20, 2024). 
 
-[7] Digikey, https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/13/451,452_Series_Header&Socket.pdf (accessed Apr. 20, 2024). 
+[7] Amazon, https://www.amazon.com/Bergen-Industries-Inc-PS613163-Appliance/dp/B07C9D6CXY/ref=pd_bxgy_d_sccl_1/136-1250652-4143303?pd_rd_w=FTiWP&content-id=amzn1.sym.2b132e63-5dcd-4ba1-be9f-9e044543d59f&pf_rd_p=2b132e63-5dcd-4ba1-be9f-9e044543d59f&pf_rd_r=G8JXM35373BJ3AMGBE8N&pd_rd_wg=ocuCJ&pd_rd_r=83d5ef2c-44e7-47a2-9db3-9f26b09cc7f7&pd_rd_i=B07C9D6CXY&th=1 (accessed Apr. 22, 2024). 
 
-[8] Amazon, https://www.amazon.com/Bergen-Industries-Inc-PS613163-Appliance/dp/B07C9D6CXY/ref=pd_bxgy_d_sccl_1/136-1250652-4143303?pd_rd_w=FTiWP&content-id=amzn1.sym.2b132e63-5dcd-4ba1-be9f-9e044543d59f&pf_rd_p=2b132e63-5dcd-4ba1-be9f-9e044543d59f&pf_rd_r=G8JXM35373BJ3AMGBE8N&pd_rd_wg=ocuCJ&pd_rd_r=83d5ef2c-44e7-47a2-9db3-9f26b09cc7f7&pd_rd_i=B07C9D6CXY&th=1 (accessed Apr. 22, 2024). 
+[8] Amazon, https://www.amazon.com/dp/B08PP8HXVD/ref=sspa_dk_hqp_detail_aax_0?sp_csd=d2lkZ2V0TmFtZT1zcF9ocXBfc2hhcmVk&th=1 (accessed Apr. 22, 2024). 
 
-[9] Amazon, https://www.amazon.com/dp/B08PP8HXVD/ref=sspa_dk_hqp_detail_aax_0?sp_csd=d2lkZ2V0TmFtZT1zcF9ocXBfc2hhcmVk&th=1 (accessed Apr. 22, 2024). 
+[9] Amazon.com: Henxlco AC100-240V to DC 5V 10A 50W power supply adapter converter transformer with 5.5 x 2.5mm plug for led strip light，cctv security camera system : Electronics, https://www.amazon.com/Henxlco-AC100-240V-Converter-Transformer-Light%EF%BC%8CCCTV/dp/B0CJRZPJSY (accessed Apr. 23, 2024). 
 
-[10] Amazon.com: Henxlco AC100-240V to DC 5V 10A 50W power supply adapter converter transformer with 5.5 x 2.5mm plug for led strip light，cctv security camera system : Electronics, https://www.amazon.com/Henxlco-AC100-240V-Converter-Transformer-Light%EF%BC%8CCCTV/dp/B0CJRZPJSY (accessed Apr. 23, 2024). 
+[10] Schmalztech double sided Enig protoboard, solderable breadboard, electronic circuit board for DIY prototype circuit, FR4, plated through Hole Solder Prototype Board, St-Proto (1" x 2"): Amazon.com: Industrial & Scientific, https://www.amazon.com/SchmalzTech-Protoboard-Solderable-Breadboard-Electronic/dp/B0C3YYG6CV (accessed Apr. 23, 2024). 
 
-[11] Schmalztech double sided Enig protoboard, solderable breadboard, electronic circuit board for DIY prototype circuit, FR4, plated through Hole Solder Prototype Board, St-Proto (1" x 2"): Amazon.com: Industrial & Scientific, https://www.amazon.com/SchmalzTech-Protoboard-Solderable-Breadboard-Electronic/dp/B0C3YYG6CV (accessed Apr. 23, 2024). 
-
-[12] “Top Embedded Institute in Bangalore,” IIES, https://iies.in/blog/how-to-use-relay-module-without-arduino/#:~:text=To%20use%20a%20relay%20module,and%20the%20number%20of%20channels (accessed Apr. 22, 2024). 
+[11] “Top Embedded Institute in Bangalore,” IIES, https://iies.in/blog/how-to-use-relay-module-without-arduino/#:~:text=To%20use%20a%20relay%20module,and%20the%20number%20of%20channels (accessed Apr. 22, 2024). 
