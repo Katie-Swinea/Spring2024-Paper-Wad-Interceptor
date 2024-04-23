@@ -34,7 +34,7 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 
 *power subsystem buildable schematic*
 
-![Function](../Images/Device_Power/power_phase.png)
+![Function](../Images/Device_Power/kicad11.png)
 
 *Entire project power schematic*
 
