@@ -38,7 +38,7 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 
 *Entire project power schematic*
 
-This is to show the power system is supplying power to everything it needs to power in order to accomplish everything this project is required to do.
+This is to show the power system is supplying power to everything it needs to power in order to accomplish everything this project is required to do. The power system will just supply power to three motors, the relay system, the processor and the extra system. Every other componet will be powered by another componet. 
 
 ## Analysis
 
