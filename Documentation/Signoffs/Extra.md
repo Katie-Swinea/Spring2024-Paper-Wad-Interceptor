@@ -30,7 +30,7 @@ Figure 1: This represents the buildable schematic for the pause switch. This swi
 
 ![System](../Images/Buildable_Buzzer.png)
 
-Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound.
+Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound. 
 
 
 ## **Analysis**
