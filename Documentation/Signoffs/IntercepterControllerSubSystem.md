@@ -14,7 +14,7 @@ The goal of this subsystem is to take the analog outputs produced by the process
 |1|The Interceptor Controller shall move firing mechanism to 1 of 30 pre set locations |Conceptual Design|
 |2|Must send back signal when aiming is finished to initiate firing sequence in processor| Conceptual Design |
 |3|Shall receive 5V power supply from processor| Conceptual Design|
-|4|Must change speed and direction of the motors in the Mechanical's section |Concepyual Design|
+|4|Must change speed and direction of the motors in the Mechanical's section |Conceptual Design|
 
 
 
