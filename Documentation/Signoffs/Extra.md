@@ -28,7 +28,7 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure.
 
 Figure 1: This represents the buildable schematic for the pause switch. This switch outputs 5V or ground that is found on the arduino. This output is sent to the processor block to determine the pause state. In this example, the green LED's will be at the top, and the red LED's will be at the bottom.
 
-![System](../Images/Buildable_Buzzer.png)
+![System](../Images/Buzzer_Buildable2.png)
 
 Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound. 
 
