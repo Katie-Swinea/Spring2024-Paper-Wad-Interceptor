@@ -5,31 +5,23 @@
 
 Figure 1: Interceptor Controller Subsystem
 
-The goal of this subsystem is to take the analog outputs produced by the processor and the Arduino converts them the into digital outputs that can be used by the mechanical system to move the firing mechanism. The Arduino and Stepper Motor will allow the specific motors the Mechanical Engineering team has picked to change speed, direction to one of the 30 set positions, and drop the ammunition when the firing sequence is activated .
+The goal of this subsystem is to take the analog outputs produced by the processor and the Arduino converts them the into digital outputs that can be used by the mechanical system to move the firing mechanism. The Arduino and Stepper Motor Driver will allow the specific motors the Mechanical Engineering team has picked to change speed, direction to one of the 30 set positions, and drop the ammunition when the firing sequence is activated .
 
 ## **Constraints:**
 
 |No.|Constraint|Origin|
 |--|------|-------|
-|1|The Interceptor Controller shall move firing mechanism to 1 of 30 locations |Conceptual Design|
-|2|Must send back signal when aiming is finished to initiate firing | Conceptual Design |
-|3|Must turn initiate firing| Conceptual Design
-|4|Arduino must be powered with a 6 to 20V voltage source | Device Constraint|
-|5|Arduino's maximum current per I/O pin is 20mA| Device Constraint|
-|6|Arduino's maximum current per +3.3V pin is 50mA| Device Constraint|
-|7|Maximum voltage for the Stepper Motor 4 to 92V| Device Constraint|
+|1|The Interceptor Controller shall move firing mechanism to 1 of 30 pre set locations |Conceptual Design|
+|2|Must send back signal when aiming is finished to initiate firing sequence in processor| Conceptual Design |
+|3|Shall receive 5V power supply from processor| Conceptual Design|
+|4|Must change speed and direction of the motors in the Mechanical's section |Concepyual Design|
 
 
 
-
-1.	Using the data sent by the processor it converts it digital as coordinates that correspond to 1 of 30 set positions.
+1.	Using the data sent by the processor it converts it to digital as coordinates that correspond to 1 of 30 set positions.
 2.	After completing the movement to the desired position, a signal is sent back to the processor.
-3.	After sending a signal from the Interceptor Controller another signal is sent back from the processor to initiate the firing of the projectile.
-4.	To ensure that the device is powered safely a 6 to 20V power supply is needed but, has a barrel plug connector that works with a standard 9V battery.
-5.	Per the data sheet the I/O pins are only regulated for 20mA.
-6.	Per the data sheet the +3.3V pins are only regulated for 50mA.
-7.	Per the data sheet a max of 92V can be applied.
-
+3.	Using the 5V pin from the processor to power the device.
+4.  To be able to move to the correct coordinates the motors need to move in either direction along the x and y axis. This is also needed for testing the speed in which it must fire at and the speed it takes to move in to position.
 
 ## **Buildable Schematics:**
 
