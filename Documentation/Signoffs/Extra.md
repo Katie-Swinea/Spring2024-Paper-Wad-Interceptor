@@ -78,7 +78,7 @@ $$dL =  20 log (R2 / R1)$$
 1. “Audible/Visible Appliance Reference Guide Introduction: The Need for an Audible/Visible Compliance Reference Guide.”, firetechs.net, https://www.firetechs.net/library/ReferenceGuides/SystemSensor/AudibleVisibleRefGuide.pdf (accessed Apr. 22, 2024).
 2.  A. Hadhazy, “What are the limits of human vision?,” BBC News, https://www.bbc.com/future/article/20150727-what-are-the-limits-of-human-vision (accessed Apr. 17, 2024).
 3. “What is the human hearing range in hz and DB?: Miracle-ear,” Miracle Ear, https://www.miracle-ear.com/blog-news/human-hearing-range (accessed Apr. 17, 2024).
-4. https://kintronics.com/right-sound-level-paging-system/ 
+4. B. Mesnik, “What is the right sound level for your paging speakers?,” Kintronics, https://kintronics.com/right-sound-level-paging-system/ (accessed Apr. 23, 2024). 
 5. “Ant11sf1cqe CIT relay and switch | switches | DigiKey,” Digikey, https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 (accessed Apr. 16, 2024). 
 6. “VLCS5130,” DigiKey, https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/VLCS5130/4073547 (accessed Apr. 21, 2024).
 7. “BL-BGX3V1,” DigiKey, https://www.digikey.com/en/products/detail/american-bright-optoelectronics-corporation/BL-BGX3V1/9678159 (accessed Apr. 21, 2024). 
@@ -88,7 +88,7 @@ $$dL =  20 log (R2 / R1)$$
 11. “RNF18FTD75R0,” DigiKey, https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNF18FTD75R0/1682997 (accessed Apr. 21, 2024). 
 12. “CMF5550R000FKEK70,” DigiKey, https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606 (accessed Apr. 21, 2024). 
 13. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
-14. https://www.digikey.com/en/products/detail/mallory-sonalert-products-inc/MSR516NR/1014723
-15. https://www.engineeringtoolbox.com/inverse-square-law-d_890.html
+14. “MSR516NR Mallory Sonalert Products Inc. | Audio Products | DigiKey,” DigiKey, https://www.digikey.com/product-detail/en/mallory-sonalert-products-inc/MSR516NR/458-1088-ND/1014723 (accessed Apr. 24, 2024). 
+15. E. Engineeringtoolbox, “Sound propagation - The Inverse Square Law,” Engineering ToolBox, https://www.engineeringtoolbox.com/inverse-square-law-d_890.html (accessed Apr. 23, 2024). 
 
 ‌
