@@ -24,13 +24,16 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure.
 4. To add to the total points for the competition, the interceptor must make sounds before firing. This constraint can be found in the official rulebook for the competition. The piezo buzzer must be able to work with an output of the Arduino Uno R3 which will be 5V. It must also fall within the human hearing range of frequency which is 20 to approximately 20,000Hz. The piezo buzzer that was chosen operates at a frequency of 3600Hz to 4600Hz which will fall within the frequency range that we can hear. When it comes to loudness, humans can tolerate a range of 0 to 120db and the sound must not exceed 85db for long periods which will keep the noise at a save level [3]. The buzzer also needs to be 10db louder than the noise in the room which is the qualification for paging speakers [2]. The average room noise is 30-50db, therefore the buzzer should produce a noise with a minimum loudness of 40-60db. 
    
 ## Buildable Schematic
-![System](../Images/Extra-Buildable_Pause_Switch.png)
+![System](../Images/PCB_Buildable.png)
 
 Figure 1: This represents the buildable schematic for the pause switch. This switch outputs 5V or ground that is found on the arduino. This output is sent to the processor block to determine the pause state. In this example, the green LED's will be at the top, and the red LED's will be at the bottom.
 
 ![System](../Images/Buildable_Buzzer.png)
 
 Figure 2: This image shows the buildable schematic for the buzzer system. This buzzer is powered by an Arduino Uno R3 that takes a power input from the device power system of 9V and an input from the processor to tell the arduino when to play the sounds. Finally, it outputs 5V for the buzzer to play the sound. 
+
+![System](../Images/Layout.png)
+Figure 3: This image shows the final layout for the PCB. This includes the footprints for the pause switch, LED's, resistors, and the buzzer.
 
 
 ## **Analysis**
