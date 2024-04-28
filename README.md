@@ -23,7 +23,7 @@ through the design process and culminate in a final summary for the final design
 ## Salient Outcomes
 
 The team has learned about tracking smaller objects through this project. The object's size was not an issue the team anticipated to be such a challenge.
-While there are several sensors that are capable of tracking objects, very few can reliably track a small object like a plastic golf ball. This issue was
+While there are several sensors that are capable of tracking objects, very few can reliably track a small object such as a plastic golf ball. This issue was
 highlighted even further with the limitation sensors that can detect plastic. Research shows that vision detection is the most reliable and used technology
 for small object tracking. This was an outcome the team was not expecting from the project. This difficulty was something the team had to overcome and learn
 from to achieve the goal of the project.
