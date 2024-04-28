@@ -1,4 +1,4 @@
-# Paper Wad Interceptor
+# Paper Wad Interceptor - Purple Team
 
 ## Executive Summary
 
