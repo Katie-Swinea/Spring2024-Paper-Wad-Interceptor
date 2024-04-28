@@ -17,8 +17,7 @@ the project was already being scaled down, the project was also turned into a co
 
 ## Capabilities
 
-In it's current state, the team's project is not capable of powering the devices that will be used. The designs have not yet been completed and the project
-has not been built, so all the capabilities are theoritcal and proven through datasheets and analysis. The capabilities of the system will be updated
+The designs have not yet been completed and the project has not been built, so all the capabilities are theoritcal and proven through datasheets and analysis. The capabilities of the system will be updated
 through the design process and culminate in a final summary for the final design.
 
 ## Salient Outcomes
