@@ -59,7 +59,7 @@ The customer is Devcom who also created and proposed the project and competition
 
 ### Recognitions
 
-The team wants to acknowledge the contributions of the partnered Mecahanical Engineering team. The team consists of: Ishak Lamei, Samuel Rainey, Steven
+The team wants to acknowledge the contributions of the partnered Mechanical Engineering team. The team consists of: Ishak Lamei, Samuel Rainey, Steven
 Tucker, and Austin Williams.
 
 ## Repo Organization
