@@ -55,7 +55,7 @@ The team's faculty supervisor is Dr. Jesse Roberts.
 
 ### Stakeholders
 
-The customer for this project is Devcom who also created and proposed this project.
+The customer is Devcom who also created and proposed the project and competition.
 
 ### Recognitions
 
