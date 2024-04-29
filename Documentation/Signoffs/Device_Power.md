@@ -35,15 +35,17 @@ The system will be controlled by an on/off switch. This switch will allow the wa
 
 ## Buildable schematic 
 
-![Function](../Images/Device_Power/kicad10.png)
+![Function](../Images/Device_Power/kicad20.png)
 
 *power subsystem buildable schematic*
 
-The wires used for the mechanical system 
+The wires used for the mechanical system, extra system and relay coil will be 8 AWG wire as it will completely encapsulate the max requirment of 24 volts at 25 amps [8].
 
-The input wire to the Jetson Nano will be a Barrel Jack connector cord rather than a micro-USB becuase the image processing system has ran it's calculations with the processor receiving this specfic draw.
+The input wire to the Jetson Nano will be a Barrel Jack connector cord rather than a micro-USB becuase the image processing system has ran it's calculations with the processor receiving this specfic draw. This wire will be rated to handle at least 5 volts at 4 amps as that is what the Jetson Nano will be drawing [7].
 
-![Function](../Images/Device_Power/kicad11.png)
+Both power supplies will have it's output split using a terminal block that will act as power bus to every system that draws power from it [6].
+
+![Function](../Images/Device_Power/kicad21.png)
 
 *Entire project power schematic*
 
@@ -137,7 +139,8 @@ To accomplish the power switch constraint this system will utilize a power strip
 |DC 24V 25A 600W Power Supply | 600 watt power supply | Mechanical | 	B0BKY78JDX | NUOFUWEI | 1 | 49.99 | 96.96 |
 | 1-channel relay | Relay that will disconnect the power to the motors | Mechanical | B07DSZFLMQ | NOYITO | 1 | 8.99 | 105.95 |
 | 6-channel terminal block | 6-channel power block to split power | All | B09D3BV22M | CZH-LABS | 2 | 12.99 | 131.93 |
-
+| 16-AWG barrel jack connector | Barrel jack connector to power Jetson Nano | Processor | B07VW5VRX7 | SIOCEN | 1 | 6.99 | 139.92 |
+| 8-AWG electrical wire | Electrical wire to hook up each system | Processor, Mechanical | B0BYJRDT19 | Beffkkip | 1 | 19.99 | 158.91 | 
 
 
 ## References 
@@ -154,5 +157,6 @@ To accomplish the power switch constraint this system will utilize a power strip
 
 [6] “30Amp 48V 2x6 Position Terminal Block,” Amazon, https://www.amazon.com/OONO-Position-Terminal-Distribution-Module/dp/B09D3BV22M/ref=asc_df_B09D3BV22M/?tag=hyprod-20&linkCode=df0&hvadid=533110574637&hvpos=&hvnetw=g&hvrand=10973354898479652102&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-1457134993109&psc=1&mcid=a1906572abf43679bd658b004ace500d&gclid=CjwKCAjwxLKxBhA7EiwAXO0R0JVhvSCwmtcfgJcPx-fdBBdNfHe22T96p_9NsPDzXmUqYMYpRjTJvBoC04cQAvD_BwE (accessed Apr. 29, 2024). 
 
+[7] “DC Power Pigtail Cable,16AWG DC Barrel Plug Connector,” Amazon, https://www.amazon.com/Pigtail-Supply-Security-Adapter-Connector/dp/B07VW5VRX7/ref=asc_df_B07VW5VRX7/?tag=hyprod-20&linkCode=df0&hvadid=673743426895&hvpos=&hvnetw=g&hvrand=14844271245038445913&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-2204451269236&psc=1&mcid=09b19936f4b83043a4b9bc1f7727918e (accessed Apr. 29, 2024). 
 
-
+[8] 8 AWG Gauge Silicone Wire Electrical Cable, https://www.amazon.com/Silicone-Electrical-Cable%EF%BC%8810ft-Temperature-Resistant/dp/B0BYJRDT19/ref=asc_df_B0BYJRDT19/?tag=hyprod-20&linkCode=df0&hvadid=693596122465&hvpos=&hvnetw=g&hvrand=14146947752178268467&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1025954&hvtargid=pla-2201929527018&mcid=b9540a6ae1f530d093a4bd8069b18131&gad_source=1&gclid=CjwKCAjw57exBhAsEiwAaIxaZqkGeh0035UTVqDyrVWD4AjlOLxEIJsIcuknV6LJ9DHMXSrHvSgKGRoC070QAvD_BwE&th=1 (accessed Apr. 29, 2024). 
