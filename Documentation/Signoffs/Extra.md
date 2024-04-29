@@ -26,7 +26,7 @@ Figure 1: Extra subsystem and the pause switch can be seen in this figure.
 ## Buildable Schematic
 ![System](../Images/Buildable_Extra_jrneal.png)
 
-Figure 1: This represents the buildable schematic for the pause switch. This switch outputs 5V or ground that is found on the arduino. This output is sent to the processor block to determine the pause state. In this example, the green LED's will be at the top, and the red LED's will be at the bottom. 
+Figure 1: This represents the buildable schematic for the pause switch. This switch outputs 5V or ground that comes from the power subsystem. This output is sent to the processor block to determine the pause state. In this example, the green LED's will be at the top, and the red LED's will be at the bottom. 
 
 
 ## **Analysis**
