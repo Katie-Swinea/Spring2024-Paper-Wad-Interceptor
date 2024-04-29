@@ -36,13 +36,13 @@ When the output of the switch is connected to 5V this will be sent to the proces
 
 ![System](../Images/Led_Equation.png) [8]
 
-The maximum current that can be handled by the LED's is 30mA for the green LED's and for the red it is 50mA. Because of the 5V being used a resistor value was chosen, using the equation above [8], to keep the LED's below their maximum ratings. Both resistors share the same Vs of 5V. The values for the red LED were found using the datasheet those values are: Vf = max of 3.0V and If DC = max of 50mA [9]. For the green LED's the datasheet was used to find values of Vf = 3.6V max and If DC = 30mA max [10]. These values were then put into the equation above and resistance values were calculated to make both resistors. The green LED's need a resistance of 75 Ohm [11] and the red LED's need a resistance of 50 Ohm [12]. For the green LED this sets the voltage at 3.5V and the current at 20mA. This allows for the light intensity to be calculated from the datasheet, at 20mA the LED is rated for 25cd [10]. For the red LED, the values are set at 2.5V and 50mA. Based on the datasheet, a current of 50mA produces a value of 25cd [9]. This sets the power consumtion at 0.125W for the red LED and 0.03W for the green LED, according to the first equation below.
+The rated current for the LED's is 20mA for the green LED's and for the red it is 50mA. Because of the 5V being used a resistor value was chosen, using the equation above [8], to keep the LED's below their maximum ratings. Both resistors share the same Vs of 5V. The values for the red LED were found using the datasheet those values are: Vf = max of 3.0V and If DC = max of 50mA [9]. For the green LED's the datasheet was used to find values of Vf = 3V average and If DC = 20mA max [10]. These values were then put into the equation above and resistance values were calculated to make both resistors. The green LED's need a resistance of 100 Ohm [11] and the red LED's need a resistance of 50 Ohm [12]. For the green LED this sets the voltage at 3V and the current at 20mA. This allows for the light intensity to be calculated from the datasheet, at 20mA the LED is rated for 25cd [10]. For the red LED, the values are set at 2.5V and 50mA. Based on the datasheet, a current of 50mA produces a value of 25cd [9]. This sets the power consumtion at 0.125W for the red LED and 0.03W for the green LED, according to the first equation below.
 
 $$P=VI$$
 
 The candela value for fire alarms was taken from the Americans with Disabilities Act's (ADA) guidelines on accessable designs. This value, which is considered enough light to get the attention of hearing impared individuals, had an ADA anticipated value of 15cd. This value takes into account ambient light and if the strobe is in the middle of the room [1]. Therefore, if this value is considered the standard for getting the attention of deaf individuals during an emergency, it will be adequate for viewing from approximately 6.5ft away by the judges. Just to be sure, once again the green and red LED's both have an output of 25cd which surpasses the given requirement. There is also an array of ten of them to increase the overall brightness for the judges.
 
-The wiring schematic can be seen in figure one. The wiring diagram is very simple and only involves a few connections. The power source comes directly from the power block. The connection for the buzzer circuit would be from the GPIO (General Purpose Input Output) pins to one connection of the buzzer and then the other connection will be connected to the ground of the board. The next connection would be the 5V terminal to the PCB and the second would be the ground. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable and falls within the frequency requirements of the piezo buzzer. This sound would be played for a defined period of time when the processor sends the proper signal. This signal will most likely be the aiming signal and the sounds will be played for said amount of time. The buzzer that was chosen is the Visaton GmbH & Co. KG, MB 12 - 5 V [15]. This buzzer is rated for 5V and can operate from 3 - 7V DC and a frequency of 2300Hz. This buzzer needs to have a decibel value at 6.5ft that falls within the rating for paging speakers which is 10db above the ambient noise level [4]. The equation below [15] shows the relationship between decibels and distance. As distance increases the decible level drops. As the datasheet for the buzzer states, the rating for the chosen buzzer is 88db at 5V from 10cm away [14]. A calculation from 6.5ft away (1.98m) shows that the decibel level will be reduced by 16.40db, therefore the decibel rating at 6.5ft (1.98m) will be 88db - 25.93db which is 62.07db. This value falls more than 10db above the rating for the noise in the room which is 60db therefore the volume meets the qulifications of a paging speaker. Because the qualifications are met, the judges will be able to hear the buzzer from 6.5ft (1.98m). 
+The wiring schematic can be seen in figure one. The wiring diagram is very simple and only involves a few connections. The power source comes directly from the power block. The connection for the buzzer circuit would be from the GPIO (General Purpose Input Output) pins to one connection of the buzzer and then the other connection will be connected to the ground of the board. The next connection would be the 5V terminal to the PCB and the second would be the ground. All that would be left is the code for making the sounds. The code written would need to generate a sound that is tolerable and falls within the frequency requirements of the piezo buzzer. This sound would be played for a defined period of time when the processor sends the proper signal. This signal will most likely be the aiming signal and the sounds will be played for said amount of time. The buzzer that was chosen is the Mallory Sonalert Products Inc. PT-2130PQ [15]. This buzzer is rated for 5V and can operate from 3 - 7V DC and a frequency of 2300Hz. This buzzer needs to have a decibel value at 6.5ft that falls within the rating for paging speakers which is 10db above the ambient noise level [4]. The equation below [14] shows the relationship between decibels and distance. As distance increases the decible level drops. As the datasheet for the buzzer states, the rating for the chosen buzzer is 90db at 5V from 10cm away [13]. A calculation from 6.5ft away (1.98m) shows that the decibel level will be reduced by 16.40db, therefore the decibel rating at 6.5ft (1.98m) will be 90db - 25.93db which is 64.07db. This value falls more than 10db above the rating for the noise in the room which is 60db therefore the volume meets the qulifications of a paging speaker. Because the qualifications are met, the judges will be able to hear the buzzer from 6.5ft (1.98m). 
 
 $$dL =  20 log (R2 / R1)$$
 
@@ -53,10 +53,9 @@ $$dL =  20 log (R2 / R1)$$
 | CIT Relay and Switch, ANT11SF1CQE (Switch) | 1 | $3.48 | $3.48 |
 |  Vishay Semiconductor Opto Division, VLCS5130 (Red LED) | 10 | $4.10 | $7.58 |
 |  American Bright Optoelectronics Corporation, BL-BGX3V1 (Green LED) | 10 | $3.47 | $11.05 |
-|  Stackpole Electronics Inc, RNF18FTD75R0 (75 Ohm Resistor) | 10 | $0.87 | $11.92 |
-|  Vishay Dale, CMF5550R000FKEK70 (50 Ohm resistor) | 10 | $3.78 | $15.70 |
-| Arduino Uno REV3 [A000066] (Arduino) | 1 | $27.60 | $43.30 |
-|  Visaton GmbH & Co. KG, MB 12 - 5 V (Buzzer) | 1 | $1.68 | $44.98 |
+|  TE Connectivity Passive Product, LR1F100R (100 Ohm Resistor) | 10 | $0.55 | $ 11.60|
+|  Vishay Dale, CMF5550R000FKEK70 (50 Ohm resistor) | 10 | $3.78 | $15.38 |
+|  Mallory Sonalert Products Inc. PT-2130PQ (Buzzer) | 1 | $2.14 | $17.52 |
 
 
 | **Item:** | **URL** |
@@ -64,10 +63,9 @@ $$dL =  20 log (R2 / R1)$$
 | CIT Relay and Switch, ANT11SF1CQE (Switch) |  https://www.digikey.com/en/products/detail/cit-relay-and-switch/ANT11SF1CQE/12503396 |
 | Vishay Semiconductor Opto Division, VLCS5130 (Red LED) | https://www.digikey.com/en/products/detail/vishay-semiconductor-opto-division/VLCS5130/4073547 |
 | American Bright Optoelectronics Corporation, BL-BGX3V1 (Green LED) | https://www.digikey.com/en/products/detail/american-bright-optoelectronics-corporation/BL-BGX3V1/9678159 |
-|  Stackpole Electronics Inc, RNF18FTD75R0 (75 Ohm Resistor) | https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNF18FTD75R0/1682997 |
+|  TE Connectivity Passive Product, LR1F100R (100 Ohm Resistor) | https://www.digikey.com/en/products/detail/te-connectivity-passive-product/LR1F100R/2381158 |
 | Vishay Dale, CMF5550R000FKEK70 (50 Ohm Resistor) | https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606 |
-| Arduino Uno REV3 [A000066] (Arduino) | https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6/ref=asc_df_B008GRTSV6?tag=bngsmtphsnus-20&linkCode=df0&hvadid=79852149837934&hvnetw=s&hvqmt=ehvbmt=be&hvdev=c&hvlocint=&hvlocphy=&hvtargid=pla-4583451676566041&th=1 |
-| Visaton GmbH & Co. KG, MB 12 - 5 V (Buzzer) | https://www.digikey.com/en/products/detail/visaton-gmbh-co-kg/MB-12-5-V/10650231 |
+| Mallory Sonalert Products Inc. PT-2130PQ (Buzzer) | https://www.digikey.com/en/products/detail/mallory-sonalert-products-inc/PT-2130PQ/969807 |
 
 
 ## References
@@ -81,10 +79,9 @@ $$dL =  20 log (R2 / R1)$$
 8. V. Lynch, “Led resistor calculator,” The Engineering Mindset, https://theengineeringmindset.com/led-resistor-calculator/ (accessed Apr. 21, 2024). 
 9. “VLCS5130,” Vishay, https://www.vishay.com/docs/81938/vlcs5130.pdf (accessed Apr. 21, 2024). 
 10. “BL-BGX3V1,” BRIGHT LED ElLECTRONICS CORP., https://www.americanbrightled.com/pdffiles/led-components/through-hole/BL-BGX3V1.pdf (accessed Apr. 21, 2024). 
-11. “RNF18FTD75R0,” DigiKey, https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RNF18FTD75R0/1682997 (accessed Apr. 21, 2024). 
+11. “LR1F100R,” DigiKey, https://www.digikey.com/en/products/detail/te-connectivity-passive-product/LR1F100R/2381158 (accessed Apr. 28, 2024). 
 12. “CMF5550R000FKEK70,” DigiKey, https://www.digikey.com/en/products/detail/vishay-dale/CMF5550R000FKEK70/3616606 (accessed Apr. 21, 2024). 
-13. “A000066-datasheet.pdf,” Ardui Uno R3, https://docs.arduino.cc/resources/datasheets/A000066-datasheet.pdf (accessed Apr. 16, 2024). 
-14. “MB 12 - 5 V visaton gmbh & co.. KG | audio products | DigiKey,” DigiKey, https://www.digikey.com/en/products/detail/visaton-gmbh-co-kg/MB-12-5-V/10650231 (accessed Apr. 24, 2024). 
-15. E. Engineeringtoolbox, “Sound propagation - The Inverse Square Law,” Engineering ToolBox, https://www.engineeringtoolbox.com/inverse-square-law-d_890.html (accessed Apr. 23, 2024). 
+13. “PT-2130PQ,” DigiKey, https://www.digikey.com/en/products/detail/mallory-sonalert-products-inc/PT-2130PQ/969807 (accessed Apr. 28, 2024). 
+14. E. Engineeringtoolbox, “Sound propagation - The Inverse Square Law,” Engineering ToolBox, https://www.engineeringtoolbox.com/inverse-square-law-d_890.html (accessed Apr. 23, 2024). 
 
 ‌
