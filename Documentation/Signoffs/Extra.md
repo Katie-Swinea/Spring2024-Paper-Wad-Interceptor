@@ -1,6 +1,6 @@
 # Extra
 
-![System](../Images/Extra_jrneal20.png)
+![System](../Images/Extra_jrneal.png)
 
 Figure 1: Extra subsystem and the pause switch can be seen in this figure.
 
