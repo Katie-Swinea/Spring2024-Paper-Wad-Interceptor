@@ -5,7 +5,7 @@
 
 Figure 1: Interceptor Controller Subsystem
 
-The Mechanical System requires a bridge between their motors that uses the Stepper Motor Driver they have purchased and our processer. To do this the Arduino will be used as the bridge to convert the analog outputs from the processer to digital outputs to control the driver so it can move the firing mechanism to a firing position, and send a analog signal back to the processer to initiate firing at the incoming projectile.
+The Mechanical System requires a bridge between their motors that uses the Stepper Motor Driver they have purchased and our processer. To do this the Arduino will be used as the bridge to convert the analog outputs from the processer to digital outputs to control the driver so it can move the firing mechanism to a firing position, send a analog signal back to the processer to initiate firing at the incoming projectile, and maintain firing speed.
 
 ## **Constraints:**
 
@@ -15,6 +15,8 @@ The Mechanical System requires a bridge between their motors that uses the Stepp
 |2|Must communicate with processor| Conceptual Design |
 |3|Shall receive 5V power supply from processor| Conceptual Design|
 |4|Must change speed and direction of the motors in the Mechanical's section |Conceptual Design|
+|5|Must maintain safe firing speed and distance|Conceptual Design|
+|6|Must supply a 5V power supply to Stepper Motor Driver| Device design|
 
 
 
@@ -22,7 +24,8 @@ The Mechanical System requires a bridge between their motors that uses the Stepp
 2.	After completing the movement to the desired position, a signal is sent back, and recieve data from the processor.
 3.	Using the 5V pin from the processor to power the device.
 4.  To be able to move to the correct coordinates the motors need to move in either direction along the x and y axis. This is also needed for testing the speed in which it must fire at and the speed it takes to move in to position.
-
+5.  Per Devcom rule books the projectile must be fired at a safe speed and stay within a distance of 6ft *this speed will be found by the ME team*
+6. The Stepper Motor Driver will be powered using the arduino.
 ## **Buildable Schematics:**
 
 ![Elaboration Photo](../Images/Controllers/Schematic3.png)
