@@ -5,7 +5,7 @@
 
 Figure 1: Interceptor Controller Subsystem
 
-The goal of this subsystem is to take the analog outputs produced by the processor and the Arduino converts them the into digital outputs that can be used by the mechanical system to move the firing mechanism. The Arduino and Stepper Motor Driver will allow the specific motors the Mechanical Engineering team has picked to change speed, direction to one of the 30 set positions, and drop the ammunition when the firing sequence is activated .
+The Mechanical System requires a bridge between their motors that uses the Stepper Motor Driver they have purchased and our processer. To do this the Arduino will be used as the bridge to convert the analog outputs from the processer to digital outputs to control the driver so it can move the firing mechanism to a firing position, and send a analog signal back to the processer to initiate firing at the incoming projectile.
 
 ## **Constraints:**
 
