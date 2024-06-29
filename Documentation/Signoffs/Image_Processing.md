@@ -58,10 +58,15 @@ detect a light color like grey.
 This can be adjusted to detect the ball at longer distances when the amount of pixels repersenting the object are smaller. The Big O analysis of this
 function would be O(n) because it is an iterative function that will go through all of the pixels provided [1].
 
-Once the golf ball has been detected based on color, the pixels repersenting the color can have an edge detection algorithm applied to it. The canny edge detection would be best suited for this since it not only filters our non-edges but also sets edges as weak and strong. The golf ball will have very strong, round edges making it highly detectable by the algorithm. The adjustable ranges to define an edge used by the open sources cv function also make it ideal. The results of calibrated canny edge algorithms can be seen below [2].
+Once the golf ball has been detected based on color, the pixels repersenting the color can have an edge detection algorithm applied to it. The canny edge
+detection would be best suited for this since it not only filters our non-edges but also sets edges as weak and strong. The golf ball will have very
+strong, round edges making it highly detectable by the algorithm. The adjustable ranges to define an edge used by the open sources cv function also make it
+ideal. The results of calibrated canny edge algorithms can be seen below [2].
 
+![Function](../Images/Image_Processing/Edge_Detection.PNG)
 
-The Big O analysis of this function would also be O(n) since it is an iterative function through the pixels to determine if it has the qualities of an edge. This function is most effective when the image has been cleaned and processed which is another O(n) analysis.
+The Big O analysis of this function would also be O(n) since it is an iterative function through the pixels to determine if it has the qualities of an
+edge. This function is most effective when the image has been cleaned and processed which is another O(n) analysis.
 
 *Distance and Coordinates*
 
